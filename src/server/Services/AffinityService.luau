@@ -372,7 +372,7 @@ function AffinityService:Start()
 					clearBurn(target)
 				elseif now >= burn.nextTick then
 					burn.nextTick += BURN_TICK
-					CombatService:dealDamage(burn.source, target, burn.damage, "Fire")
+					CombatService:dealDamage(burn.source, target, burn.damage, "Fire", "Burn")
 				end
 			end
 		end

@@ -829,6 +829,78 @@
      }
     },
     {
+     "Name": "EnemySpawn_Spitter_L3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       30,
+       1,
+       -195
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Spitter",
+      "Level": 3,
+      "Count": 3,
+      "Zone": "EmeraldVerge"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Sentry_L5",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -30,
+       1,
+       -150
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Sentry",
+      "Level": 5,
+      "Count": 2,
+      "Zone": "EmeraldVerge"
+     }
+    },
+    {
      "Name": "RuinPillar1",
      "ClassName": "Part",
      "Properties": {

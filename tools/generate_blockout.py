@@ -92,9 +92,16 @@ spawns = [
     ("EnemySpawn_Thornling_L2", [22, 1, -150], 2, 4),
     ("EnemySpawn_Thornling_L3", [-5, 1, -190], 3, 4),
 ]
-for name, pos, level, count in spawns:
+# Provisional: Lanzadores en la Linde (misión 4) y Centinelas junto a las ruinas
+# (en el juego final los Centinelas viven en las Ruinas de Aelith, Zona 2).
+spawns = [(n, p, l, c, "Thornling") for n, p, l, c in spawns]
+spawns += [
+    ("EnemySpawn_Spitter_L3", [30, 1, -195], 3, 3, "Spitter"),
+    ("EnemySpawn_Sentry_L5", [-30, 1, -150], 5, 2, "Sentry"),
+]
+for name, pos, level, count, enemy_id in spawns:
     verge.append(part(name, [4, 1, 4], pos, [1, 0.2, 0.2], tags=["EnemySpawn"],
-                      attributes={"EnemyId": "Thornling", "Level": level, "Count": count, "Zone": "EmeraldVerge"}))
+                      attributes={"EnemyId": enemy_id, "Level": level, "Count": count, "Zone": "EmeraldVerge"}))
 # Ruinas pequeñas (futuro Fragmento F01, misión 3)
 for i, (x, z, h) in enumerate([(-38, -175, 8), (-30, -182, 5), (-44, -168, 10), (-36, -186, 3)]):
     verge.append(part(f"RuinPillar{i + 1}", [3, h, 3], [x, h / 2 + 0.4, z], STONE, "Slate"))

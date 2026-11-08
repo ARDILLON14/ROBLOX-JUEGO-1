@@ -42,6 +42,9 @@ local CombatService = {}
 
 local states: { [Player]: CombatState } = {}
 local damageListeners: { (Player, Model, number) -> () } = {}
+-- Modificadores de daño (p. ej., la guardia del Centinela). Devuelven (daño, tipo).
+type DamageModifier = (player: Player, target: Model, amount: number, kind: string, source: string) -> (number, string)
+local damageModifiers: { DamageModifier } = {}
 
 local function log(message: string)
 	if Debug.LogCombat then
@@ -133,7 +136,13 @@ local function sendHit(attacker: Player, target: Model, amount: number, kind: st
 	end
 end
 
-local function resolveHit(player: Player, weapon: WeaponTypes.WeaponType, attackMultiplier: number, label: string)
+local function resolveHit(
+	player: Player,
+	weapon: WeaponTypes.WeaponType,
+	attackMultiplier: number,
+	label: string,
+	source: string
+)
 	local _, _, root = getAliveCharacter(player)
 	if not root then
 		return
@@ -147,7 +156,7 @@ local function resolveHit(player: Player, weapon: WeaponTypes.WeaponType, attack
 	)
 	for _, target in targets do
 		local amount, kind = calculateDamage(player, weapon, attackMultiplier)
-		CombatService:dealDamage(player, target, amount, kind)
+		CombatService:dealDamage(player, target, amount, kind, source)
 		log(`{player.Name}: {label} → {target.Name} -{amount} ({kind})`)
 	end
 end
@@ -175,6 +184,7 @@ local function onRequestAttack(player: Player, kind: unknown)
 	local hitTime: number
 	local multiplier: number
 	local label: string
+	local source: string
 
 	if kind == "Light" then
 		if now - state.lastAttackEnd > CombatConfig.ComboResetTime + CombatConfig.NetworkTimeTolerance then
@@ -188,6 +198,7 @@ local function onRequestAttack(player: Player, kind: unknown)
 		hitTime = weapon.LightHitTime
 		multiplier = 1
 		label = `Ligero {state.comboIndex}`
+		source = "Light"
 	else
 		local isFinisher = state.comboIndex == 2
 			and now - state.lastAttackEnd <= CombatConfig.ComboResetTime + CombatConfig.NetworkTimeTolerance
@@ -195,6 +206,7 @@ local function onRequestAttack(player: Player, kind: unknown)
 		hitTime = weapon.HeavyHitTime
 		multiplier = if isFinisher then CombatConfig.FinisherMultiplier else CombatConfig.HeavyMultiplier
 		label = if isFinisher then "Remate" else "Pesado"
+		source = if isFinisher then "Finisher" else "Heavy"
 		state.comboIndex = 0
 	end
 
@@ -207,7 +219,7 @@ local function onRequestAttack(player: Player, kind: unknown)
 	task.delay(hitTime, function()
 		-- Si mientras tanto esquivó o murió, el golpe se cancela.
 		if states[player] == state and state.attackToken == token then
-			resolveHit(player, weapon, multiplier, label)
+			resolveHit(player, weapon, multiplier, label, source)
 		end
 	end)
 end
@@ -283,10 +295,17 @@ end
 	Aplica daño de un jugador a un objetivo (enemigo o muñeco) y avisa a todos:
 	números de daño a los clientes y aviso a otros servicios (contribución, misiones, ulti...).
 	kind: "Normal", "Crit", "Fire", "Lightning", "Resonance".
+	source: "Light", "Heavy", "Finisher", "Ability" o "Burn" (lo usan los modificadores, p. ej., la guardia).
 ]]
-function CombatService:dealDamage(player: Player, target: Model, amount: number, kind: string)
+function CombatService:dealDamage(player: Player, target: Model, amount: number, kind: string, source: string?)
 	local humanoid = target:FindFirstChildOfClass("Humanoid")
 	if not humanoid or humanoid.Health <= 0 or amount <= 0 then
+		return
+	end
+	for _, modifier in damageModifiers do
+		amount, kind = modifier(player, target, amount, kind, source or "Ability")
+	end
+	if amount <= 0 then
 		return
 	end
 	humanoid:TakeDamage(amount)
@@ -337,6 +356,11 @@ end
 function CombatService:isBusy(player: Player): boolean
 	local state = states[player]
 	return state ~= nil and os.clock() < state.busyUntil
+end
+
+-- Añade un modificador de daño (lo usa EnemyService para la guardia del Centinela).
+function CombatService:addDamageModifier(modifier: DamageModifier)
+	table.insert(damageModifiers, modifier)
 end
 
 -- Otros servicios (p. ej., EnemyService) se enteran del daño que hace cada jugador.

@@ -17,6 +17,7 @@
 local CollectionService = game:GetService("CollectionService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 
 local Shared = ReplicatedStorage:WaitForChild("Shared")
@@ -73,13 +74,14 @@ local function log(message: string)
 	end
 end
 
--- Construye un Brotespina provisional con bloques (sin modelo 3D todavía).
+-- Construye un enemigo provisional con bloques (sin modelo 3D todavía). "Scale" cambia su tamaño.
 local function buildModel(config: Enemies.EnemyConfig, cframe: CFrame): (Model, Humanoid, BasePart)
 	local model = Instance.new("Model")
+	local k = config.Scale
 
 	local root = Instance.new("Part")
 	root.Name = "HumanoidRootPart"
-	root.Size = Vector3.new(2, 2, 1)
+	root.Size = Vector3.new(2, 2, 1) * k
 	root.Transparency = 1
 	root.CanCollide = false
 	root.CFrame = cframe
@@ -105,13 +107,22 @@ local function buildModel(config: Enemies.EnemyConfig, cframe: CFrame): (Model, 
 			color = config.LeafColor,
 		},
 	}
+	if config.FrontGuard then
+		-- Escudo de piedra delante: indica que bloquea de frente.
+		table.insert(pieces, {
+			name = "Shield",
+			size = Vector3.new(2.2, 2.4, 0.4),
+			offset = CFrame.new(0, -0.6, -0.9),
+			color = Color3.fromRGB(150, 150, 140),
+		})
+	end
 	for _, piece in pieces do
 		local part = Instance.new("Part")
 		part.Name = piece.name
-		part.Size = piece.size
-		part.CFrame = cframe * piece.offset
+		part.Size = piece.size * k
+		part.CFrame = cframe * CFrame.new(piece.offset.Position * k)
 		part.Color = piece.color
-		part.Material = Enum.Material.Wood
+		part.Material = config.Material
 		part.CanCollide = false
 		part.Massless = true
 		part.TopSurface = Enum.SurfaceType.Smooth
@@ -125,7 +136,7 @@ local function buildModel(config: Enemies.EnemyConfig, cframe: CFrame): (Model, 
 
 	local humanoid = Instance.new("Humanoid")
 	humanoid.RigType = Enum.HumanoidRigType.R15
-	humanoid.HipHeight = 1.5 -- flota a esta altura (no tiene piernas)
+	humanoid.HipHeight = 1.5 * k -- flota a esta altura (no tiene piernas)
 	humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.DisplayWhenDamaged
 	humanoid.Parent = model
 
@@ -271,13 +282,61 @@ spawnEnemy = function(spawnPoint: SpawnPoint)
 	end)
 end
 
-local function stun(enemy: Enemy)
+local function stun(enemy: Enemy, duration: number?)
 	enemy.state = "Stunned"
 	enemy.attackToken += 1
-	enemy.stateUntil = os.clock() + enemy.config.StunDuration
+	enemy.stateUntil = os.clock() + (duration or enemy.config.StunDuration)
 	enemy.model:SetAttribute("Telegraph", nil)
 	enemy.model:SetAttribute("Stunned", true)
 	enemy.humanoid:Move(Vector3.zero)
+end
+
+-- Espina del Lanzador: el servidor la mueve y comprueba si toca a un jugador (se puede bloquear o esquivar).
+local function fireProjectile(enemy: Enemy, targetPosition: Vector3)
+	local origin = enemy.root.Position + Vector3.new(0, 0.5, 0)
+	local offset = targetPosition - origin
+	if offset.Magnitude < 0.1 then
+		return
+	end
+	local direction = offset.Unit
+	local speed = enemy.config.ProjectileSpeed or 45
+	local maxDistance = enemy.config.ProjectileRange or 45
+	local damage = enemy.damage
+
+	local spine = Instance.new("Part")
+	spine.Name = "Spine"
+	spine.Size = Vector3.new(0.4, 0.4, 1.6)
+	spine.Color = enemy.config.LeafColor
+	spine.Material = Enum.Material.Neon
+	spine.Anchored = true
+	spine.CanCollide = false
+	spine.CanQuery = false
+	spine.CanTouch = false
+	spine.CFrame = CFrame.lookAt(origin, origin + direction)
+	spine.Parent = folder
+
+	local traveled = 0
+	local connection: RBXScriptConnection
+	connection = RunService.Heartbeat:Connect(function(deltaTime: number)
+		local stepDistance = speed * deltaTime
+		traveled += stepDistance
+		local position = spine.Position + direction * stepDistance
+		spine.CFrame = CFrame.lookAt(position, position + direction)
+		for _, player in Players:GetPlayers() do
+			local character = player.Character
+			local root = character and character:FindFirstChild("HumanoidRootPart")
+			if root and root:IsA("BasePart") and (root.Position - position).Magnitude <= 2.5 then
+				CombatService:damagePlayer(player, damage, false)
+				connection:Disconnect()
+				spine:Destroy()
+				return
+			end
+		end
+		if traveled >= maxDistance then
+			connection:Disconnect()
+			spine:Destroy()
+		end
+	end)
 end
 
 local function startAttack(enemy: Enemy, targetRoot: BasePart)
@@ -296,6 +355,14 @@ local function startAttack(enemy: Enemy, targetRoot: BasePart)
 		end
 		enemy.model:SetAttribute("Telegraph", nil)
 		enemy.humanoid.AutoRotate = true
+
+		if enemy.config.AttackStyle == "Ranged" then
+			local currentTarget = getTargetRoot(enemy.target)
+			fireProjectile(enemy, if currentTarget then currentTarget.Position else targetRoot.Position)
+			enemy.state = "Cooldown"
+			enemy.stateUntil = os.clock() + enemy.config.AttackCooldown
+			return
+		end
 
 		local hits =
 			Hitbox.query(enemy.root.CFrame, enemy.config.AttackRange + 1, enemy.config.AttackWidth, 5, { folder })
@@ -375,6 +442,13 @@ local function step(enemy: Enemy)
 		if distance > enemy.config.AggroRange * 1.5 then
 			enemy.target = nil
 			enemy.state = "Return"
+		elseif enemy.config.AttackStyle == "Ranged" and distance < (enemy.config.PreferredRange or 18) * 0.6 then
+			-- Demasiado cerca: el Lanzador retrocede.
+			local away = position - targetRoot.Position
+			away = Vector3.new(away.X, 0, away.Z)
+			if away.Magnitude > 0.1 then
+				enemy.humanoid:MoveTo(position + away.Unit * 8)
+			end
 		elseif distance <= enemy.config.AttackRange then
 			startAttack(enemy, targetRoot)
 		else
@@ -436,7 +510,39 @@ function EnemyService:Init()
 	folder.Parent = Workspace
 end
 
+-- Guardia frontal (Centinela): golpes ligeros de frente → bloqueados; pesado o remate de frente → rompe la guardia.
+local function guardModifier(
+	player: Player,
+	target: Model,
+	amount: number,
+	kind: string,
+	source: string
+): (number, string)
+	local enemy = enemies[target]
+	if not enemy or not enemy.config.FrontGuard or enemy.state == "Stunned" or enemy.state == "Dead" then
+		return amount, kind
+	end
+	local character = player.Character
+	local attackerRoot = character and character:FindFirstChild("HumanoidRootPart")
+	if not attackerRoot or not attackerRoot:IsA("BasePart") then
+		return amount, kind
+	end
+	local toAttacker = attackerRoot.Position - enemy.root.Position
+	toAttacker = Vector3.new(toAttacker.X, 0, toAttacker.Z)
+	if toAttacker.Magnitude < 0.1 or enemy.root.CFrame.LookVector:Dot(toAttacker.Unit) < 0.3 then
+		return amount, kind -- por detrás o de lado: daño completo
+	end
+	if source == "Heavy" or source == "Finisher" then
+		stun(enemy, enemy.config.GuardBreakStun)
+		return amount, kind
+	elseif source == "Light" then
+		return math.max(1, math.floor(amount * (enemy.config.GuardBlockMultiplier or 0.2) + 0.5)), "Blocked"
+	end
+	return amount, kind
+end
+
 function EnemyService:Start()
+	CombatService:addDamageModifier(guardModifier)
 	-- Si un jugador daña a un enemigo: se apunta su contribución y el enemigo le persigue.
 	CombatService:onDamageDealt(function(player: Player, target: Model, amount: number)
 		local enemy = enemies[target]
