@@ -9,7 +9,9 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local Strings = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config"):WaitForChild("Strings"))
+local Config = ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config")
+local Strings = require(Config:WaitForChild("Strings"))
+local GameInfo = require(Config:WaitForChild("GameInfo"))
 local InputController = require(script.Parent:WaitForChild("InputController"))
 local CameraController = require(script.Parent:WaitForChild("CameraController"))
 local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
@@ -202,6 +204,11 @@ local function buildGui()
 	hint.Font = Enum.Font.Gotham
 	hint.TextWrapped = true
 	hint.TextColor3 = Color3.fromRGB(180, 185, 190)
+
+	-- Versión del juego (útil para los informes de errores de los jugadores).
+	local version = makeLabel(panel, `v{GameInfo.Version}`, UDim2.fromScale(0.3, 0.05), UDim2.fromScale(0.05, 0.92))
+	version.Font = Enum.Font.Code
+	version.TextColor3 = Color3.fromRGB(130, 135, 140)
 
 	gui.Parent = player:WaitForChild("PlayerGui")
 end

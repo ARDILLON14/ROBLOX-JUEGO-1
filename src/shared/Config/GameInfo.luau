@@ -3,7 +3,7 @@
 
 local GameInfo = {
 	Name = "ECLIPSE: The Fragments of Dawn",
-	Version = "0.17.0",
+	Version = "1.0.0-rc1",
 }
 
 return table.freeze(GameInfo)
