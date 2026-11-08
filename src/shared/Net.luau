@@ -45,6 +45,7 @@ local RELIABLE_EVENTS = {
 -- Mensajes no fiables (UnreliableRemoteEvent): solo cosas cosméticas.
 local UNRELIABLE_EVENTS = {
 	"HitBroadcast", -- golpes de otros jugadores (números pequeños y efectos)
+	"AbilityEffect", -- [PROPUESTA] efectos visuales de habilidades para todos los jugadores
 }
 
 local isServer = RunService:IsServer()

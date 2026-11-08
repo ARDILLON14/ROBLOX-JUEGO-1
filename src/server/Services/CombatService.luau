@@ -146,20 +146,9 @@ local function resolveHit(player: Player, weapon: WeaponTypes.WeaponType, attack
 		getPlayerCharacters()
 	)
 	for _, target in targets do
-		local humanoid = target:FindFirstChildOfClass("Humanoid")
-		if humanoid then
-			local amount, kind = calculateDamage(player, weapon, attackMultiplier)
-			humanoid:TakeDamage(amount)
-			sendHit(player, target, amount, kind)
-			log(`{player.Name}: {label} → {target.Name} -{amount} ({kind})`)
-			for _, listener in damageListeners do
-				task.spawn(listener, player, target, amount)
-			end
-			-- Temporal (solo desarrollo): XP por golpear al muñeco, para probar la subida de nivel.
-			if Debug.DummyXPPerHit > 0 and CollectionService:HasTag(target, "TrainingDummy") then
-				ProgressionService:addXP(player, Debug.DummyXPPerHit)
-			end
-		end
+		local amount, kind = calculateDamage(player, weapon, attackMultiplier)
+		CombatService:dealDamage(player, target, amount, kind)
+		log(`{player.Name}: {label} → {target.Name} -{amount} ({kind})`)
 	end
 end
 
@@ -288,6 +277,60 @@ function CombatService:Start()
 	Players.PlayerRemoving:Connect(function(player: Player)
 		states[player] = nil
 	end)
+end
+
+--[[
+	Aplica daño de un jugador a un objetivo (enemigo o muñeco) y avisa a todos:
+	números de daño a los clientes y aviso a otros servicios (contribución, misiones, ulti...).
+	kind: "Normal", "Crit", "Fire", "Lightning", "Resonance".
+]]
+function CombatService:dealDamage(player: Player, target: Model, amount: number, kind: string)
+	local humanoid = target:FindFirstChildOfClass("Humanoid")
+	if not humanoid or humanoid.Health <= 0 or amount <= 0 then
+		return
+	end
+	humanoid:TakeDamage(amount)
+	sendHit(player, target, amount, kind)
+	for _, listener in damageListeners do
+		task.spawn(listener, player, target, amount)
+	end
+	-- Temporal (solo desarrollo): XP por golpear al muñeco, para probar la subida de nivel.
+	if Debug.DummyXPPerHit > 0 and CollectionService:HasTag(target, "TrainingDummy") then
+		ProgressionService:addXP(player, Debug.DummyXPPerHit)
+	end
+end
+
+-- Objetivos (no jugadores) dentro de una caja que empieza en "origin" y se extiende "range" hacia delante.
+function CombatService:queryTargets(origin: CFrame, range: number, width: number): { Model }
+	return Hitbox.query(origin, range, width, CombatConfig.HitboxHeight + 2, getPlayerCharacters())
+end
+
+-- Objetivos (no jugadores) dentro de un cuadrado de lado 2 × radius centrado en "center".
+function CombatService:queryTargetsAround(center: Vector3, radius: number): { Model }
+	return Hitbox.query(
+		CFrame.new(center) * CFrame.new(0, 0, radius),
+		radius * 2,
+		radius * 2,
+		CombatConfig.HitboxHeight + 4,
+		getPlayerCharacters()
+	)
+end
+
+-- Daño escalado por el nivel del jugador (+4 % por nivel), para habilidades.
+function CombatService:scaleByLevel(player: Player, baseDamage: number): number
+	local level = ProgressionService:getLevel(player)
+	return math.floor(baseDamage * (1 + Levels.DamagePerLevel * (level - 1)) + 0.5)
+end
+
+-- Marca al jugador como ocupado (p. ej., lanzando una habilidad) y cancela su golpe pendiente.
+function CombatService:setBusy(player: Player, duration: number)
+	local state = states[player]
+	if state then
+		state.attackToken += 1
+		state.comboIndex = 0
+		state.blocking = false
+		state.busyUntil = os.clock() + duration
+	end
 end
 
 -- true si el jugador está atacando o esquivando (no puede cambiar de arma en ese momento).

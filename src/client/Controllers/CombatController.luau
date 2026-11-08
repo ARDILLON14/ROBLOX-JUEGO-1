@@ -155,6 +155,29 @@ local function doHitCheck(weapon: WeaponTypes.WeaponType, label: string)
 	end
 end
 
+-- Impulso horizontal durante "duration" segundos (la gravedad sigue actuando). Lo usan la esquiva y el Paso Relámpago.
+local function applyDash(direction: Vector3, speed: number, duration: number)
+	if not root then
+		return
+	end
+	local attachment = Instance.new("Attachment")
+	attachment.Name = "DashAttachment"
+	attachment.Parent = root
+	local velocity = Instance.new("LinearVelocity")
+	velocity.Attachment0 = attachment
+	velocity.RelativeTo = Enum.ActuatorRelativeTo.World
+	velocity.VelocityConstraintMode = Enum.VelocityConstraintMode.Plane
+	velocity.PrimaryTangentAxis = Vector3.new(1, 0, 0)
+	velocity.SecondaryTangentAxis = Vector3.new(0, 0, 1)
+	velocity.PlaneVelocity = Vector2.new(direction.X, direction.Z) * speed
+	velocity.MaxForce = 1e7
+	velocity.Parent = root
+	task.delay(duration, function()
+		velocity:Destroy()
+		attachment:Destroy()
+	end)
+end
+
 local requestAttack: (input: AttackInput) -> ()
 
 local function performAttack(kind: AttackKind)
@@ -266,27 +289,13 @@ local function requestDodge()
 	end
 	direction = direction.Unit
 
-	-- Impulso horizontal durante la esquiva (la gravedad sigue actuando).
-	local attachment = Instance.new("Attachment")
-	attachment.Name = "DodgeAttachment"
-	attachment.Parent = root
-	local velocity = Instance.new("LinearVelocity")
-	velocity.Attachment0 = attachment
-	velocity.RelativeTo = Enum.ActuatorRelativeTo.World
-	velocity.VelocityConstraintMode = Enum.VelocityConstraintMode.Plane
-	velocity.PrimaryTangentAxis = Vector3.new(1, 0, 0)
-	velocity.SecondaryTangentAxis = Vector3.new(0, 0, 1)
-	velocity.PlaneVelocity = Vector2.new(direction.X, direction.Z) * CombatConfig.DodgeSpeed
-	velocity.MaxForce = 1e7
-	velocity.Parent = root
+	applyDash(direction, CombatConfig.DodgeSpeed, CombatConfig.DodgeDuration)
 
 	playTrack("Dodge", Animations.Dodge, CombatConfig.DodgeDuration)
 	log("Esquiva")
 	Net.event("RequestDodge"):FireServer(direction)
 
 	task.delay(CombatConfig.DodgeDuration, function()
-		velocity:Destroy()
-		attachment:Destroy()
 		if token == actionToken then
 			state = "Idle"
 		end
@@ -366,6 +375,25 @@ end
 -- Estado actual (lo usarán otros controladores, p. ej., la interfaz).
 function CombatController:getState(): State
 	return state
+end
+
+-- Embestida de una habilidad (p. ej., Paso Relámpago). Bloquea otras acciones mientras dura.
+function CombatController:dash(direction: Vector3, speed: number, duration: number)
+	if not humanoid or humanoid.Health <= 0 then
+		return
+	end
+	actionToken += 1
+	local token = actionToken
+	bufferedAttack = nil
+	comboIndex = 0
+	state = "Dodging"
+	setWalkSpeed(1)
+	applyDash(direction, speed, duration)
+	task.delay(duration, function()
+		if token == actionToken then
+			state = "Idle"
+		end
+	end)
 end
 
 -- Segundos que faltan para poder esquivar otra vez (lo usa el HUD).

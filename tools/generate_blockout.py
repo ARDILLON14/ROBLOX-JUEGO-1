@@ -72,6 +72,9 @@ for i, (x, z, rot) in enumerate([(-22, -18, 20), (22, -16, -25), (-24, 18, 160),
 camp.append(part("QuestNPC_Ilen", [2, 1, 2], [-8, 0.9, -4], STONE, tags=["QuestNPC"],
                  attributes={"NpcId": "Ilen", "NameKey": "Npc_Ilen"}))
 camp.append(part("TrainingArea", [16, 0.3, 12], [-14, 0.55, 12], DIRT, "Ground"))
+camp.append(part("AffinityShrine", [3, 3, 3], [14, 1.9, -6], [0.6, 0.5, 1], "Neon", shape="Ball",
+                 tags=["AffinityShrine"]))  # provisional: se moverá a las Ruinas de Aelith
+camp.append(part("ShrineBase", [5, 0.6, 5], [14, 0.7, -6], STONE, "Slate"))
 camp.append(part("NoticeBoard", [6, 4, 0.5], [6, 2.4, -14], WOOD, "WoodPlanks"))
 
 path = []

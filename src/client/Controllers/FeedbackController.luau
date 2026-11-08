@@ -25,6 +25,9 @@ local COLORS: { [string]: Color3 } = {
 	Blocked = Color3.fromRGB(170, 170, 170),
 	PerfectBlock = Color3.fromRGB(255, 205, 80),
 	Heal = Color3.fromRGB(90, 230, 110),
+	Fire = Color3.fromRGB(255, 140, 40),
+	Lightning = Color3.fromRGB(90, 220, 255),
+	Resonance = Color3.fromRGB(200, 90, 255),
 }
 
 type ActiveNumber = {
@@ -85,6 +88,8 @@ local function showNumber(target: Instance, amount: number, kind: string, isMine
 		text = Strings.get("Blocked", { amount = amount })
 	elseif kind == "Heal" then
 		text = `+{amount}`
+	elseif kind == "Resonance" then
+		text = Strings.get("Resonance", { amount = amount })
 	end
 	local canMerge = isMine and (kind == "Normal" or kind == "Crit")
 
@@ -99,7 +104,7 @@ local function showNumber(target: Instance, amount: number, kind: string, isMine
 		return
 	end
 
-	local size = if isMine then (if kind == "Crit" then 56 else 44) else 26
+	local size = if isMine then (if kind == "Crit" or kind == "Resonance" then 56 else 44) else 26
 	local gui = Instance.new("BillboardGui")
 	gui.Size = UDim2.fromOffset(160, size)
 	gui.AlwaysOnTop = true

@@ -320,6 +320,64 @@
      }
     },
     {
+     "Name": "AffinityShrine",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       3,
+       3
+      ],
+      "Color": [
+       0.6,
+       0.5,
+       1
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       14,
+       1.9,
+       -6
+      ],
+      "Shape": "Ball",
+      "Tags": [
+       "AffinityShrine"
+      ]
+     }
+    },
+    {
+     "Name": "ShrineBase",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       0.6,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       14,
+       0.7,
+       -6
+      ]
+     }
+    },
+    {
      "Name": "NoticeBoard",
      "ClassName": "Part",
      "Properties": {
