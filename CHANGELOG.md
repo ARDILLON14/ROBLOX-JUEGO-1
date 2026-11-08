@@ -1,5 +1,9 @@
 # Registro de cambios — ECLIPSE: The Fragments of Dawn
 
+## 1.0.0-rc4 — versión candidata
+- **Autodiagnóstico** al pulsar Play en Studio: informe `[SMOKE]` en Output con el estado de cada sistema
+  (servidor y cliente). Nunca se ejecuta en el juego publicado.
+
 ## 1.0.0-rc3 — versión candidata
 - **Animaciones provisionales generadas por código** (solo en Studio, si no hay animación publicada):
   3 golpes ligeros, pesado/remate, esquiva y bloqueo para avatares R15.

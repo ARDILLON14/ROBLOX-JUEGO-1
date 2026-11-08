@@ -24,6 +24,9 @@ local Debug = {
 	LogData = true, -- carga y guardado de datos (útil también en el juego publicado)
 	LogEnemies = dev(true, false), -- aparición y derrota de enemigos
 
+	-- Autodiagnóstico al pulsar Play (solo Studio): escribe un informe [SMOKE] en Output
+	RunSmokeTest = dev(true, false),
+
 	-- Trucos para probar (solo Studio)
 	GiveAllWeapons = dev(true, false), -- da las 6 armas al entrar
 	DummyXPPerHit = dev(0, 0), -- XP por golpe al muñeco (pon 500 en Studio para subir rápido)
