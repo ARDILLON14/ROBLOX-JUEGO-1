@@ -23,6 +23,7 @@ local Affinities = require(Config:WaitForChild("Affinities"))
 local World = require(Config:WaitForChild("World"))
 local Strings = require(Config:WaitForChild("Strings"))
 local Net = require(Shared:WaitForChild("Net"))
+local Platform = require(Shared:WaitForChild("Util"):WaitForChild("Platform"))
 local PlayerDataController = require(script.Parent:WaitForChild("PlayerDataController"))
 local CombatController = require(script.Parent:WaitForChild("CombatController"))
 
@@ -156,6 +157,14 @@ local function buildGui()
 	toast.TextColor3 = COLOR_XP
 	toast.TextTransparency = 1
 	toast.TextStrokeTransparency = 1
+
+	-- Móvil: el joystick ocupa abajo a la izquierda y los botones abajo a la derecha.
+	if Platform.isTouch() then
+		left.AnchorPoint = Vector2.new(0, 0)
+		left.Position = UDim2.new(0, 16, 0.28, 0)
+		bottom.Size = UDim2.new(0.3, 0, 0, 52)
+		bottom.Position = UDim2.new(0.42, 0, 1, -14)
+	end
 
 	gui.Parent = player:WaitForChild("PlayerGui")
 end

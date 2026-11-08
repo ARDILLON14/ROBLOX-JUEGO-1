@@ -175,3 +175,12 @@ DeathRespawn,Respawning at {place}…,,,Reapareciendo en {place}…,Respawning a
 DeathTip,You don't lose experience or items.,,,No pierdes experiencia ni objetos.,You don't lose experience or items.
 ZoneLevels,Lv {min}–{max},,,Nv {min}–{max},Lv {min}–{max}
 ZoneBoss,Boss area,,,Zona del jefe,Boss area
+Touch_Attack,Attack,,,Atacar,Attack
+Touch_Heavy,Heavy,,,Pesado,Heavy
+Touch_Dodge,Dodge,,,Esquivar,Dodge
+Touch_Block,Block,,,Bloquear,Block
+Touch_Skill,Skill,,,Habilidad,Skill
+Touch_Ultimate,ULT,,,ULTI,ULT
+Touch_Potion,Potion,,,Poción,Potion
+Touch_Inventory,Bag,,,Bolsa,Bag
+Touch_Journal,Journal,,,Diario,Journal

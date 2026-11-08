@@ -1,5 +1,10 @@
 # Registro de cambios — ECLIPSE: The Fragments of Dawn
 
+## 1.0.0-rc2 — versión candidata
+- **Controles táctiles (móvil)**, primera actualización del GDD §11, adelantada: botones de combate, habilidad,
+  ulti (visible al cargarse), poción, inventario y diario; HUD reorganizado en pantallas táctiles.
+  En PC no cambia nada. Mantener "solo PC" en la página del juego hasta probarlo en móvil.
+
 ## 1.0.0-rc1 — versión candidata (pendiente de pruebas en Studio y prueba pública)
 Primera versión completa según el GDD v1.
 

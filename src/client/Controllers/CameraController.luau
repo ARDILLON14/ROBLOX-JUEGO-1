@@ -51,7 +51,9 @@ local function update()
 		return
 	end
 
-	UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+	if UserInputService.KeyboardEnabled then
+		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+	end
 	humanoid.AutoRotate = false
 
 	-- Girar el personaje hacia donde mira la cámara (solo en horizontal).
