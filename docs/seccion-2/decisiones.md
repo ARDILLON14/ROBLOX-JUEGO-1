@@ -8,3 +8,10 @@
 | A4 | Guardado | ProfileStore (verificar mantenimiento al instalar) | [DECISIÓN APROBADA] |
 | A5 | Dónde vive cada cosa | Código en GitHub vía Rojo; mapa en Studio (Publish to Roblox); UI exportada .rbxmx | [DECISIÓN APROBADA] |
 | A6 | Estructura de carpetas | Según Entrega 2A §5 | [DECISIÓN APROBADA] |
+| B1 | Datos guardados | Esquema de Entrega 2B §1 (no se guarda vida, posición, enfriamientos ni carga de ulti) | [DECISIÓN APROBADA] |
+| B2 | Configuración | 10 tablas en src/shared/Config | [DECISIÓN APROBADA] |
+| B3 | Mapa ↔ código | Etiquetas (CollectionService) + Atributos | [DECISIÓN APROBADA] |
+| B4 | Red | Lista de mensajes y validaciones de 2B §3 | [DECISIÓN APROBADA] |
+| B5 | Estados de combate | Idle, Attacking, Blocking, Dodging, Stunned, Dead | [DECISIÓN APROBADA] |
+| B6 | Daño | Fórmula 2B §5; crítico 10 % ×1,5; contribución 10 % normal / 3 % jefe | [DECISIÓN APROBADA] |
+| B7 | Idiomas | Claves + CSV → LocalizationTable | [DECISIÓN APROBADA] |
