@@ -21,6 +21,7 @@ local Debug = require(Config:WaitForChild("Debug"))
 local Hitbox = require(Shared:WaitForChild("Combat"):WaitForChild("Hitbox"))
 local Net = require(Shared:WaitForChild("Net"))
 local InputController = require(script.Parent:WaitForChild("InputController"))
+local ProceduralAnimations = require(script.Parent.Parent:WaitForChild("Util"):WaitForChild("ProceduralAnimations"))
 local SoundController = require(script.Parent:WaitForChild("SoundController"))
 
 type State = "Idle" | "Attacking" | "Blocking" | "Dodging"
@@ -71,6 +72,10 @@ local function setWalkSpeed(multiplier: number)
 end
 
 local function getTrack(key: string, animationId: string): AnimationTrack?
+	-- Sin animación publicada: en Studio se usa una provisional generada por código.
+	if animationId == "" and Debug.IsStudio then
+		animationId = ProceduralAnimations.getId(key)
+	end
 	if animationId == "" then
 		if not warnedMissing[key] then
 			warnedMissing[key] = true

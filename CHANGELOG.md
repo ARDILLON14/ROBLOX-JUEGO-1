@@ -1,5 +1,10 @@
 # Registro de cambios — ECLIPSE: The Fragments of Dawn
 
+## 1.0.0-rc3 — versión candidata
+- **Animaciones provisionales generadas por código** (solo en Studio, si no hay animación publicada):
+  3 golpes ligeros, pesado/remate, esquiva y bloqueo para avatares R15.
+- Comprobaciones automáticas en GitHub Actions y `tools/check_project.py`.
+
 ## 1.0.0-rc2 — versión candidata
 - **Controles táctiles (móvil)**, primera actualización del GDD §11, adelantada: botones de combate, habilidad,
   ulti (visible al cargarse), poción, inventario y diario; HUD reorganizado en pantallas táctiles.
