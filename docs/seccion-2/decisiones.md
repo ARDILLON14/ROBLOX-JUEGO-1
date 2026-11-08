@@ -15,3 +15,6 @@
 | B5 | Estados de combate | Idle, Attacking, Blocking, Dodging, Stunned, Dead | [DECISIÓN APROBADA] |
 | B6 | Daño | Fórmula 2B §5; crítico 10 % ×1,5; contribución 10 % normal / 3 % jefe | [DECISIÓN APROBADA] |
 | B7 | Idiomas | Claves + CSV → LocalizationTable | [DECISIÓN APROBADA] |
+| C1 | Calendario | 25 semanas + colchón (26–28); hitos: slice vertical S8, playtest público S22, publicación S25 | [DECISIÓN APROBADA] |
+| C2 | Ritmo | Una meta por semana probable con Play; commit + nota en diario de desarrollo | [DECISIÓN APROBADA] |
+| C3 | Assets | Provisionales hasta el slice vertical; Creator Store/IA revisados para la versión final | [DECISIÓN APROBADA] |

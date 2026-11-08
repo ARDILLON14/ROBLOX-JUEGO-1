@@ -1,0 +1,10 @@
+# Archivos de Roblox Studio generados localmente
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+# Generado por Selene
+roblox.yml
+# Sistema
+.DS_Store
+Thumbs.db
