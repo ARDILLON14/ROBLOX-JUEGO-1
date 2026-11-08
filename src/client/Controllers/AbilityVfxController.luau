@@ -16,6 +16,7 @@ local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Affinities = require(Shared:WaitForChild("Config"):WaitForChild("Affinities"))
 local Net = require(Shared:WaitForChild("Net"))
 local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
+local SoundController = require(script.Parent:WaitForChild("SoundController"))
 
 local RESONANCE_COLOR = Color3.fromRGB(200, 90, 255)
 
@@ -57,8 +58,18 @@ local function flashPart(
 	end)
 end
 
+local ABILITY_SOUNDS: { [string]: string } = {
+	Fire = "AbilityFire",
+	Lightning = "AbilityLightning",
+	Resonance = "Resonance",
+}
+
 local function play(caster: Player, affinityId: string, kind: string, origin: Vector3, direction: Vector3)
 	local isMine = caster == player
+	local soundKey = ABILITY_SOUNDS[affinityId]
+	if soundKey and (isMine or affinityId == "Resonance") then
+		SoundController:play(soundKey, nil, 0.6)
+	end
 	if not isMine and SettingsController:get("EffectsQuality") == "Low" then
 		return -- Calidad baja: no se dibujan los efectos de otros jugadores (rendimiento)
 	end

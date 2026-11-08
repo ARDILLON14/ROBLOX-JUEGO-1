@@ -15,6 +15,8 @@ local TweenService = game:GetService("TweenService")
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Strings = require(Shared:WaitForChild("Config"):WaitForChild("Strings"))
 local Net = require(Shared:WaitForChild("Net"))
+local SoundController = require(script.Parent:WaitForChild("SoundController"))
+local GameFeelController = require(script.Parent:WaitForChild("GameFeelController"))
 
 local AETHER = Color3.fromRGB(170, 80, 230)
 local HIDE_AFTER = 2
@@ -137,7 +139,13 @@ local function watchBoss(model: Instance)
 		end
 		highlight.Enabled = model:GetAttribute("Invulnerable") == true
 	end
-	model:GetAttributeChangedSignal("Phase"):Connect(refresh)
+	model:GetAttributeChangedSignal("Phase"):Connect(function()
+		refresh()
+		if (model:GetAttribute("Phase") or 1) >= 2 then
+			SoundController:play("BossRoar", root, 1)
+			GameFeelController:shake(0.6, 1.2)
+		end
+	end)
 	model:GetAttributeChangedSignal("Invulnerable"):Connect(refresh)
 	refresh()
 end

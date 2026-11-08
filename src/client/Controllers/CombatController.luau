@@ -21,6 +21,7 @@ local Debug = require(Config:WaitForChild("Debug"))
 local Hitbox = require(Shared:WaitForChild("Combat"):WaitForChild("Hitbox"))
 local Net = require(Shared:WaitForChild("Net"))
 local InputController = require(script.Parent:WaitForChild("InputController"))
+local SoundController = require(script.Parent:WaitForChild("SoundController"))
 
 type State = "Idle" | "Attacking" | "Blocking" | "Dodging"
 type AttackInput = "Light" | "Heavy"
@@ -215,6 +216,7 @@ local function performAttack(kind: AttackKind)
 	attackStartTime = os.clock()
 	setWalkSpeed(CombatConfig.AttackMoveSpeedMultiplier)
 	playTrack(animationKey, animationId, duration)
+	SoundController:play(if kind == "Light" then "Swing" else "HeavySwing", root, 0.5)
 	log(`{label} ({weaponName})`)
 	-- El servidor decide por su cuenta si es remate; solo le decimos ligero o pesado.
 	Net.event("RequestAttack"):FireServer(if kind == "Light" then "Light" else "Heavy")
@@ -292,6 +294,7 @@ local function requestDodge()
 	applyDash(direction, CombatConfig.DodgeSpeed, CombatConfig.DodgeDuration)
 
 	playTrack("Dodge", Animations.Dodge, CombatConfig.DodgeDuration)
+	SoundController:play("Dodge", root, 0.5)
 	log("Esquiva")
 	Net.event("RequestDodge"):FireServer(direction)
 

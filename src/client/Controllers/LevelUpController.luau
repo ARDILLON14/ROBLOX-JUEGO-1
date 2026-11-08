@@ -8,7 +8,6 @@
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local SoundService = game:GetService("SoundService")
 local TweenService = game:GetService("TweenService")
 local Workspace = game:GetService("Workspace")
 
@@ -16,8 +15,7 @@ local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Config = Shared:WaitForChild("Config")
 local Net = require(Shared:WaitForChild("Net"))
 local Strings = require(Config:WaitForChild("Strings"))
-local Sounds = require(Config:WaitForChild("Sounds"))
-local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
+local SoundController = require(script.Parent:WaitForChild("SoundController"))
 
 local GOLD = Color3.fromRGB(255, 205, 80)
 local COLUMN_HEIGHT = 30
@@ -63,17 +61,7 @@ local function showColumn(target: Player)
 end
 
 local function playSound()
-	if Sounds.LevelUp == "" then
-		return
-	end
-	local sound = Instance.new("Sound")
-	sound.SoundId = Sounds.LevelUp
-	sound.SoundGroup = SettingsController:getEffectsGroup() -- respeta el volumen de Ajustes
-	sound.Parent = SoundService
-	sound:Play()
-	sound.Ended:Connect(function()
-		sound:Destroy()
-	end)
+	SoundController:play("LevelUp", nil, 0.8)
 end
 
 local function showBanner(level: number, rewards: { string })

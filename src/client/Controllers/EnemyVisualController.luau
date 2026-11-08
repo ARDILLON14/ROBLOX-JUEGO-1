@@ -12,6 +12,7 @@ local CollectionService = game:GetService("CollectionService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Strings = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config"):WaitForChild("Strings"))
+local SoundController = require(script.Parent:WaitForChild("SoundController"))
 
 local TAG_ENEMY = "Enemy"
 local COLOR_NORMAL = Color3.fromRGB(255, 240, 170)
@@ -57,7 +58,12 @@ local function setupEnemy(model: Instance)
 			highlight.Enabled = false
 		end
 	end
-	model:GetAttributeChangedSignal("Telegraph"):Connect(refresh)
+	model:GetAttributeChangedSignal("Telegraph"):Connect(function()
+		refresh()
+		if model:GetAttribute("Telegraph") then
+			SoundController:play("Telegraph", model:FindFirstChild("HumanoidRootPart"), 0.5)
+		end
+	end)
 	model:GetAttributeChangedSignal("Stunned"):Connect(refresh)
 	refresh()
 end

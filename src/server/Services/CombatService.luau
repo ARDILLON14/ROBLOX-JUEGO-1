@@ -213,6 +213,10 @@ local function onRequestAttack(player: Player, kind: unknown)
 
 	state.attackStart = now
 	state.busyUntil = now + duration
+	-- Marca el golpe en el personaje: los clientes muestran la estela del arma.
+	character:SetAttribute("SwingDuration", duration)
+	local swingId = character:GetAttribute("SwingId")
+	character:SetAttribute("SwingId", (if typeof(swingId) == "number" then swingId else 0) + 1)
 	state.lastAttackEnd = now + duration
 	state.attackToken += 1
 	local token = state.attackToken
