@@ -13,6 +13,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Config = ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config")
 local Strings = require(Config:WaitForChild("Strings"))
 local Cosmetics = require(Config:WaitForChild("Cosmetics"))
+local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
 
 local CosmeticVisualController = {}
 
@@ -63,7 +64,7 @@ local function updateAura(character: Model)
 	emitter.Name = "CosmeticAura"
 	emitter.Color = ColorSequence.new(cosmetic.Color)
 	emitter.LightEmission = 1
-	emitter.Rate = 18
+	emitter.Rate = if SettingsController:get("EffectsQuality") == "Low" then 6 else 18
 	emitter.Lifetime = NumberRange.new(0.8, 1.4)
 	emitter.Speed = NumberRange.new(1, 3)
 	emitter.SpreadAngle = Vector2.new(180, 180)

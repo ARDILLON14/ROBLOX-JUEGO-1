@@ -15,6 +15,7 @@ local Shared = ReplicatedStorage:WaitForChild("Shared")
 local CombatConfig = require(Shared:WaitForChild("Config"):WaitForChild("Combat"))
 local Strings = require(Shared:WaitForChild("Config"):WaitForChild("Strings"))
 local Net = require(Shared:WaitForChild("Net"))
+local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
 
 local player = Players.LocalPlayer
 
@@ -142,6 +143,9 @@ function FeedbackController:Start()
 		showNumber(target, amount, kind, true)
 	end)
 	Net.unreliable("HitBroadcast").OnClientEvent:Connect(function(target: Instance, amount: number, kind: string)
+		if not SettingsController:get("ShowOthersDamage") then
+			return -- Ajustes: ocultar los números de otros jugadores
+		end
 		showNumber(target, amount, kind, false)
 	end)
 end

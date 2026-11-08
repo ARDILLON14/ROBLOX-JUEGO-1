@@ -22,4 +22,8 @@ RPG de acción y aventura cooperativo de estética anime para Roblox.
 | `selene src` | Revisa el código en busca de errores comunes |
 | `stylua src` | Da formato al código |
 
-El mapa se construye en Studio y **no** está en este repositorio.
+## Textos (español / inglés)
+Todos los textos visibles están en `src/shared/Localization/Strings.csv` (columnas `Key, Source, Context, Example, es, en`).
+Para añadir o cambiar un texto, edita esa fila; en el código se usa con `Strings.get("Clave")`.
+
+El mapa se construye en Studio. El mapa provisional en bloques (`map/VerdantiaBlockout.model.json`, generado por `tools/generate_blockout.py`) solo se incluye en el lugar de prueba `builds/ECLIPSE-dev.rbxl`.

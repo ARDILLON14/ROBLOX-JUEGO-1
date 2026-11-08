@@ -33,8 +33,10 @@ local DataTemplate = {
 	Campfires = { Camp = true } :: { [string]: boolean },
 	LastCampfire = "Camp",
 	Settings = {
-		Language = "auto",
+		Language = "auto", -- "auto" | "es" | "en"
 		ShowOthersDamage = true,
+		EffectsVolume = 0.8, -- 0 a 1
+		EffectsQuality = "High", -- "High" | "Low"
 	},
 	Meta = {
 		FirstJoin = 0,

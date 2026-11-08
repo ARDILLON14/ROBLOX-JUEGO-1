@@ -15,6 +15,7 @@ local Workspace = game:GetService("Workspace")
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Affinities = require(Shared:WaitForChild("Config"):WaitForChild("Affinities"))
 local Net = require(Shared:WaitForChild("Net"))
+local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
 
 local RESONANCE_COLOR = Color3.fromRGB(200, 90, 255)
 
@@ -58,6 +59,9 @@ end
 
 local function play(caster: Player, affinityId: string, kind: string, origin: Vector3, direction: Vector3)
 	local isMine = caster == player
+	if not isMine and SettingsController:get("EffectsQuality") == "Low" then
+		return -- Calidad baja: no se dibujan los efectos de otros jugadores (rendimiento)
+	end
 	if affinityId == "Resonance" then
 		flashPart(Enum.PartType.Ball, Vector3.one * 2, CFrame.new(origin), RESONANCE_COLOR, 0.5, true, Vector3.one * 16)
 		return

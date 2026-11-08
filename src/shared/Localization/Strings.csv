@@ -1,0 +1,175 @@
+Key,Source,Context,Example,es,en
+LevelUp,LEVEL {level}!,,,¡NIVEL {level}!,LEVEL {level}!
+RewardPotion,+1 Potion,,,+1 Poción,+1 Potion
+RewardHeal,Health restored,,,Vida restaurada,Health restored
+RewardAffinity,You can now awaken your affinity!,,,¡Ya puedes despertar tu afinidad!,You can now awaken your affinity!
+Title_DawnSeeker,New title: Dawn Seeker,,,Nuevo título: Explorador del Alba,New title: Dawn Seeker
+Aura_AetherEmber,New aura: Aether Ember,,,Nueva aura: Brasa de Éter,New aura: Aether Ember
+Title_VerdantiaGuardian,New title: Guardian of Verdantia,,,Nuevo título: Guardián de Verdantia,New title: Guardian of Verdantia
+Blocked,Blocked {amount},,,Bloqueado {amount},Blocked {amount}
+PerfectBlock,Perfect!,,,¡Perfecto!,Perfect!
+Enemy_Thornling,Thornling,,,Brotespina,Thornling
+Enemy_Spitter,Thornling Spitter,,,Brotespina Lanzador,Thornling Spitter
+Enemy_Sentry,Aelith Sentry,,,Centinela Aelith,Aelith Sentry
+EnemyName,{name} · Lv {level},,,{name} · Nv {level},{name} · Lv {level}
+Npc_Ilen,Master Ilen,,,Maestra Ilen,Master Ilen
+Talk,Talk,,,Hablar,Talk
+Continue,Continue,,,Continuar,Continue
+Item_SapPotion,Sap Potion,,,Poción de Savia,Sap Potion
+Potions,Potions x{count}  [1],,,Pociones x{count}  [1],Potions x{count}  [1]
+DodgeReady,Dodge [Q],,,Esquiva [Q],Dodge [Q]
+DodgeCooldown,Dodge {time},,,Esquiva {time},Dodge {time}
+LevelShort,Lv {level},,,Nv {level},Lv {level}
+XPText,{xp}/{next} XP,,,{xp}/{next} XP,{xp}/{next} XP
+XPMax,Max level,,,Nivel máximo,Max level
+QuestTitle,Quest,,,Misión,Quest
+QuestTalkTo,Talk to {npc},,,Habla con {npc},Talk to {npc}
+QuestReturnTo,Return to {npc},,,Vuelve con {npc},Return to {npc}
+QuestNone,More quests coming soon…,,,Más misiones muy pronto…,More quests coming soon…
+QuestReady,Objective complete! Return to {npc},,,¡Objetivo cumplido! Vuelve con {npc},Objective complete! Return to {npc}
+QuestComplete,Quest complete: {name},,,Misión completada: {name},Quest complete: {name}
+Quest_Q01_Name,Seeker's Awakening,,,Despertar del Explorador,Seeker's Awakening
+Quest_Q01_Objective,Hit the training dummy ({progress}/{count}),,,Golpea al muñeco de práctica ({progress}/{count}),Hit the training dummy ({progress}/{count})
+Quest_Q02_Name,Restless Roots,,,Raíces Inquietas,Restless Roots
+Quest_Q02_Objective,Defeat Thornlings in the Emerald Verge ({progress}/{count}),,,Derrota Brotespinas en la Linde Esmeralda ({progress}/{count}),Defeat Thornlings in the Emerald Verge ({progress}/{count})
+Dialog_Q01_Start,"Welcome to Dawn Camp, seeker. Before you enter the forest, show me you can use your katana: strike the training dummy. Left click to attack; right click for a heavy strike.",,,"Bienvenido al Campamento del Alba, explorador. Antes de entrar al bosque, demuéstrame que sabes usar tu katana: golpea al muñeco de práctica. Clic izquierdo para atacar; clic derecho para un golpe pesado.","Welcome to Dawn Camp, seeker. Before you enter the forest, show me you can use your katana: strike the training dummy. Left click to attack; right click for a heavy strike."
+Dialog_Q01_Active,Hit the dummy a few more times. Try the combo: two left clicks and one right click.,,,Golpea al muñeco unas cuantas veces más. Prueba el combo: dos clics izquierdos y uno derecho.,Hit the dummy a few more times. Try the combo: two left clicks and one right click.
+Dialog_Q01_Done,Well done! Remember: Q to dodge and F to block. Block right before a hit to stun your enemy.,,,"¡Bien hecho! Recuerda: Q para esquivar y F para bloquear. Si bloqueas justo antes del golpe, aturdirás al enemigo.",Well done! Remember: Q to dodge and F to block. Block right before a hit to stun your enemy.
+Dialog_Q02_Start,"Corrupted Aether has awakened the forest roots. Follow the path north to the Emerald Verge and defeat the Thornlings. When they glow, get ready to block or dodge!",,,"El Éter corrompido ha despertado a las raíces del bosque. Sigue el camino hacia el norte hasta la Linde Esmeralda y derrota a los Brotespinas. Cuando brillen, ¡prepárate para bloquear o esquivar!","Corrupted Aether has awakened the forest roots. Follow the path north to the Emerald Verge and defeat the Thornlings. When they glow, get ready to block or dodge!"
+Dialog_Q02_Active,"The Thornlings are still restless in the Emerald Verge, to the north. Don't come back until you've calmed a few.",,,"Los Brotespinas siguen inquietos en la Linde Esmeralda, al norte. No vuelvas hasta calmar a unos cuantos.","The Thornlings are still restless in the Emerald Verge, to the north. Don't come back until you've calmed a few."
+Dialog_Q02_Done,You have shown courage. But the forest holds many secrets… Talk to me again whenever you are ready.,,,Has demostrado valor. Pero el bosque guarda muchos secretos… Habla conmigo de nuevo cuando quieras.,You have shown courage. But the forest holds many secrets… Talk to me again whenever you are ready.
+Dialog_NoQuest,"Rest, seeker. There will be more to do soon.",,,"Descansa, explorador. Pronto habrá más por hacer.","Rest, seeker. There will be more to do soon."
+QuestReachLevel,Reach level {level} to continue,,,Alcanza el nivel {level} para continuar,Reach level {level} to continue
+WeaponReward,New weapon: {name},,,Nueva arma: {name},New weapon: {name}
+ItemCollected,+1 {name},,,+1 {name},+1 {name}
+Item_WitheredSap,Withered Sap,,,Savia corrupta,Withered Sap
+Quest_Q03_Name,The First Light,,,La Primera Luz,The First Light
+Quest_Q03_Objective,Explore the ruins west of the Emerald Verge,,,Explora las ruinas al oeste de la Linde Esmeralda,Explore the ruins west of the Emerald Verge
+Quest_Q04_Name,The Weight of Steel,,,El Peso del Acero,The Weight of Steel
+Quest_Q04_Objective,Defeat Thornling Spitters ({progress}/{count}),,,Derrota Brotespinas Lanzadores ({progress}/{count}),Defeat Thornling Spitters ({progress}/{count})
+Quest_Q05_Name,Aether Awakening,,,Despertar del Éter,Aether Awakening
+Quest_Q05_Objective,Awaken your affinity at the Shrine,,,Despierta tu afinidad en el Santuario,Awaken your affinity at the Shrine
+Quest_Q06_Name,Stone Guardians,,,Guardianes de Piedra,Stone Guardians
+Quest_Q06_Objective,Defeat Aelith Sentries ({progress}/{count}),,,Derrota Centinelas Aelith ({progress}/{count}),Defeat Aelith Sentries ({progress}/{count})
+Quest_Q07_Name,Withered Sap,,,Savia Marchita,Withered Sap
+Quest_Q07_Objective,Collect Withered Sap from enemies ({progress}/{count}),,,Consigue Savia corrupta de los enemigos ({progress}/{count}),Collect Withered Sap from enemies ({progress}/{count})
+Quest_Q08_Name,The Withered Warden,,,El Guardián Marchito,The Withered Warden
+Quest_Q08_Objective,Defeat Vharok in the Forest Heart,,,Derrota a Vharok en el Corazón del Bosque,Defeat Vharok in the Forest Heart
+Dialog_Q03_Start,West of the Verge lie some Aelith ruins. They say a Fragment of Dawn fell there after the Great Eclipse. Go take a look.,,,Al oeste de la Linde hay unas ruinas de los Aelith. Dicen que allí cayó un Fragmento de Amanecer tras el Gran Eclipse. Ve a echar un vistazo.,West of the Verge lie some Aelith ruins. They say a Fragment of Dawn fell there after the Great Eclipse. Go take a look.
+Dialog_Q03_Active,The ruins are west of the Emerald Verge clearing. Look for the stone pillars.,,,Las ruinas están al oeste del claro de la Linde Esmeralda. Busca los pilares de piedra.,The ruins are west of the Emerald Verge clearing. Look for the stone pillars.
+Dialog_Q03_Done,Did you feel that warmth? That's the light of the first dawn. The Aelith used it to calm the Aether… Perhaps there's still hope for the forest.,,,¿Sentiste esa calidez? Es la luz del primer amanecer. Los Aelith la usaban para calmar el Éter… Quizás aún haya esperanza para el bosque.,Did you feel that warmth? That's the light of the first dawn. The Aelith used it to calm the Aether… Perhaps there's still hope for the forest.
+Dialog_Q04_Start,Thornling Spitters attack from afar and have wounded several seekers. Defeat a few and I'll give you something heavier than that katana.,,,Los Brotespinas Lanzadores atacan desde lejos y han herido a varios exploradores. Derrota a unos cuantos y te daré algo con más peso que esa katana.,Thornling Spitters attack from afar and have wounded several seekers. Defeat a few and I'll give you something heavier than that katana.
+Dialog_Q04_Active,The Spitters hide northeast of the Verge. Dodge their spines or block them.,,,Los Lanzadores se esconden al noreste de la Linde. Esquiva sus espinas o bloquéalas.,The Spitters hide northeast of the Verge. Dodge their spines or block them.
+Dialog_Q04_Done,"Take this greatsword. It's slow, but it hits several enemies at once. You can switch weapons in your inventory (Tab or I).",,,"Toma este mandoble. Es lento, pero golpea a varios enemigos a la vez. Puedes cambiar de arma en tu inventario (Tab o I).","Take this greatsword. It's slow, but it hits several enemies at once. You can switch weapons in your inventory (Tab or I)."
+Dialog_Q05_Start,"You've grown a lot, seeker. It's time to awaken the Aether within you. Go to the Shrine and choose your path: fire or lightning.",,,"Has crecido mucho, explorador. Es hora de despertar el Éter que llevas dentro. Ve al Santuario y elige tu camino: el fuego o el rayo.","You've grown a lot, seeker. It's time to awaken the Aether within you. Go to the Shrine and choose your path: fire or lightning."
+Dialog_Q05_Active,The Shrine awaits. Press E next to it to awaken your affinity.,,,El Santuario te espera. Pulsa E junto a él para despertar tu afinidad.,The Shrine awaits. Press E next to it to awaken your affinity.
+Dialog_Q05_Done,"I can feel your affinity. The more you use it, the stronger it becomes. And remember: you can change it at the Shrine anytime.",,,"Puedo sentir tu afinidad. Cuanto más la uses, más poderosa será. Y recuerda: puedes cambiarla en el Santuario cuando quieras.","I can feel your affinity. The more you use it, the stronger it becomes. And remember: you can change it at the Shrine anytime."
+Dialog_Q05_Locked,You're not ready to awaken the Aether yet. Come back when you're stronger (level 5).,,,Todavía no estás preparado para despertar el Éter. Vuelve cuando seas más fuerte (nivel 5).,You're not ready to awaken the Aether yet. Come back when you're stronger (level 5).
+Dialog_Q06_Start,"The Aelith Sentries guarded the ruins, but corrupted Aether has turned them against us. Their shield blocks light attacks: use heavy attacks and beware of their red strike.",,,"Los Centinelas Aelith protegían las ruinas, pero el Éter corrupto los ha vuelto contra nosotros. Su escudo bloquea los golpes ligeros: usa ataques pesados y cuidado con su golpe rojo.","The Aelith Sentries guarded the ruins, but corrupted Aether has turned them against us. Their shield blocks light attacks: use heavy attacks and beware of their red strike."
+Dialog_Q06_Active,Break their guard with a heavy strike or hit them from behind. And if they glow red… dodge!,,,Rompe su guardia con un golpe pesado o atácalos por la espalda. Y si brillan en rojo… ¡esquiva!,Break their guard with a heavy strike or hit them from behind. And if they glow red… dodge!
+Dialog_Q06_Done,"Impressive. Take this rare weapon, forged by the Aelith themselves.",,,"Impresionante. Toma esta arma rara, la forjaron los propios Aelith.","Impressive. Take this rare weapon, forged by the Aelith themselves."
+Dialog_Q06_Locked,The Sentries are dangerous. Come back when you're stronger (level 6).,,,Los Centinelas son peligrosos. Vuelve cuando seas más fuerte (nivel 6).,The Sentries are dangerous. Come back when you're stronger (level 6).
+Dialog_Q07_Start,The forest's sap is rotting because of the Aether. Bring me samples of Withered Sap from the enemies so I can study it.,,,La savia del bosque se está pudriendo por culpa del Éter. Tráeme muestras de Savia corrupta de los enemigos para estudiarla.,The forest's sap is rotting because of the Aether. Bring me samples of Withered Sap from the enemies so I can study it.
+Dialog_Q07_Active,Not every enemy carries withered sap. Keep looking.,,,No todos los enemigos llevan savia corrupta. Sigue buscando.,Not every enemy carries withered sap. Keep looking.
+Dialog_Q07_Done,This sap… comes from the Forest Heart. Something terrible has awakened there.,,,Esta savia… viene del Corazón del Bosque. Algo terrible ha despertado allí.,This sap… comes from the Forest Heart. Something terrible has awakened there.
+Dialog_Q07_Locked,It's not safe to go that deep into the forest yet. Come back when you're stronger (level 10).,,,Todavía no es seguro adentrarse tanto en el bosque. Vuelve cuando seas más fuerte (nivel 10).,It's not safe to go that deep into the forest yet. Come back when you're stronger (level 10).
+Dialog_Q08_Start,"Vharok, the forest's Warden, has been corrupted. If we defeat him, the Primeval Tree can heal. Gather other seekers: don't go alone.",,,"Vharok, el Guardián del bosque, ha sido corrompido. Si lo derrotamos, el Árbol Primigenio podrá sanar. Reúne a otros exploradores: no vayas solo.","Vharok, the forest's Warden, has been corrupted. If we defeat him, the Primeval Tree can heal. Gather other seekers: don't go alone."
+Dialog_Q08_Active,Vharok awaits in the Forest Heart. Prepare well before you go.,,,Vharok espera en el Corazón del Bosque. Prepárate bien antes de ir.,Vharok awaits in the Forest Heart. Prepare well before you go.
+Dialog_Q08_Done,You did it! The Primeval Tree shines again… and it has revealed a sealed portal. That symbol… belongs to another region. Your journey has only just begun.,,,¡Lo lograste! El Árbol Primigenio vuelve a brillar… y ha revelado un portal sellado. Ese símbolo… pertenece a otra región. Tu viaje acaba de empezar.,You did it! The Primeval Tree shines again… and it has revealed a sealed portal. That symbol… belongs to another region. Your journey has only just begun.
+Dialog_Q08_Locked,Vharok is too powerful for you right now. Come back when you're stronger (level 14).,,,Vharok es demasiado poderoso para ti ahora. Vuelve cuando seas más fuerte (nivel 14).,Vharok is too powerful for you right now. Come back when you're stronger (level 14).
+InventoryTitle,Inventory,,,Inventario,Inventory
+Tab_Weapons,Weapons,,,Armas,Weapons
+Tab_Consumables,Consumables,,,Consumibles,Consumables
+Tab_Cosmetics,Cosmetics,,,Cosméticos,Cosmetics
+Equip,Equip,,,Equipar,Equip
+Equipped,Equipped,,,Equipado,Equipped
+Unequip,Remove,,,Quitar,Remove
+Use,Use,,,Usar,Use
+Close,Close,,,Cerrar,Close
+DamageMultiplier,Damage ×{mult},,,Daño ×{mult},Damage ×{mult}
+PotionDescription,Heals 40% of your health. Key 1.,,,Cura el 40 % de tu vida. Tecla 1.,Heals 40% of your health. Key 1.
+NoCosmetics,"Level up to earn titles and auras (levels 10, 15 and 20).",,,"Sube de nivel para conseguir títulos y auras (niveles 10, 15 y 20).","Level up to earn titles and auras (levels 10, 15 and 20)."
+Rarity_Common,Common,,,Común,Common
+Rarity_Rare,Rare,,,Rara,Rare
+Rarity_Epic,Epic,,,Épica,Epic
+Weapon_Katana_Common,Common Katana,,,Katana común,Common Katana
+Weapon_Katana_Rare,Rare Katana,,,Katana rara,Rare Katana
+Weapon_Katana_Epic,Epic Katana,,,Katana épica,Epic Katana
+Weapon_Greatsword_Common,Common Greatsword,,,Mandoble común,Common Greatsword
+Weapon_Greatsword_Rare,Rare Greatsword,,,Mandoble raro,Rare Greatsword
+Weapon_Greatsword_Epic,Epic Greatsword,,,Mandoble épico,Epic Greatsword
+Cosmetic_Title_DawnSeeker,Dawn Seeker,,,Explorador del Alba,Dawn Seeker
+Cosmetic_Aura_AetherEmber,Aether Ember,,,Brasa de Éter,Aether Ember
+Cosmetic_Title_VerdantiaGuardian,Guardian of Verdantia,,,Guardián de Verdantia,Guardian of Verdantia
+Affinity_Fire,Fire,,,Fuego,Fire
+Affinity_Lightning,Lightning,,,Rayo,Lightning
+Skill_BlazingArc,Blazing Arc,,,Tajo Ígneo,Blazing Arc
+Skill_ThunderStep,Thunder Step,,,Paso Relámpago,Thunder Step
+Ult_Dawnburst,Dawnburst,,,Erupción del Alba,Dawnburst
+Ult_ThunderVerdict,Thunder Verdict,,,Juicio del Trueno,Thunder Verdict
+AffinityPrompt,Awaken affinity,,,Despertar afinidad,Awaken affinity
+AffinityLocked,You need level {level} to awaken your affinity,,,Necesitas nivel {level} para despertar tu afinidad,You need level {level} to awaken your affinity
+AffinityChosen,Affinity awakened: {name},,,Afinidad despertada: {name},Affinity awakened: {name}
+AffinityChooseTitle,Choose your affinity,,,Elige tu afinidad,Choose your affinity
+AffinityChooseHint,You can change it for free at this Shrine. Your mastery is saved separately.,,,Podrás cambiarla gratis en este Santuario. Tu maestría se guarda por separado.,You can change it for free at this Shrine. Your mastery is saved separately.
+AffinityDesc_Fire,Blazing Arc: a fiery arc that burns enemies. Ultimate: Dawnburst.,,,Tajo Ígneo: arco de fuego que quema a los enemigos. Ulti: Erupción del Alba.,Blazing Arc: a fiery arc that burns enemies. Ultimate: Dawnburst.
+AffinityDesc_Lightning,Thunder Step: an electric dash. Ultimate: Thunder Verdict.,,,Paso Relámpago: embestida eléctrica. Ulti: Juicio del Trueno.,Thunder Step: an electric dash. Ultimate: Thunder Verdict.
+Choose,Choose,,,Elegir,Choose
+MasteryRank,{name}: rank {rank} unlocked!,,,¡{name}: rango {rank} desbloqueado!,{name}: rank {rank} unlocked!
+SkillReady,{name} [Z],,,{name} [Z],{name} [Z]
+SkillCooldown,{name} {time},,,{name} {time},{name} {time}
+UltLocked,Ultimate: rank 3,,,Ulti: rango 3,Ultimate: rank 3
+UltCharging,{name} {percent}%,,,{name} {percent}%,{name} {percent}%
+UltReady,{name} [X] READY!,,,{name} [X] ¡LISTA!,{name} [X] READY!
+MasteryText,{affinity} mastery R{rank}: {points}/{next},,,Maestría {affinity} R{rank}: {points}/{next},{affinity} mastery R{rank}: {points}/{next}
+MasteryMax,{affinity} mastery R{rank} (max),,,Maestría {affinity} R{rank} (máx.),{affinity} mastery R{rank} (max)
+NoAffinity,Affinity: level 5 (Shrine),,,Afinidad: nivel 5 (Santuario),Affinity: level 5 (Shrine)
+Resonance,RESONANCE! {amount},,,¡RESONANCIA! {amount},RESONANCE! {amount}
+Npc_Fragment,Fragment of Dawn,,,Fragmento de Amanecer,Fragment of Dawn
+Boss_Vharok,"Vharok, the Withered Warden",,,"Vharok, el Guardián Marchito","Vharok, the Withered Warden"
+BossPhaseLabel,Phase {phase},,,Fase {phase},Phase {phase}
+BossDefeated,{name} has been defeated!,,,¡{name} ha sido derrotado!,{name} has been defeated!
+Rest,Rest,,,Descansar,Rest
+Collect,Collect,,,Recoger,Collect
+Here,here,,,aquí,here
+FastTravelTitle,Fast travel,,,Viaje rápido,Fast travel
+CampfireDiscovered,Campfire discovered: {name},,,Fogata descubierta: {name},Campfire discovered: {name}
+FastTravelBlocked,You can't travel in the middle of combat,,,No puedes viajar en pleno combate,You can't travel in the middle of combat
+FragmentFound,Fragment of Dawn found ({count}/{total}),,,Fragmento de Amanecer encontrado ({count}/{total}),Fragment of Dawn found ({count}/{total})
+FragmentsCount,Fragments found: {count}/{total},,,Fragmentos encontrados: {count}/{total},Fragments found: {count}/{total}
+AffinityChangeOnly,Awaken your affinity first at the Shrine in the Aelith Ruins,,,Despierta tu afinidad primero en el Santuario de las Ruinas de Aelith,Awaken your affinity first at the Shrine in the Aelith Ruins
+JournalTitle,Journal,,,Diario,Journal
+JournalTab_Quests,Quests,,,Misiones,Quests
+JournalTab_Fragments,Fragments,,,Fragmentos,Fragments
+Campfire_Camp,Dawn Camp,,,Campamento del Alba,Dawn Camp
+Campfire_Verge,Emerald Verge,,,Linde Esmeralda,Emerald Verge
+Campfire_Ruins,Aelith Ruins,,,Ruinas de Aelith,Aelith Ruins
+Campfire_Hollow,Withered Hollow,,,Hondonada Marchita,Withered Hollow
+Campfire_Heart,Forest Heart,,,Corazón del Bosque,Forest Heart
+Lore_F01,"""The day the sun went out, the Aether roared like a beast. And when the light returned, it fell from the sky like crystal rain.""",,,"«El día que el sol se apagó, el Éter rugió como una bestia. Y cuando volvió la luz, cayó del cielo como lluvia de cristal.»","""The day the sun went out, the Aether roared like a beast. And when the light returned, it fell from the sky like crystal rain."""
+Lore_F02,"The Aelith called the Aether ""the breath of the world."" With it they grew forests in a single night.",,,Los Aelith llamaban al Éter «el aliento del mundo». Con él hacían crecer bosques en una sola noche.,"The Aelith called the Aether ""the breath of the world."" With it they grew forests in a single night."
+Lore_F03,"Inscription: ""We keep the light of the first dawn. Whoever holds it may calm what the Eclipse awakened.""",,,Inscripción: «Guardamos la luz del primer amanecer. Quien la sostenga podrá calmar lo que el Eclipse despertó.»,"Inscription: ""We keep the light of the first dawn. Whoever holds it may calm what the Eclipse awakened."""
+Lore_F04,The Sentries were made to protect the Shrine. They obeyed whoever bore the Aelith seal.,,,Los Centinelas fueron creados para proteger el Santuario. Obedecían a quien portara el sello de los Aelith.,The Sentries were made to protect the Shrine. They obeyed whoever bore the Aelith seal.
+Lore_F05,"At the Shrine, each seeker chose a path: the fire that purifies or the lightning that guides.",,,"En el Santuario, cada explorador elegía su camino: el fuego que purifica o el rayo que guía.","At the Shrine, each seeker chose a path: the fire that purifies or the lightning that guides."
+Lore_F06,"Aelith diary: ""The Primeval Tree drinks too much Aether. Its roots darken. Vharok no longer knows us.""",,,Diario de un Aelith: «El Árbol Primigenio bebe demasiado Éter. Sus raíces se oscurecen. Vharok ya no nos reconoce.»,"Aelith diary: ""The Primeval Tree drinks too much Aether. Its roots darken. Vharok no longer knows us."""
+Lore_F07,The Hollow was once a garden. Now its roots glow with raw Aether and nothing blooms.,,,La Hondonada fue un jardín. Ahora sus raíces brillan con Éter crudo y nada florece.,The Hollow was once a garden. Now its roots glow with raw Aether and nothing blooms.
+Lore_F08,Thornlings were born from seeds touched by corrupted Aether. They are not evil: they suffer.,,,Los Brotespinas nacieron de semillas tocadas por el Éter corrupto. No son malvados: sufren.,Thornlings were born from seeds touched by corrupted Aether. They are not evil: they suffer.
+Lore_F09,"""If the Warden falls, the Tree will heal. But the seal it guards must not be opened… yet.""",,,"«Si el Guardián cae, el Árbol sanará. Pero el sello que protege no debe abrirse… aún.»","""If the Warden falls, the Tree will heal. But the seal it guards must not be opened… yet."""
+Lore_F10,"A vision: a stone portal beneath the Tree, bearing the symbol of a land of scorching sun.",,,"Una visión: un portal de piedra bajo el Árbol, y en él, el símbolo de una tierra de sol abrasador.","A vision: a stone portal beneath the Tree, bearing the symbol of a land of scorching sun."
+SettingsTitle,Settings,,,Ajustes,Settings
+Settings_Language,Language,,,Idioma,Language
+Settings_Volume,Effects volume,,,Volumen de efectos,Effects volume
+Settings_OthersDamage,Other players' damage numbers,,,Números de daño de otros jugadores,Other players' damage numbers
+Settings_Quality,Effects quality,,,Calidad de efectos,Effects quality
+Settings_SensitivityHint,Camera sensitivity: Roblox menu (Esc) → Settings.,,,Sensibilidad de la cámara: menú de Roblox (Esc) → Configuración.,Camera sensitivity: Roblox menu (Esc) → Settings.
+Settings_LanguageHint,Some texts change after rejoining.,,,Algunos textos cambian al volver a entrar.,Some texts change after rejoining.
+Lang_auto,Automatic,,,Automático,Automatic
+Lang_es,Español,,,Español,Español
+Lang_en,English,,,English,English
+On,On,,,Sí,On
+Off,Off,,,No,Off
+Quality_High,High,,,Alta,High
+Quality_Low,Low,,,Baja,Low
+DeathTitle,You have fallen,,,Has caído,You have fallen
+DeathRespawn,Respawning at {place}…,,,Reapareciendo en {place}…,Respawning at {place}…
+DeathTip,You don't lose experience or items.,,,No pierdes experiencia ni objetos.,You don't lose experience or items.

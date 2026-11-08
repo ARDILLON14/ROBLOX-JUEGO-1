@@ -1,336 +1,45 @@
 --!strict
 --[[
-	Textos del juego en español e inglés.
-	[PENDIENTE] Semana 19: pasar estos textos a archivos CSV / LocalizationTable (decisión B7).
-	Mientras tanto, todos los textos visibles se piden aquí con una clave.
+	Strings — textos del juego en español e inglés (decisión B7).
+	Los textos viven en src/shared/Localization/Strings.csv (columnas Key, Source, Context, Example, es, en).
+	Rojo convierte ese CSV en una LocalizationTable de Roblox; este módulo la lee al arrancar.
+	El código NUNCA escribe textos visibles directamente: siempre usa Strings.get("Clave").
+
+	Idioma: el de tu cuenta de Roblox, salvo que elijas otro en Ajustes (Strings.setLanguage).
+	[VERIFICAR EN DOCUMENTACIÓN: "LocalizationTable:GetEntries"]
 ]]
 
 local LocalizationService = game:GetService("LocalizationService")
 
-local TEXTS: { [string]: { [string]: string } } = {
-	es = {
-		LevelUp = "¡NIVEL {level}!",
-		RewardPotion = "+1 Poción",
-		RewardHeal = "Vida restaurada",
-		RewardAffinity = "¡Ya puedes despertar tu afinidad!",
-		Title_DawnSeeker = "Nuevo título: Explorador del Alba",
-		Aura_AetherEmber = "Nueva aura: Brasa de Éter",
-		Title_VerdantiaGuardian = "Nuevo título: Guardián de Verdantia",
-		Blocked = "Bloqueado {amount}",
-		PerfectBlock = "¡Perfecto!",
-		Enemy_Thornling = "Brotespina",
-		Enemy_Spitter = "Brotespina Lanzador",
-		Enemy_Sentry = "Centinela Aelith",
-		EnemyName = "{name} · Nv {level}",
-		Npc_Ilen = "Maestra Ilen",
-		Talk = "Hablar",
-		Continue = "Continuar",
-		Item_SapPotion = "Poción de Savia",
-		Potions = "Pociones x{count}  [1]",
-		DodgeReady = "Esquiva [Q]",
-		DodgeCooldown = "Esquiva {time}",
-		LevelShort = "Nv {level}",
-		XPText = "{xp}/{next} XP",
-		XPMax = "Nivel máximo",
-		QuestTitle = "Misión",
-		QuestTalkTo = "Habla con {npc}",
-		QuestReturnTo = "Vuelve con {npc}",
-		QuestNone = "Más misiones muy pronto…",
-		QuestReady = "¡Objetivo cumplido! Vuelve con {npc}",
-		QuestComplete = "Misión completada: {name}",
-		Quest_Q01_Name = "Despertar del Explorador",
-		Quest_Q01_Objective = "Golpea al muñeco de práctica ({progress}/{count})",
-		Quest_Q02_Name = "Raíces Inquietas",
-		Quest_Q02_Objective = "Derrota Brotespinas en la Linde Esmeralda ({progress}/{count})",
-		Dialog_Q01_Start = "Bienvenido al Campamento del Alba, explorador. Antes de entrar al bosque, demuéstrame que sabes usar tu katana: golpea al muñeco de práctica. Clic izquierdo para atacar; clic derecho para un golpe pesado.",
-		Dialog_Q01_Active = "Golpea al muñeco unas cuantas veces más. Prueba el combo: dos clics izquierdos y uno derecho.",
-		Dialog_Q01_Done = "¡Bien hecho! Recuerda: Q para esquivar y F para bloquear. Si bloqueas justo antes del golpe, aturdirás al enemigo.",
-		Dialog_Q02_Start = "El Éter corrompido ha despertado a las raíces del bosque. Sigue el camino hacia el norte hasta la Linde Esmeralda y derrota a los Brotespinas. Cuando brillen, ¡prepárate para bloquear o esquivar!",
-		Dialog_Q02_Active = "Los Brotespinas siguen inquietos en la Linde Esmeralda, al norte. No vuelvas hasta calmar a unos cuantos.",
-		Dialog_Q02_Done = "Has demostrado valor. Pero el bosque guarda muchos secretos… Habla conmigo de nuevo cuando quieras.",
-		Dialog_NoQuest = "Descansa, explorador. Pronto habrá más por hacer.",
-		QuestReachLevel = "Alcanza el nivel {level} para continuar",
-		WeaponReward = "Nueva arma: {name}",
-		ItemCollected = "+1 {name}",
-		Item_WitheredSap = "Savia corrupta",
-		Quest_Q03_Name = "La Primera Luz",
-		Quest_Q03_Objective = "Explora las ruinas al oeste de la Linde Esmeralda",
-		Quest_Q04_Name = "El Peso del Acero",
-		Quest_Q04_Objective = "Derrota Brotespinas Lanzadores ({progress}/{count})",
-		Quest_Q05_Name = "Despertar del Éter",
-		Quest_Q05_Objective = "Despierta tu afinidad en el Santuario",
-		Quest_Q06_Name = "Guardianes de Piedra",
-		Quest_Q06_Objective = "Derrota Centinelas Aelith ({progress}/{count})",
-		Quest_Q07_Name = "Savia Marchita",
-		Quest_Q07_Objective = "Consigue Savia corrupta de los enemigos ({progress}/{count})",
-		Quest_Q08_Name = "El Guardián Marchito",
-		Quest_Q08_Objective = "Derrota a Vharok en el Corazón del Bosque",
-		Dialog_Q03_Start = "Al oeste de la Linde hay unas ruinas de los Aelith. Dicen que allí cayó un Fragmento de Amanecer tras el Gran Eclipse. Ve a echar un vistazo.",
-		Dialog_Q03_Active = "Las ruinas están al oeste del claro de la Linde Esmeralda. Busca los pilares de piedra.",
-		Dialog_Q03_Done = "¿Sentiste esa calidez? Es la luz del primer amanecer. Los Aelith la usaban para calmar el Éter… Quizás aún haya esperanza para el bosque.",
-		Dialog_Q04_Start = "Los Brotespinas Lanzadores atacan desde lejos y han herido a varios exploradores. Derrota a unos cuantos y te daré algo con más peso que esa katana.",
-		Dialog_Q04_Active = "Los Lanzadores se esconden al noreste de la Linde. Esquiva sus espinas o bloquéalas.",
-		Dialog_Q04_Done = "Toma este mandoble. Es lento, pero golpea a varios enemigos a la vez. Puedes cambiar de arma en tu inventario (Tab o I).",
-		Dialog_Q05_Start = "Has crecido mucho, explorador. Es hora de despertar el Éter que llevas dentro. Ve al Santuario y elige tu camino: el fuego o el rayo.",
-		Dialog_Q05_Active = "El Santuario te espera. Pulsa E junto a él para despertar tu afinidad.",
-		Dialog_Q05_Done = "Puedo sentir tu afinidad. Cuanto más la uses, más poderosa será. Y recuerda: puedes cambiarla en el Santuario cuando quieras.",
-		Dialog_Q05_Locked = "Todavía no estás preparado para despertar el Éter. Vuelve cuando seas más fuerte (nivel 5).",
-		Dialog_Q06_Start = "Los Centinelas Aelith protegían las ruinas, pero el Éter corrupto los ha vuelto contra nosotros. Su escudo bloquea los golpes ligeros: usa ataques pesados y cuidado con su golpe rojo.",
-		Dialog_Q06_Active = "Rompe su guardia con un golpe pesado o atácalos por la espalda. Y si brillan en rojo… ¡esquiva!",
-		Dialog_Q06_Done = "Impresionante. Toma esta arma rara, la forjaron los propios Aelith.",
-		Dialog_Q06_Locked = "Los Centinelas son peligrosos. Vuelve cuando seas más fuerte (nivel 6).",
-		Dialog_Q07_Start = "La savia del bosque se está pudriendo por culpa del Éter. Tráeme muestras de Savia corrupta de los enemigos para estudiarla.",
-		Dialog_Q07_Active = "No todos los enemigos llevan savia corrupta. Sigue buscando.",
-		Dialog_Q07_Done = "Esta savia… viene del Corazón del Bosque. Algo terrible ha despertado allí.",
-		Dialog_Q07_Locked = "Todavía no es seguro adentrarse tanto en el bosque. Vuelve cuando seas más fuerte (nivel 10).",
-		Dialog_Q08_Start = "Vharok, el Guardián del bosque, ha sido corrompido. Si lo derrotamos, el Árbol Primigenio podrá sanar. Reúne a otros exploradores: no vayas solo.",
-		Dialog_Q08_Active = "Vharok espera en el Corazón del Bosque. Prepárate bien antes de ir.",
-		Dialog_Q08_Done = "¡Lo lograste! El Árbol Primigenio vuelve a brillar… y ha revelado un portal sellado. Ese símbolo… pertenece a otra región. Tu viaje acaba de empezar.",
-		Dialog_Q08_Locked = "Vharok es demasiado poderoso para ti ahora. Vuelve cuando seas más fuerte (nivel 14).",
-		InventoryTitle = "Inventario",
-		Tab_Weapons = "Armas",
-		Tab_Consumables = "Consumibles",
-		Tab_Cosmetics = "Cosméticos",
-		Equip = "Equipar",
-		Equipped = "Equipado",
-		Unequip = "Quitar",
-		Use = "Usar",
-		Close = "Cerrar",
-		DamageMultiplier = "Daño ×{mult}",
-		PotionDescription = "Cura el 40 % de tu vida. Tecla 1.",
-		NoCosmetics = "Sube de nivel para conseguir títulos y auras (niveles 10, 15 y 20).",
-		Rarity_Common = "Común",
-		Rarity_Rare = "Rara",
-		Rarity_Epic = "Épica",
-		Weapon_Katana_Common = "Katana común",
-		Weapon_Katana_Rare = "Katana rara",
-		Weapon_Katana_Epic = "Katana épica",
-		Weapon_Greatsword_Common = "Mandoble común",
-		Weapon_Greatsword_Rare = "Mandoble raro",
-		Weapon_Greatsword_Epic = "Mandoble épico",
-		Cosmetic_Title_DawnSeeker = "Explorador del Alba",
-		Cosmetic_Aura_AetherEmber = "Brasa de Éter",
-		Cosmetic_Title_VerdantiaGuardian = "Guardián de Verdantia",
-		Affinity_Fire = "Fuego",
-		Affinity_Lightning = "Rayo",
-		Skill_BlazingArc = "Tajo Ígneo",
-		Skill_ThunderStep = "Paso Relámpago",
-		Ult_Dawnburst = "Erupción del Alba",
-		Ult_ThunderVerdict = "Juicio del Trueno",
-		AffinityPrompt = "Despertar afinidad",
-		AffinityLocked = "Necesitas nivel {level} para despertar tu afinidad",
-		AffinityChosen = "Afinidad despertada: {name}",
-		AffinityChooseTitle = "Elige tu afinidad",
-		AffinityChooseHint = "Podrás cambiarla gratis en este Santuario. Tu maestría se guarda por separado.",
-		AffinityDesc_Fire = "Tajo Ígneo: arco de fuego que quema a los enemigos. Ulti: Erupción del Alba.",
-		AffinityDesc_Lightning = "Paso Relámpago: embestida eléctrica. Ulti: Juicio del Trueno.",
-		Choose = "Elegir",
-		MasteryRank = "¡{name}: rango {rank} desbloqueado!",
-		SkillReady = "{name} [Z]",
-		SkillCooldown = "{name} {time}",
-		UltLocked = "Ulti: rango 3",
-		UltCharging = "{name} {percent}%",
-		UltReady = "{name} [X] ¡LISTA!",
-		MasteryText = "Maestría {affinity} R{rank}: {points}/{next}",
-		MasteryMax = "Maestría {affinity} R{rank} (máx.)",
-		NoAffinity = "Afinidad: nivel 5 (Santuario)",
-		Resonance = "¡RESONANCIA! {amount}",
-		Npc_Fragment = "Fragmento de Amanecer",
-		Boss_Vharok = "Vharok, el Guardián Marchito",
-		BossPhaseLabel = "Fase {phase}",
-		BossDefeated = "¡{name} ha sido derrotado!",
-		Rest = "Descansar",
-		Collect = "Recoger",
-		Here = "aquí",
-		FastTravelTitle = "Viaje rápido",
-		CampfireDiscovered = "Fogata descubierta: {name}",
-		FastTravelBlocked = "No puedes viajar en pleno combate",
-		FragmentFound = "Fragmento de Amanecer encontrado ({count}/{total})",
-		FragmentsCount = "Fragmentos encontrados: {count}/{total}",
-		AffinityChangeOnly = "Despierta tu afinidad primero en el Santuario de las Ruinas de Aelith",
-		JournalTitle = "Diario",
-		JournalTab_Quests = "Misiones",
-		JournalTab_Fragments = "Fragmentos",
-		Campfire_Camp = "Campamento del Alba",
-		Campfire_Verge = "Linde Esmeralda",
-		Campfire_Ruins = "Ruinas de Aelith",
-		Campfire_Hollow = "Hondonada Marchita",
-		Campfire_Heart = "Corazón del Bosque",
-		Lore_F01 = "«El día que el sol se apagó, el Éter rugió como una bestia. Y cuando volvió la luz, cayó del cielo como lluvia de cristal.»",
-		Lore_F02 = "Los Aelith llamaban al Éter «el aliento del mundo». Con él hacían crecer bosques en una sola noche.",
-		Lore_F03 = "Inscripción: «Guardamos la luz del primer amanecer. Quien la sostenga podrá calmar lo que el Eclipse despertó.»",
-		Lore_F04 = "Los Centinelas fueron creados para proteger el Santuario. Obedecían a quien portara el sello de los Aelith.",
-		Lore_F05 = "En el Santuario, cada explorador elegía su camino: el fuego que purifica o el rayo que guía.",
-		Lore_F06 = "Diario de un Aelith: «El Árbol Primigenio bebe demasiado Éter. Sus raíces se oscurecen. Vharok ya no nos reconoce.»",
-		Lore_F07 = "La Hondonada fue un jardín. Ahora sus raíces brillan con Éter crudo y nada florece.",
-		Lore_F08 = "Los Brotespinas nacieron de semillas tocadas por el Éter corrupto. No son malvados: sufren.",
-		Lore_F09 = "«Si el Guardián cae, el Árbol sanará. Pero el sello que protege no debe abrirse… aún.»",
-		Lore_F10 = "Una visión: un portal de piedra bajo el Árbol, y en él, el símbolo de una tierra de sol abrasador.",
-	},
-	en = {
-		LevelUp = "LEVEL {level}!",
-		RewardPotion = "+1 Potion",
-		RewardHeal = "Health restored",
-		RewardAffinity = "You can now awaken your affinity!",
-		Title_DawnSeeker = "New title: Dawn Seeker",
-		Aura_AetherEmber = "New aura: Aether Ember",
-		Title_VerdantiaGuardian = "New title: Guardian of Verdantia",
-		Blocked = "Blocked {amount}",
-		PerfectBlock = "Perfect!",
-		Enemy_Thornling = "Thornling",
-		Enemy_Spitter = "Thornling Spitter",
-		Enemy_Sentry = "Aelith Sentry",
-		EnemyName = "{name} · Lv {level}",
-		Npc_Ilen = "Master Ilen",
-		Talk = "Talk",
-		Continue = "Continue",
-		Item_SapPotion = "Sap Potion",
-		Potions = "Potions x{count}  [1]",
-		DodgeReady = "Dodge [Q]",
-		DodgeCooldown = "Dodge {time}",
-		LevelShort = "Lv {level}",
-		XPText = "{xp}/{next} XP",
-		XPMax = "Max level",
-		QuestTitle = "Quest",
-		QuestTalkTo = "Talk to {npc}",
-		QuestReturnTo = "Return to {npc}",
-		QuestNone = "More quests coming soon…",
-		QuestReady = "Objective complete! Return to {npc}",
-		QuestComplete = "Quest complete: {name}",
-		Quest_Q01_Name = "Seeker's Awakening",
-		Quest_Q01_Objective = "Hit the training dummy ({progress}/{count})",
-		Quest_Q02_Name = "Restless Roots",
-		Quest_Q02_Objective = "Defeat Thornlings in the Emerald Verge ({progress}/{count})",
-		Dialog_Q01_Start = "Welcome to Dawn Camp, seeker. Before you enter the forest, show me you can use your katana: strike the training dummy. Left click to attack; right click for a heavy strike.",
-		Dialog_Q01_Active = "Hit the dummy a few more times. Try the combo: two left clicks and one right click.",
-		Dialog_Q01_Done = "Well done! Remember: Q to dodge and F to block. Block right before a hit to stun your enemy.",
-		Dialog_Q02_Start = "Corrupted Aether has awakened the forest roots. Follow the path north to the Emerald Verge and defeat the Thornlings. When they glow, get ready to block or dodge!",
-		Dialog_Q02_Active = "The Thornlings are still restless in the Emerald Verge, to the north. Don't come back until you've calmed a few.",
-		Dialog_Q02_Done = "You have shown courage. But the forest holds many secrets… Talk to me again whenever you are ready.",
-		Dialog_NoQuest = "Rest, seeker. There will be more to do soon.",
-		QuestReachLevel = "Reach level {level} to continue",
-		WeaponReward = "New weapon: {name}",
-		ItemCollected = "+1 {name}",
-		Item_WitheredSap = "Withered Sap",
-		Quest_Q03_Name = "The First Light",
-		Quest_Q03_Objective = "Explore the ruins west of the Emerald Verge",
-		Quest_Q04_Name = "The Weight of Steel",
-		Quest_Q04_Objective = "Defeat Thornling Spitters ({progress}/{count})",
-		Quest_Q05_Name = "Aether Awakening",
-		Quest_Q05_Objective = "Awaken your affinity at the Shrine",
-		Quest_Q06_Name = "Stone Guardians",
-		Quest_Q06_Objective = "Defeat Aelith Sentries ({progress}/{count})",
-		Quest_Q07_Name = "Withered Sap",
-		Quest_Q07_Objective = "Collect Withered Sap from enemies ({progress}/{count})",
-		Quest_Q08_Name = "The Withered Warden",
-		Quest_Q08_Objective = "Defeat Vharok in the Forest Heart",
-		Dialog_Q03_Start = "West of the Verge lie some Aelith ruins. They say a Fragment of Dawn fell there after the Great Eclipse. Go take a look.",
-		Dialog_Q03_Active = "The ruins are west of the Emerald Verge clearing. Look for the stone pillars.",
-		Dialog_Q03_Done = "Did you feel that warmth? That's the light of the first dawn. The Aelith used it to calm the Aether… Perhaps there's still hope for the forest.",
-		Dialog_Q04_Start = "Thornling Spitters attack from afar and have wounded several seekers. Defeat a few and I'll give you something heavier than that katana.",
-		Dialog_Q04_Active = "The Spitters hide northeast of the Verge. Dodge their spines or block them.",
-		Dialog_Q04_Done = "Take this greatsword. It's slow, but it hits several enemies at once. You can switch weapons in your inventory (Tab or I).",
-		Dialog_Q05_Start = "You've grown a lot, seeker. It's time to awaken the Aether within you. Go to the Shrine and choose your path: fire or lightning.",
-		Dialog_Q05_Active = "The Shrine awaits. Press E next to it to awaken your affinity.",
-		Dialog_Q05_Done = "I can feel your affinity. The more you use it, the stronger it becomes. And remember: you can change it at the Shrine anytime.",
-		Dialog_Q05_Locked = "You're not ready to awaken the Aether yet. Come back when you're stronger (level 5).",
-		Dialog_Q06_Start = "The Aelith Sentries guarded the ruins, but corrupted Aether has turned them against us. Their shield blocks light attacks: use heavy attacks and beware of their red strike.",
-		Dialog_Q06_Active = "Break their guard with a heavy strike or hit them from behind. And if they glow red… dodge!",
-		Dialog_Q06_Done = "Impressive. Take this rare weapon, forged by the Aelith themselves.",
-		Dialog_Q06_Locked = "The Sentries are dangerous. Come back when you're stronger (level 6).",
-		Dialog_Q07_Start = "The forest's sap is rotting because of the Aether. Bring me samples of Withered Sap from the enemies so I can study it.",
-		Dialog_Q07_Active = "Not every enemy carries withered sap. Keep looking.",
-		Dialog_Q07_Done = "This sap… comes from the Forest Heart. Something terrible has awakened there.",
-		Dialog_Q07_Locked = "It's not safe to go that deep into the forest yet. Come back when you're stronger (level 10).",
-		Dialog_Q08_Start = "Vharok, the forest's Warden, has been corrupted. If we defeat him, the Primeval Tree can heal. Gather other seekers: don't go alone.",
-		Dialog_Q08_Active = "Vharok awaits in the Forest Heart. Prepare well before you go.",
-		Dialog_Q08_Done = "You did it! The Primeval Tree shines again… and it has revealed a sealed portal. That symbol… belongs to another region. Your journey has only just begun.",
-		Dialog_Q08_Locked = "Vharok is too powerful for you right now. Come back when you're stronger (level 14).",
-		InventoryTitle = "Inventory",
-		Tab_Weapons = "Weapons",
-		Tab_Consumables = "Consumables",
-		Tab_Cosmetics = "Cosmetics",
-		Equip = "Equip",
-		Equipped = "Equipped",
-		Unequip = "Remove",
-		Use = "Use",
-		Close = "Close",
-		DamageMultiplier = "Damage ×{mult}",
-		PotionDescription = "Heals 40% of your health. Key 1.",
-		NoCosmetics = "Level up to earn titles and auras (levels 10, 15 and 20).",
-		Rarity_Common = "Common",
-		Rarity_Rare = "Rare",
-		Rarity_Epic = "Epic",
-		Weapon_Katana_Common = "Common Katana",
-		Weapon_Katana_Rare = "Rare Katana",
-		Weapon_Katana_Epic = "Epic Katana",
-		Weapon_Greatsword_Common = "Common Greatsword",
-		Weapon_Greatsword_Rare = "Rare Greatsword",
-		Weapon_Greatsword_Epic = "Epic Greatsword",
-		Cosmetic_Title_DawnSeeker = "Dawn Seeker",
-		Cosmetic_Aura_AetherEmber = "Aether Ember",
-		Cosmetic_Title_VerdantiaGuardian = "Guardian of Verdantia",
-		Affinity_Fire = "Fire",
-		Affinity_Lightning = "Lightning",
-		Skill_BlazingArc = "Blazing Arc",
-		Skill_ThunderStep = "Thunder Step",
-		Ult_Dawnburst = "Dawnburst",
-		Ult_ThunderVerdict = "Thunder Verdict",
-		AffinityPrompt = "Awaken affinity",
-		AffinityLocked = "You need level {level} to awaken your affinity",
-		AffinityChosen = "Affinity awakened: {name}",
-		AffinityChooseTitle = "Choose your affinity",
-		AffinityChooseHint = "You can change it for free at this Shrine. Your mastery is saved separately.",
-		AffinityDesc_Fire = "Blazing Arc: a fiery arc that burns enemies. Ultimate: Dawnburst.",
-		AffinityDesc_Lightning = "Thunder Step: an electric dash. Ultimate: Thunder Verdict.",
-		Choose = "Choose",
-		MasteryRank = "{name}: rank {rank} unlocked!",
-		SkillReady = "{name} [Z]",
-		SkillCooldown = "{name} {time}",
-		UltLocked = "Ultimate: rank 3",
-		UltCharging = "{name} {percent}%",
-		UltReady = "{name} [X] READY!",
-		MasteryText = "{affinity} mastery R{rank}: {points}/{next}",
-		MasteryMax = "{affinity} mastery R{rank} (max)",
-		NoAffinity = "Affinity: level 5 (Shrine)",
-		Resonance = "RESONANCE! {amount}",
-		Npc_Fragment = "Fragment of Dawn",
-		Boss_Vharok = "Vharok, the Withered Warden",
-		BossPhaseLabel = "Phase {phase}",
-		BossDefeated = "{name} has been defeated!",
-		Rest = "Rest",
-		Collect = "Collect",
-		Here = "here",
-		FastTravelTitle = "Fast travel",
-		CampfireDiscovered = "Campfire discovered: {name}",
-		FastTravelBlocked = "You can't travel in the middle of combat",
-		FragmentFound = "Fragment of Dawn found ({count}/{total})",
-		FragmentsCount = "Fragments found: {count}/{total}",
-		AffinityChangeOnly = "Awaken your affinity first at the Shrine in the Aelith Ruins",
-		JournalTitle = "Journal",
-		JournalTab_Quests = "Quests",
-		JournalTab_Fragments = "Fragments",
-		Campfire_Camp = "Dawn Camp",
-		Campfire_Verge = "Emerald Verge",
-		Campfire_Ruins = "Aelith Ruins",
-		Campfire_Hollow = "Withered Hollow",
-		Campfire_Heart = "Forest Heart",
-		Lore_F01 = '"The day the sun went out, the Aether roared like a beast. And when the light returned, it fell from the sky like crystal rain."',
-		Lore_F02 = 'The Aelith called the Aether "the breath of the world." With it they grew forests in a single night.',
-		Lore_F03 = 'Inscription: "We keep the light of the first dawn. Whoever holds it may calm what the Eclipse awakened."',
-		Lore_F04 = "The Sentries were made to protect the Shrine. They obeyed whoever bore the Aelith seal.",
-		Lore_F05 = "At the Shrine, each seeker chose a path: the fire that purifies or the lightning that guides.",
-		Lore_F06 = 'Aelith diary: "The Primeval Tree drinks too much Aether. Its roots darken. Vharok no longer knows us."',
-		Lore_F07 = "The Hollow was once a garden. Now its roots glow with raw Aether and nothing blooms.",
-		Lore_F08 = "Thornlings were born from seeds touched by corrupted Aether. They are not evil: they suffer.",
-		Lore_F09 = '"If the Warden falls, the Tree will heal. But the seal it guards must not be opened… yet."',
-		Lore_F10 = "A vision: a stone portal beneath the Tree, bearing the symbol of a land of scorching sun.",
-	},
-}
+local SUPPORTED = { "es", "en" }
 
 local Strings = {}
 
-local function currentLanguage(): string
+local texts: { [string]: { [string]: string } } = { es = {}, en = {} }
+local override: string? = nil -- "es", "en" o nil (automático)
+
+local function load()
+	local localizationFolder = script.Parent.Parent:WaitForChild("Localization", 10)
+	local tableInstance = localizationFolder and localizationFolder:WaitForChild("Strings", 10)
+	if not tableInstance or not tableInstance:IsA("LocalizationTable") then
+		warn("[Strings] No se encontró la LocalizationTable 'Strings'")
+		return
+	end
+	for _, entry in tableInstance:GetEntries() do
+		local key = entry.Key
+		local values = entry.Values
+		if typeof(key) == "string" and typeof(values) == "table" then
+			for _, language in SUPPORTED do
+				local value = values[language]
+				if typeof(value) == "string" and value ~= "" then
+					texts[language][key] = value
+				end
+			end
+		end
+	end
+end
+
+local function robloxLanguage(): string
 	local ok, locale = pcall(function()
 		return LocalizationService.RobloxLocaleId
 	end)
@@ -340,10 +49,20 @@ local function currentLanguage(): string
 	return "en"
 end
 
+-- Idioma que se está usando ahora mismo ("es" o "en").
+function Strings.currentLanguage(): string
+	return override or robloxLanguage()
+end
+
+-- Cambia el idioma: "es", "en" o "auto" (el de la cuenta de Roblox).
+function Strings.setLanguage(language: string)
+	override = if table.find(SUPPORTED, language) then language else nil
+end
+
 -- Devuelve el texto de una clave, sustituyendo {param} por su valor.
 function Strings.get(key: string, params: { [string]: any }?): string
-	local language = currentLanguage()
-	local text = TEXTS[language][key] or TEXTS.en[key] or key
+	local language = Strings.currentLanguage()
+	local text = texts[language][key] or texts.en[key] or key
 	if params then
 		text = string.gsub(text, "{(%w+)}", function(name: string)
 			local value = params[name]
@@ -352,5 +71,7 @@ function Strings.get(key: string, params: { [string]: any }?): string
 	end
 	return text
 end
+
+load()
 
 return Strings

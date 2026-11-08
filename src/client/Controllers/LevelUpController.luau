@@ -17,6 +17,7 @@ local Config = Shared:WaitForChild("Config")
 local Net = require(Shared:WaitForChild("Net"))
 local Strings = require(Config:WaitForChild("Strings"))
 local Sounds = require(Config:WaitForChild("Sounds"))
+local SettingsController = require(script.Parent:WaitForChild("SettingsController"))
 
 local GOLD = Color3.fromRGB(255, 205, 80)
 local COLUMN_HEIGHT = 30
@@ -67,6 +68,7 @@ local function playSound()
 	end
 	local sound = Instance.new("Sound")
 	sound.SoundId = Sounds.LevelUp
+	sound.SoundGroup = SettingsController:getEffectsGroup() -- respeta el volumen de Ajustes
 	sound.Parent = SoundService
 	sound:Play()
 	sound.Ended:Connect(function()

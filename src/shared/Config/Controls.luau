@@ -20,6 +20,7 @@ local Actions: { [string]: Binding } = {
 	UsePotion = { PC = { Enum.KeyCode.One } },
 	Inventory = { PC = { Enum.KeyCode.Tab, Enum.KeyCode.I } }, -- I por si Tab choca con la lista de jugadores
 	Journal = { PC = { Enum.KeyCode.J } },
+	Settings = { PC = { Enum.KeyCode.P } },
 	FreeCursor = { PC = { Enum.KeyCode.LeftAlt } }, -- mantener para liberar el ratón
 }
 
