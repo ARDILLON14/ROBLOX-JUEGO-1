@@ -18,6 +18,7 @@ local Net = require(Shared:WaitForChild("Net"))
 local DataService = require(script.Parent:WaitForChild("DataService"))
 local ProgressionService = require(script.Parent:WaitForChild("ProgressionService"))
 local CombatService = require(script.Parent:WaitForChild("CombatService"))
+local AntiCheatService = require(script.Parent:WaitForChild("AntiCheatService"))
 
 local TAG_CAMPFIRE = "Campfire"
 local TAG_FRAGMENT = "Fragment"
@@ -40,6 +41,7 @@ local function teleportToCampfire(player: Player, campfireId: string)
 	local campfire = campfireParts[campfireId]
 	local character = player.Character
 	if campfire and character then
+		AntiCheatService:allowTeleport(player) -- teletransporte del propio juego
 		character:PivotTo(CFrame.new(campfire.Position + Vector3.new(4, 4, 0)))
 	end
 end

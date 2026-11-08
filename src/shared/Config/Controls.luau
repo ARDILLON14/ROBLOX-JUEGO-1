@@ -21,6 +21,7 @@ local Actions: { [string]: Binding } = {
 	Inventory = { PC = { Enum.KeyCode.Tab, Enum.KeyCode.I } }, -- I por si Tab choca con la lista de jugadores
 	Journal = { PC = { Enum.KeyCode.J } },
 	Settings = { PC = { Enum.KeyCode.P } },
+	PerfOverlay = { PC = { Enum.KeyCode.F7 } }, -- panel de rendimiento (para las pruebas)
 	FreeCursor = { PC = { Enum.KeyCode.LeftAlt } }, -- mantener para liberar el ratón
 }
 

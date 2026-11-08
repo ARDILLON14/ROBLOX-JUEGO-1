@@ -708,6 +708,15 @@ function BossService:Start()
 		end
 	end)
 
+	Players.PlayerRemoving:Connect(function(player: Player)
+		for _, boss in bosses do
+			boss.damageBy[player] = nil
+			if boss.target == player then
+				boss.target = nil
+			end
+		end
+	end)
+
 	for _, arena in CollectionService:GetTagged(TAG_ARENA) do
 		local bossId = arena:GetAttribute("BossId")
 		if arena:IsA("BasePart") and typeof(bossId) == "string" then

@@ -110,7 +110,10 @@ function Net.onRequest(name: string, maxPerSecond: number, handler: (player: Pla
 			end
 			return
 		end
-		handler(player, ...)
+		-- Un error en un handler (p. ej., datos raros enviados por un tramposo) no debe tumbar nada más.
+		xpcall(handler, function(err)
+			warn(`[Net] Error procesando {name} de {player.Name}: {err}`)
+		end, player, ...)
 	end)
 
 	Players.PlayerRemoving:Connect(function(player: Player)
