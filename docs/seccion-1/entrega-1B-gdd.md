@@ -113,7 +113,7 @@ La clave técnica: el juego no pregunta "¿pulsó la tecla F?", sino "¿pidió *
 
 - **Maestría:** se gana al usar habilidades y al derrotar enemigos con esa afinidad equipada. Progreso guardado **por afinidad**.
 - **Ulti:** se carga haciendo daño; al llenarse, el botón brilla.
-- **Resonancia:** golpe de rayo sobre enemigo Quemado → pequeña explosión extra (consume el Quemado). Funciona entre jugadores distintos o con uno mismo si cambia de afinidad… no: solo hay una afinidad equipada, así que en la práctica premia jugar en grupo.
+- **Resonancia:** golpe de rayo sobre enemigo Quemado → pequeña explosión extra (consume el Quemado). Como cada jugador solo tiene una afinidad equipada, la Resonancia necesita a otro jugador con la afinidad contraria: premia jugar en grupo.
 
 ### 4.5 Feedback visual y sonoro
 | Momento | Visual | Sonido |
