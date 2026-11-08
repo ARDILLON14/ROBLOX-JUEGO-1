@@ -34,7 +34,7 @@ local Bosses = {
 			VulnerableMultiplier = 1.5, -- daño extra mientras está aturdido tras chocar
 		},
 
-		Rewards = { XP = 1500, Potions = 1, EpicChance = 0.2 },
+		Rewards = { XP = 4000, Potions = 1, EpicChance = 0.2 }, -- XP ajustada en la semana 24: ~7 victorias de nivel 15 a 20
 	},
 }
 

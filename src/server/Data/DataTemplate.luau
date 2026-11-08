@@ -41,6 +41,9 @@ local DataTemplate = {
 	Meta = {
 		FirstJoin = 0,
 		PlayTime = 0,
+		OnboardingStep = 0, -- último paso del embudo de Analytics registrado
+		EnemiesDefeated = 0,
+		BossDefeats = 0,
 	},
 }
 
