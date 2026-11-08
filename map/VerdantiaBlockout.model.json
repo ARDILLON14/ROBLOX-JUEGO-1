@@ -320,14 +320,14 @@
      }
     },
     {
-     "Name": "AffinityShrine",
+     "Name": "AffinityAltar",
      "ClassName": "Part",
      "Properties": {
       "Anchored": true,
       "Size": [
-       3,
-       3,
-       3
+       2,
+       2,
+       2
       ],
       "Color": [
        0.6,
@@ -340,59 +340,28 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       14,
-       1.9,
-       -6
+       -14,
+       1.6,
+       -4
       ],
       "Shape": "Ball",
       "Tags": [
        "AffinityShrine"
       ]
-     }
-    },
-    {
-     "Name": "QuestMarker_Shrine",
-     "ClassName": "Part",
-     "Properties": {
-      "Anchored": true,
-      "Size": [
-       2,
-       2,
-       2
-      ],
-      "Color": [
-       1,
-       0.85,
-       0.3
-      ],
-      "Material": "SmoothPlastic",
-      "TopSurface": "Smooth",
-      "BottomSurface": "Smooth",
-      "CanCollide": false,
-      "Transparency": 1,
-      "Position": [
-       14,
-       3,
-       -6
-      ],
-      "Tags": [
-       "QuestMarker"
-      ]
      },
      "attributes": {
-      "MarkerId": "Shrine",
-      "Radius": 8
+      "ChangeOnly": true
      }
     },
     {
-     "Name": "ShrineBase",
+     "Name": "AltarBase",
      "ClassName": "Part",
      "Properties": {
       "Anchored": true,
       "Size": [
-       5,
+       4,
        0.6,
-       5
+       4
       ],
       "Color": [
        0.55,
@@ -405,9 +374,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       14,
+       -14,
        0.7,
-       -6
+       -4
       ]
      }
     },
@@ -686,6 +655,87 @@
        -200
       ]
      }
+    },
+    {
+     "Name": "PathLink1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       30
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.25,
+       -225
+      ]
+     }
+    },
+    {
+     "Name": "PathLink2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       30
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.25,
+       -390
+      ]
+     }
+    },
+    {
+     "Name": "PathLink3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       30
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.25,
+       -550
+      ]
+     }
     }
    ]
   },
@@ -899,42 +949,6 @@
      }
     },
     {
-     "Name": "EnemySpawn_Sentry_L5",
-     "ClassName": "Part",
-     "Properties": {
-      "Anchored": true,
-      "Size": [
-       4,
-       1,
-       4
-      ],
-      "Color": [
-       1,
-       0.2,
-       0.2
-      ],
-      "Material": "SmoothPlastic",
-      "TopSurface": "Smooth",
-      "BottomSurface": "Smooth",
-      "CanCollide": true,
-      "Transparency": 0,
-      "Position": [
-       -30,
-       1,
-       -150
-      ],
-      "Tags": [
-       "EnemySpawn"
-      ]
-     },
-     "attributes": {
-      "EnemyId": "Sentry",
-      "Level": 5,
-      "Count": 2,
-      "Zone": "EmeraldVerge"
-     }
-    },
-    {
      "Name": "RuinPillar1",
      "ClassName": "Part",
      "Properties": {
@@ -1102,6 +1116,2472 @@
        -177
       ]
      }
+    },
+    {
+     "Name": "Fragment_F01",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       -37,
+       2,
+       -180
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F01"
+     }
+    },
+    {
+     "Name": "Fragment_F02",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       46,
+       1.8,
+       -118
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F02"
+     }
+    },
+    {
+     "Name": "Fragment_F03",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       -50,
+       1.8,
+       -205
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F03"
+     }
+    }
+   ]
+  },
+  {
+   "Name": "AelithRuins",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "RuinsGround",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       110,
+       0.4,
+       140
+      ],
+      "Color": [
+       0.4,
+       0.4,
+       0.42
+      ],
+      "Material": "Cobblestone",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.2,
+       -310
+      ]
+     }
+    },
+    {
+     "Name": "Campfire_Ruins",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       1,
+       3
+      ],
+      "Color": [
+       0.9,
+       0.45,
+       0.15
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       12,
+       0.9,
+       -248
+      ],
+      "Tags": [
+       "Campfire"
+      ]
+     },
+     "attributes": {
+      "CampfireId": "Ruins",
+      "Zone": "AelithRuins"
+     }
+    },
+    {
+     "Name": "Shrine_Plaza",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       24,
+       0.6,
+       24
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.6,
+       -315
+      ]
+     }
+    },
+    {
+     "Name": "AffinityShrine",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       3,
+       3
+      ],
+      "Color": [
+       0.6,
+       0.5,
+       1
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       3,
+       -315
+      ],
+      "Shape": "Ball",
+      "Tags": [
+       "AffinityShrine"
+      ]
+     }
+    },
+    {
+     "Name": "QuestMarker_Shrine",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2,
+       2,
+       2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.3
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 1,
+      "Position": [
+       0,
+       4.5,
+       -315
+      ],
+      "Tags": [
+       "QuestMarker"
+      ]
+     },
+     "attributes": {
+      "MarkerId": "Shrine",
+      "Radius": 10
+     }
+    },
+    {
+     "Name": "RuinWall1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16,
+       10,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -45,
+         5.4,
+         -270
+        ],
+        "orientation": [
+         [
+          0.9924465127468161,
+          0,
+          -0.12267811270427924
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0.12267811270427924,
+          0,
+          0.9924465127468161
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "RuinWall2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20,
+       7,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         45,
+         3.9,
+         -285
+        ],
+        "orientation": [
+         [
+          0.9704389755847455,
+          0,
+          -0.24134662762514378
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0.24134662762514378,
+          0,
+          0.9704389755847455
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "RuinWall3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14,
+       12,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -48,
+         6.4,
+         -345
+        ],
+        "orientation": [
+         [
+          0.9944534909076983,
+          0,
+          0.10517725239562202
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.10517725239562202,
+          0,
+          0.9944534909076983
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "RuinWall4",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18,
+       6,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         46,
+         3.4,
+         -360
+        ],
+        "orientation": [
+         [
+          0.9557799348517767,
+          0,
+          -0.2940828388987249
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0.2940828388987249,
+          0,
+          0.9557799348517767
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "RuinWall5",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       22,
+       9,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -20,
+         4.9,
+         -378
+        ],
+        "orientation": [
+         [
+          0.9996862560215857,
+          0,
+          0.02504774483949992
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.02504774483949992,
+          0,
+          0.9996862560215857
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "RuinWall6",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10,
+       5,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         22,
+         2.9,
+         -262
+        ],
+        "orientation": [
+         [
+          0.9956071112948831,
+          0,
+          -0.09362948221077709
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0.09362948221077709,
+          0,
+          0.9956071112948831
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "PlazaPillar1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       4,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       16.0,
+       2.4,
+       -315.0
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       7,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       11.313708498984761,
+       3.9,
+       -303.68629150101526
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       4,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       9.797174393178826e-16,
+       2.4,
+       -299.0
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar4",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       4,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -11.31370849898476,
+       2.4,
+       -303.68629150101526
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar5",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       12,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -16.0,
+       6.4,
+       -315.0
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar6",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       12,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -11.313708498984763,
+       6.4,
+       -326.31370849898474
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar7",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       4,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -2.9391523179536475e-15,
+       2.4,
+       -331.0
+      ]
+     }
+    },
+    {
+     "Name": "PlazaPillar8",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2.4,
+       7,
+       2.4
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Marble",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       11.313708498984758,
+       3.9,
+       -326.31370849898474
+      ]
+     }
+    },
+    {
+     "Name": "EnemySpawn_Thornling_L6",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       1,
+       -268
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Thornling",
+      "Level": 6,
+      "Count": 4,
+      "Zone": "AelithRuins"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Sentry_L7",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -28,
+       1,
+       -292
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Sentry",
+      "Level": 7,
+      "Count": 2,
+      "Zone": "AelithRuins"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Sentry_L9",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       28,
+       1,
+       -345
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Sentry",
+      "Level": 9,
+      "Count": 3,
+      "Zone": "AelithRuins"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Spitter_L8",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -30,
+       1,
+       -362
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Spitter",
+      "Level": 8,
+      "Count": 3,
+      "Zone": "AelithRuins"
+     }
+    },
+    {
+     "Name": "Fragment_F04",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       -44,
+       1.8,
+       -300
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F04"
+     }
+    },
+    {
+     "Name": "Fragment_F05",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       44,
+       1.8,
+       -330
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F05"
+     }
+    },
+    {
+     "Name": "Fragment_F06",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       -20,
+       10.5,
+       -378
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F06"
+     }
+    }
+   ]
+  },
+  {
+   "Name": "WitheredHollow",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "HollowGround",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       110,
+       0.4,
+       140
+      ],
+      "Color": [
+       0.33,
+       0.36,
+       0.27
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.2,
+       -470
+      ]
+     }
+    },
+    {
+     "Name": "Campfire_Hollow",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       1,
+       3
+      ],
+      "Color": [
+       0.9,
+       0.45,
+       0.15
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -12,
+       0.9,
+       -408
+      ],
+      "Tags": [
+       "Campfire"
+      ]
+     },
+     "attributes": {
+      "CampfireId": "Hollow",
+      "Zone": "WitheredHollow"
+     }
+    },
+    {
+     "Name": "CorruptRoot1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.614816997376305,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -39.29155071898896,
+         0.9,
+         -479.0576973028983
+        ],
+        "orientation": [
+         [
+          0.9253133101535141,
+          0,
+          0.37920347842912333
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.37920347842912333,
+          0,
+          0.9253133101535141
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.581671539656046,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -26.569059397726605,
+         0.9,
+         -454.7080133113293
+        ],
+        "orientation": [
+         [
+          -0.23986428934082996,
+          0,
+          0.9708064290573165
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.9708064290573165,
+          0,
+          -0.23986428934082996
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8.37266144494205,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -9.918674433525105,
+         0.9,
+         -412.8493873288496
+        ],
+        "orientation": [
+         [
+          -0.902767959263691,
+          0,
+          0.43012790159076025
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.43012790159076025,
+          0,
+          -0.902767959263691
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot4",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8.942337904626946,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -20.19750851215908,
+         0.9,
+         -512.6893899971075
+        ],
+        "orientation": [
+         [
+          0.5660217224950624,
+          0,
+          0.824390326037201
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.824390326037201,
+          0,
+          0.5660217224950624
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot5",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.65280130929973,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         30.34813047552302,
+         0.9,
+         -508.3128344091275
+        ],
+        "orientation": [
+         [
+          -0.4226882459889713,
+          0,
+          0.9062751495560092
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.9062751495560092,
+          0,
+          -0.4226882459889713
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot6",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8.502311799786586,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -12.249835898329806,
+         0.9,
+         -464.27066411485305
+        ],
+        "orientation": [
+         [
+          0.9825212611885928,
+          0,
+          0.18615039971049455
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.18615039971049455,
+          0,
+          0.9825212611885928
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot7",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.420738445355223,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -28.227963569344652,
+         0.9,
+         -448.3520032181857
+        ],
+        "orientation": [
+         [
+          0.5512601760382344,
+          0,
+          0.8343333975781473
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.8343333975781473,
+          0,
+          0.5512601760382344
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot8",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.398135974909458,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         8.213938896733318,
+         0.9,
+         -475.61787483550694
+        ],
+        "orientation": [
+         [
+          -0.798512670770236,
+          0,
+          0.6019780017736401
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.6019780017736401,
+          0,
+          -0.798512670770236
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot9",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.595389682069367,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         19.10346563803884,
+         0.9,
+         -500.70841871334164
+        ],
+        "orientation": [
+         [
+          -0.07907451263117209,
+          0,
+          0.9968687082320031
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.9968687082320031,
+          0,
+          -0.07907451263117209
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot10",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.303502119121493,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         36.01319957504917,
+         0.9,
+         -442.4665652672939
+        ],
+        "orientation": [
+         [
+          -0.9980610686663621,
+          0,
+          0.0622422944030763
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.0622422944030763,
+          0,
+          -0.9980610686663621
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot11",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.057127436521995,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -36.66568528752364,
+         0.9,
+         -479.8252613857727
+        ],
+        "orientation": [
+         [
+          0.8881587768190649,
+          0,
+          0.4595367092619072
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.4595367092619072,
+          0,
+          0.8881587768190649
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot12",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       13.345726852275162,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -1.0595423543226588,
+         0.9,
+         -525.2951291543075
+        ],
+        "orientation": [
+         [
+          -0.7387230921555931,
+          0,
+          0.6740090452776425
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.6740090452776425,
+          0,
+          -0.7387230921555931
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot13",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.509980102784773,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         7.010490266628864,
+         0.9,
+         -424.9426625802934
+        ],
+        "orientation": [
+         [
+          -0.5757641822916051,
+          0,
+          0.8176158061033797
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.8176158061033797,
+          0,
+          -0.5757641822916051
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "CorruptRoot14",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.649642650411305,
+       1.2,
+       1.2
+      ],
+      "Color": [
+       0.45,
+       0.2,
+       0.55
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         9.059508202081773,
+         0.9,
+         -460.41257548610093
+        ],
+        "orientation": [
+         [
+          -0.8762579122045796,
+          0,
+          0.48184237183841705
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.48184237183841705,
+          0,
+          -0.8762579122045796
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "FallenTree",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       40,
+       3,
+       3
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -18,
+         1.8,
+         -470
+        ],
+        "orientation": [
+         [
+          0.8191520442889918,
+          0,
+          0.573576436351046
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.573576436351046,
+          0,
+          0.8191520442889918
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "EnemySpawn_Thornling_L12",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -22,
+       1,
+       -430
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Thornling",
+      "Level": 12,
+      "Count": 4,
+      "Zone": "WitheredHollow"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Spitter_L13",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       26,
+       1,
+       -455
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Spitter",
+      "Level": 13,
+      "Count": 3,
+      "Zone": "WitheredHollow"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Sentry_L14",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -26,
+       1,
+       -500
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Sentry",
+      "Level": 14,
+      "Count": 2,
+      "Zone": "WitheredHollow"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Thornling_L15",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       22,
+       1,
+       -515
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Thornling",
+      "Level": 15,
+      "Count": 4,
+      "Zone": "WitheredHollow"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Spitter_L16",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       1,
+       -535
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Spitter",
+      "Level": 16,
+      "Count": 3,
+      "Zone": "WitheredHollow"
+     }
+    },
+    {
+     "Name": "Fragment_F07",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       -46,
+       1.8,
+       -448
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F07"
+     }
+    },
+    {
+     "Name": "Fragment_F08",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       46,
+       1.8,
+       -492
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F08"
+     }
+    },
+    {
+     "Name": "Fragment_F09",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       -18,
+       4.5,
+       -470
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F09"
+     }
+    }
+   ]
+  },
+  {
+   "Name": "ForestHeart",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "Campfire_Heart",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       1,
+       3
+      ],
+      "Color": [
+       0.9,
+       0.45,
+       0.15
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       10,
+       0.9,
+       -566
+      ],
+      "Tags": [
+       "Campfire"
+      ]
+     },
+     "attributes": {
+      "CampfireId": "Heart",
+      "Zone": "ForestHeart"
+     }
+    },
+    {
+     "Name": "ArenaFloor",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1,
+       80,
+       80
+      ],
+      "Color": [
+       0.36,
+       0.3,
+       0.25
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         0.5,
+         -615
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "ArenaColumn1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       18,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       24.838748717265755,
+       9.5,
+       -607.3164746268052
+      ]
+     }
+    },
+    {
+     "Name": "ArenaColumn2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       18,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       5.765246194823849,
+       9.5,
+       -589.6472499260323
+      ]
+     }
+    },
+    {
+     "Name": "ArenaColumn3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       18,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -19.073502522441903,
+       9.5,
+       -597.3307752992271
+      ]
+     }
+    },
+    {
+     "Name": "ArenaColumn4",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       18,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -24.83874871726576,
+       9.5,
+       -622.6835253731948
+      ]
+     }
+    },
+    {
+     "Name": "ArenaColumn5",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       18,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -5.765246194823863,
+       9.5,
+       -640.3527500739677
+      ]
+     }
+    },
+    {
+     "Name": "ArenaColumn6",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       5,
+       18,
+       5
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       19.073502522441906,
+       9.5,
+       -632.6692247007729
+      ]
+     }
+    },
+    {
+     "Name": "BossArena_Vharok",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       6,
+       1,
+       6
+      ],
+      "Color": [
+       0.6,
+       0.1,
+       0.6
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 1,
+      "Position": [
+       0,
+       1,
+       -615
+      ],
+      "Tags": [
+       "BossArena"
+      ]
+     },
+     "attributes": {
+      "BossId": "Vharok",
+      "Radius": 40
+     }
+    },
+    {
+     "Name": "PrimevalTree_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       60,
+       16,
+       16
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         30,
+         -668
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "PrimevalTree_Crown",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       70,
+       40,
+       70
+      ],
+      "Color": [
+       0.35,
+       0.25,
+       0.45
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       68,
+       -668
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Fragment_F10",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       1.2,
+       2.2,
+       1.2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.35
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 0,
+      "Position": [
+       0,
+       2,
+       -652
+      ],
+      "Tags": [
+       "Fragment"
+      ]
+     },
+     "attributes": {
+      "FragmentId": "F10"
+     }
     }
    ]
   },
@@ -1115,7 +3595,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       15.206793391396015,
+       17.792786699357155,
        2.2,
        2.2
       ],
@@ -1133,8 +3613,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -19.238327648331623,
-         7.603396695698008,
+         -25.446810951079375,
+         8.896393349678577,
          -30
         ],
         "orientation": [
@@ -1164,9 +3644,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.603737892159415,
-       11.603737892159415,
-       11.603737892159415
+       11.656608821898697,
+       11.656608821898697,
+       11.656608821898697
       ],
       "Color": [
        0.22,
@@ -1179,8 +3659,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -19.238327648331623,
-       18.10772786443587,
+       -25.446810951079375,
+       20.70693890483183,
        -30
       ],
       "Shape": "Ball"
@@ -1192,7 +3672,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       18.287056034453514,
+       19.611936170435392,
        2.2,
        2.2
       ],
@@ -1210,8 +3690,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         16.724362866675428,
-         9.143528017226757,
+         16.606694275972195,
+         9.805968085217696,
          -30
         ],
         "orientation": [
@@ -1241,9 +3721,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.462755667650342,
-       10.462755667650342,
-       10.462755667650342
+       11.588515418110674,
+       11.588515418110674,
+       11.588515418110674
       ],
       "Color": [
        0.22,
@@ -1256,8 +3736,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       16.724362866675428,
-       20.9027449513661,
+       16.606694275972195,
+       22.50906502496306,
        -30
       ],
       "Shape": "Ball"
@@ -1269,7 +3749,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       18.059485865515363,
+       20.57539829287772,
        2.2,
        2.2
       ],
@@ -1287,8 +3767,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -16.57998924774707,
-         9.029742932757681,
+         -25.930959394666342,
+         10.28769914643886,
          -42
         ],
         "orientation": [
@@ -1318,9 +3798,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.149982633767939,
-       9.149982633767939,
-       9.149982633767939
+       10.138382128376596,
+       10.138382128376596,
+       10.138382128376596
       ],
       "Color": [
        0.22,
@@ -1333,8 +3813,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -16.57998924774707,
-       20.346981523957346,
+       -25.930959394666342,
+       23.109993824971866,
        -42
       ],
       "Shape": "Ball"
@@ -1346,7 +3826,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.558843388596951,
+       19.349221727073505,
        2.2,
        2.2
       ],
@@ -1364,8 +3844,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         20.33645683662386,
-         7.279421694298476,
+         19.857914424467108,
+         9.674610863536753,
          -42
         ],
         "orientation": [
@@ -1395,9 +3875,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.36285205337546,
-       9.36285205337546,
-       9.36285205337546
+       9.090251712222354,
+       9.090251712222354,
+       9.090251712222354
       ],
       "Color": [
        0.22,
@@ -1410,8 +3890,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       20.33645683662386,
-       16.899556401940817,
+       19.857914424467108,
+       21.621784655129094,
        -42
       ],
       "Shape": "Ball"
@@ -1423,7 +3903,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.614816997376305,
+       15.344387031252356,
        2.2,
        2.2
       ],
@@ -1441,8 +3921,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -20.24519189142514,
-         10.307408498688153,
+         -20.616952862997657,
+         7.672193515626178,
          -54
         ],
         "orientation": [
@@ -1472,9 +3952,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.495207844598582,
-       9.495207844598582,
-       9.495207844598582
+       9.468383177926928,
+       9.468383177926928,
+       9.468383177926928
       ],
       "Color": [
        0.22,
@@ -1487,8 +3967,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -20.24519189142514,
-       22.98861895852595,
+       -20.616952862997657,
+       17.711482825734087,
        -54
       ],
       "Shape": "Ball"
@@ -1500,7 +3980,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       19.019465779244715,
+       20.145863907780168,
        2.2,
        2.2
       ],
@@ -1518,8 +3998,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         18.232389646070146,
-         9.509732889622358,
+         16.589544193313102,
+         10.072931953890084,
          -54
         ],
         "orientation": [
@@ -1549,9 +4029,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.790835769828023,
-       12.790835769828023,
-       12.790835769828023
+       9.517360888074737,
+       9.517360888074737,
+       9.517360888074737
       ],
       "Color": [
        0.22,
@@ -1564,8 +4044,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       18.232389646070146,
-       22.21717472170172,
+       16.589544193313102,
+       22.52520412979885,
        -54
       ],
       "Shape": "Ball"
@@ -1577,7 +4057,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       17.17344379720624,
+       17.127597625065818,
        2.2,
        2.2
       ],
@@ -1595,8 +4075,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -21.77102948617499,
-         8.58672189860312,
+         -18.476148336969143,
+         8.563798812532909,
          -66
         ],
         "orientation": [
@@ -1626,9 +4106,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.905020422371681,
-       12.905020422371681,
-       12.905020422371681
+       12.485687896505198,
+       12.485687896505198,
+       12.485687896505198
       ],
       "Color": [
        0.22,
@@ -1641,8 +4121,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -21.77102948617499,
-       20.39969890279916,
+       -18.476148336969143,
+       20.249019599192117,
        -66
       ],
       "Shape": "Ball"
@@ -1654,7 +4134,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.867747672389434,
+       17.593499207594647,
        2.2,
        2.2
       ],
@@ -1672,8 +4152,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         16.465826806177564,
-         10.433873836194717,
+         16.805813012001387,
+         8.796749603797323,
          -66
         ],
         "orientation": [
@@ -1703,9 +4183,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.158437145326705,
-       10.158437145326705,
-       10.158437145326705
+       11.19775963657615,
+       11.19775963657615,
+       11.19775963657615
       ],
       "Color": [
        0.22,
@@ -1718,8 +4198,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       16.465826806177564,
-       23.40735695872111,
+       16.805813012001387,
+       20.392939116738685,
        -66
       ],
       "Shape": "Ball"
@@ -1731,7 +4211,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.942337904626946,
+       20.55423870268593,
        2.2,
        2.2
       ],
@@ -1749,8 +4229,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -17.442550833574376,
-         7.471168952313473,
+         -24.833838264415125,
+         10.277119351342964,
          -78
         ],
         "orientation": [
@@ -1780,9 +4260,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.233927296407737,
-       10.233927296407737,
-       10.233927296407737
+       12.45593787879406,
+       12.45593787879406,
+       12.45593787879406
       ],
       "Color": [
        0.22,
@@ -1795,8 +4275,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -17.442550833574376,
-       17.50081972872888,
+       -24.833838264415125,
+       23.668223172384444,
        -78
       ],
       "Shape": "Ball"
@@ -1808,7 +4288,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       15.4458110393915,
+       17.322372137693588,
        2.2,
        2.2
       ],
@@ -1826,8 +4306,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         24.161263591200314,
-         7.72290551969575,
+         18.78421064513897,
+         8.661186068846794,
          -78
         ],
         "orientation": [
@@ -1857,9 +4337,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.326400654649865,
-       11.326400654649865,
-       11.326400654649865
+       10.4350846613265,
+       10.4350846613265,
+       10.4350846613265
       ],
       "Color": [
        0.22,
@@ -1872,8 +4352,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       24.161263591200314,
-       18.277411203053965,
+       18.78421064513897,
+       19.931143303025213,
        -78
       ],
       "Shape": "Ball"
@@ -1885,7 +4365,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       16.97918034180585,
+       21.66184963171193,
        2.2,
        2.2
       ],
@@ -1903,8 +4383,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -22.38913468926184,
-         8.489590170902925,
+         -24.84192827198217,
+         10.830924815855965,
          -90
         ],
         "orientation": [
@@ -1934,9 +4414,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.190977862838231,
-       11.190977862838231,
-       11.190977862838231
+       9.603683623164436,
+       9.603683623164436,
+       9.603683623164436
       ],
       "Color": [
        0.22,
@@ -1949,8 +4429,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -22.38913468926184,
-       19.776924807515407,
+       -24.84192827198217,
+       24.06277053750304,
        -90
       ],
       "Shape": "Ball"
@@ -1962,7 +4442,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.476809359729861,
+       15.855654934556286,
        2.2,
        2.2
       ],
@@ -1980,8 +4460,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         16.62788974973323,
-         7.238404679864931,
+         17.762177284903704,
+         7.927827467278143,
          -90
         ],
         "orientation": [
@@ -2011,9 +4491,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.823834851277306,
-       9.823834851277306,
-       9.823834851277306
+       9.933344334723444,
+       9.933344334723444,
+       9.933344334723444
       ],
       "Color": [
        0.22,
@@ -2026,8 +4506,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       16.62788974973323,
-       16.932768072549187,
+       17.762177284903704,
+       18.338991018237145,
        -90
       ],
       "Shape": "Ball"
@@ -2039,7 +4519,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       16.513177363014332,
+       16.1019729543883,
        2.2,
        2.2
       ],
@@ -2057,8 +4537,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -52.275923056694026,
-         8.256588681507166,
+         -56.123864526125786,
+         8.05098647719415,
          -102
         ],
         "orientation": [
@@ -2088,9 +4568,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.342247454030556,
-       11.342247454030556,
-       11.342247454030556
+       9.016374413540255,
+       9.016374413540255,
+       9.016374413540255
       ],
       "Color": [
        0.22,
@@ -2103,8 +4583,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -52.275923056694026,
-       19.34873922652197,
+       -56.123864526125786,
+       18.356066557773367,
        -102
       ],
       "Shape": "Ball"
@@ -2116,7 +4596,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.35503585217993,
+       18.530729789651136,
        2.2,
        2.2
       ],
@@ -2134,8 +4614,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         50.99766996863682,
-         10.177517926089966,
+         54.58477501026308,
+         9.265364894825568,
          -102
         ],
         "orientation": [
@@ -2165,9 +4645,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.795977734918285,
-       11.795977734918285,
-       11.795977734918285
+       12.812391702100381,
+       12.812391702100381,
+       12.812391702100381
       ],
       "Color": [
        0.22,
@@ -2180,8 +4660,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       50.99766996863682,
-       23.3040302859095,
+       54.58477501026308,
+       21.733827715176233,
        -102
       ],
       "Shape": "Ball"
@@ -2193,7 +4673,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       18.20157203049161,
+       18.940741995273022,
        2.2,
        2.2
       ],
@@ -2211,8 +4691,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -53.74423710258671,
-         9.100786015245806,
+         -55.60844003149545,
+         9.470370997636511,
          -114
         ],
         "orientation": [
@@ -2242,9 +4722,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.500549982293716,
-       12.500549982293716,
-       12.500549982293716
+       11.704800329798005,
+       11.704800329798005,
+       11.704800329798005
       ],
       "Color": [
        0.22,
@@ -2257,8 +4737,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -53.74423710258671,
-       21.32670952606504,
+       -55.60844003149545,
+       21.866942077722523,
        -114
       ],
       "Shape": "Ball"
@@ -2270,7 +4750,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       21.841398779940658,
+       20.23975592564858,
        2.2,
        2.2
       ],
@@ -2288,8 +4768,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         50.879377648901865,
-         10.920699389970329,
+         58.29673107040566,
+         10.11987796282429,
          -114
         ],
         "orientation": [
@@ -2319,9 +4799,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.47226311301985,
-       9.47226311301985,
-       9.47226311301985
+       12.498052736537906,
+       12.498052736537906,
+       12.498052736537906
       ],
       "Color": [
        0.22,
@@ -2334,8 +4814,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       50.879377648901865,
-       24.20946455819562,
+       58.29673107040566,
+       23.364269109783056,
        -114
       ],
       "Shape": "Ball"
@@ -2347,7 +4827,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       15.215876277284039,
+       17.191830658562182,
        2.2,
        2.2
       ],
@@ -2365,8 +4845,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -55.571409295652494,
-         7.6079381386420195,
+         -54.74665234823888,
+         8.595915329281091,
          -126
         ],
         "orientation": [
@@ -2396,9 +4876,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.955852401903222,
-       10.955852401903222,
-       10.955852401903222
+       9.414148374841297,
+       9.414148374841297,
+       9.414148374841297
       ],
       "Color": [
        0.22,
@@ -2411,8 +4891,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -55.571409295652494,
-       17.954839377759846,
+       -54.74665234823888,
+       19.545367752272504,
        -126
       ],
       "Shape": "Ball"
@@ -2424,7 +4904,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.116566929702504,
+       14.538780926744199,
        2.2,
        2.2
       ],
@@ -2442,8 +4922,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         54.682158565343954,
-         10.058283464851252,
+         52.43573475133081,
+         7.269390463372099,
          -126
         ],
         "orientation": [
@@ -2473,9 +4953,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.292103761109535,
-       11.292103761109535,
-       11.292103761109535
+       9.835052741784658,
+       9.835052741784658,
+       9.835052741784658
       ],
       "Color": [
        0.22,
@@ -2488,8 +4968,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       54.682158565343954,
-       22.939592869979887,
+       52.43573475133081,
+       16.99754411219036,
        -126
       ],
       "Shape": "Ball"
@@ -2501,7 +4981,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       19.562362930189273,
+       14.420604831122136,
        2.2,
        2.2
       ],
@@ -2519,8 +4999,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -51.137475128480965,
-         9.781181465094637,
+         -54.3803755656264,
+         7.210302415561068,
          -138
         ],
         "orientation": [
@@ -2550,9 +5030,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.377479508420073,
-       11.377479508420073,
-       11.377479508420073
+       9.000933127605427,
+       9.000933127605427,
+       9.000933127605427
       ],
       "Color": [
        0.22,
@@ -2565,8 +5045,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -51.137475128480965,
-       22.40673280729429,
+       -54.3803755656264,
+       16.670838113023493,
        -138
       ],
       "Shape": "Ball"
@@ -2578,7 +5058,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.71974224410033,
+       16.908879376276566,
        2.2,
        2.2
       ],
@@ -2596,8 +5076,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         52.56205331301413,
-         10.359871122050166,
+         52.710250576158174,
+         8.454439688138283,
          -138
         ],
         "orientation": [
@@ -2627,9 +5107,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.77872438043175,
-       12.77872438043175,
-       12.77872438043175
+       9.102003546664584,
+       9.102003546664584,
+       9.102003546664584
       ],
       "Color": [
        0.22,
@@ -2642,8 +5122,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       52.56205331301413,
-       23.91442333920827,
+       52.710250576158174,
+       19.18438026294271,
        -138
       ],
       "Shape": "Ball"
@@ -2655,7 +5135,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.485355420777758,
+       15.188403882647131,
        2.2,
        2.2
       ],
@@ -2673,8 +5153,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -54.641522054746744,
-         7.242677710388879,
+         -56.298482914519354,
+         7.594201941323566,
          -150
         ],
         "orientation": [
@@ -2704,9 +5184,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.805968085217696,
-       11.805968085217696,
-       11.805968085217696
+       10.009031026228309,
+       10.009031026228309,
+       10.009031026228309
       ],
       "Color": [
        0.22,
@@ -2719,8 +5199,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -54.641522054746744,
-       17.436847442082183,
+       -56.298482914519354,
+       17.690661639204208,
        -150
       ],
       "Shape": "Ball"
@@ -2732,7 +5212,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.57539829287772,
+       14.98273784609756,
        2.2,
        2.2
       ],
@@ -2750,8 +5230,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         57.930959394666345,
-         10.28769914643886,
+         54.54914407669798,
+         7.49136892304878,
          -150
         ],
         "orientation": [
@@ -2781,9 +5261,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.138382128376596,
-       10.138382128376596,
-       10.138382128376596
+       12.39574770593846,
+       12.39574770593846,
+       12.39574770593846
       ],
       "Color": [
        0.22,
@@ -2796,8 +5276,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       57.930959394666345,
-       23.109993824971866,
+       54.54914407669798,
+       18.081674772582176,
        -150
       ],
       "Shape": "Ball"
@@ -2809,7 +5289,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.180503424444709,
+       17.870677251330157,
        2.2,
        2.2
       ],
@@ -2827,8 +5307,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -54.68652715884188,
-         7.090251712222354,
+         -55.26192621411953,
+         8.935338625665079,
          -162
         ],
         "orientation": [
@@ -2858,9 +5338,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.846781145199063,
-       10.846781145199063,
-       10.846781145199063
+       9.343538646224662,
+       9.343538646224662,
+       9.343538646224662
       ],
       "Color": [
        0.22,
@@ -2873,8 +5353,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -54.68652715884188,
-       16.892198710744474,
+       -55.26192621411953,
+       20.206561912886322,
        -162
       ],
       "Shape": "Ball"
@@ -2886,7 +5366,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.471635354650484,
+       16.118055133737442,
        2.2,
        2.2
       ],
@@ -2904,8 +5384,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         49.17095794481732,
-         7.235817677325242,
+         54.398450867701015,
+         8.059027566868721,
          -162
         ],
         "orientation": [
@@ -2935,9 +5415,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.072931953890084,
-       12.072931953890084,
-       12.072931953890084
+       12.315421512486243,
+       12.315421512486243,
+       12.315421512486243
       ],
       "Color": [
        0.22,
@@ -2950,8 +5430,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       49.17095794481732,
-       17.489868343123007,
+       54.398450867701015,
+       19.196910511859002,
        -162
       ],
       "Shape": "Ball"
@@ -2963,7 +5443,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       17.127597625065818,
+       21.607884582997617,
        2.2,
        2.2
       ],
@@ -2981,8 +5461,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -50.476148336969146,
-         8.563798812532909,
+         -52.16167004731674,
+         10.803942291498808,
          -174
         ],
         "orientation": [
@@ -3012,9 +5492,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.485687896505198,
-       12.485687896505198,
-       12.485687896505198
+       11.113029580168499,
+       11.113029580168499,
+       11.113029580168499
       ],
       "Color": [
        0.22,
@@ -3027,8 +5507,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -50.476148336969146,
-       20.249019599192117,
+       -52.16167004731674,
+       24.386141978039742,
        -174
       ],
       "Shape": "Ball"
@@ -3040,7 +5520,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       18.3955192731523,
+       14.216339931377348,
        2.2,
        2.2
       ],
@@ -3058,8 +5538,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         52.49187400949331,
-         9.19775963657615,
+         55.8022069811748,
+         7.108169965688674,
          -174
         ],
         "orientation": [
@@ -3089,9 +5569,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.53353530576605,
-       12.53353530576605,
-       12.53353530576605
+       11.112437763753226,
+       11.112437763753226,
+       11.112437763753226
       ],
       "Color": [
        0.22,
@@ -3104,8 +5584,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       52.49187400949331,
-       21.528903099593812,
+       55.8022069811748,
+       16.994449372315653,
        -174
       ],
       "Shape": "Ball"
@@ -3117,7 +5597,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       16.227368516111177,
+       19.569574287262416,
        2.2,
        2.2
       ],
@@ -3135,8 +5615,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -56.63984469698515,
-         8.113684258055589,
+         -58.04327521202768,
+         9.784787143631208,
          -186
         ],
         "orientation": [
@@ -3166,9 +5646,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.661186068846794,
-       10.661186068846794,
-       10.661186068846794
+       10.044460788917448,
+       10.044460788917448,
+       10.044460788917448
       ],
       "Color": [
        0.22,
@@ -3181,8 +5661,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -56.63984469698515,
-       18.892665033322874,
+       -58.04327521202768,
+       22.080689484491778,
        -186
       ],
       "Shape": "Ball"
@@ -3194,7 +5674,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       21.66184963171193,
+       20.17550326721625,
        2.2,
        2.2
       ],
@@ -3212,8 +5692,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         56.84192827198217,
-         10.830924815855965,
+         53.16929424174035,
+         10.087751633608125,
          -186
         ],
         "orientation": [
@@ -3243,9 +5723,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.603683623164436,
-       9.603683623164436,
-       9.603683623164436
+       11.130369589971515,
+       11.130369589971515,
+       11.130369589971515
       ],
       "Color": [
        0.22,
@@ -3258,8 +5738,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       56.84192827198217,
-       24.06277053750304,
+       53.16929424174035,
+       22.958095664709127,
        -186
       ],
       "Shape": "Ball"
@@ -3271,7 +5751,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       15.866688669446889,
+       15.78433338482548,
        2.2,
        2.2
       ],
@@ -3289,8 +5769,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -50.31956866819536,
-         7.9333443347234445,
+         -54.307654965334336,
+         7.89216669241274,
          -198
         ],
         "orientation": [
@@ -3320,9 +5800,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.939850921365426,
-       10.939850921365426,
-       10.939850921365426
+       12.246044987094379,
+       12.246044987094379,
+       12.246044987094379
       ],
       "Color": [
        0.22,
@@ -3335,8 +5815,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -50.31956866819536,
-       18.601651399788246,
+       -54.307654965334336,
+       18.845844631599075,
        -198
       ],
       "Shape": "Ball"
@@ -3348,7 +5828,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.03274882708051,
+       20.44862867828534,
        2.2,
        2.2
       ],
@@ -3366,8 +5846,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         50.62746619298538,
-         7.016374413540255,
+         57.96840159122662,
+         10.22431433914267,
          -198
         ],
         "orientation": [
@@ -3397,9 +5877,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.675786004501312,
-       10.675786004501312,
-       10.675786004501312
+       12.273331773301493,
+       12.273331773301493,
+       12.273331773301493
       ],
       "Color": [
        0.22,
@@ -3412,8 +5892,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       50.62746619298538,
-       16.701695328205837,
+       57.96840159122662,
+       23.51696162161071,
        -198
       ],
       "Shape": "Ball"
@@ -3425,7 +5905,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       18.530729789651136,
+       18.141109793948043,
        2.2,
        2.2
       ],
@@ -3443,8 +5923,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -19.692535728947256,
-         9.265364894825568,
+         -53.58717643022109,
+         9.070554896974022,
          -210
         ],
         "orientation": [
@@ -3474,9 +5954,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.812391702100381,
-       12.812391702100381,
-       12.812391702100381
+       10.422250173419833,
+       10.422250173419833,
+       10.422250173419833
       ],
       "Color": [
        0.22,
@@ -3489,8 +5969,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -19.692535728947256,
-       21.733827715176233,
+       -53.58717643022109,
+       20.746672337303004,
        -210
       ],
       "Shape": "Ball"
@@ -3502,7 +5982,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       18.123931464566226,
+       16.23534831239224,
        2.2,
        2.2
       ],
@@ -3520,8 +6000,8 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         22.904936571359777,
-         9.061965732283113,
+         52.19555952795445,
+         8.11767415619612,
          -210
         ],
         "orientation": [
@@ -3551,9 +6031,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.470370997636511,
-       11.470370997636511,
-       11.470370997636511
+       10.036697453071026,
+       10.036697453071026,
+       10.036697453071026
       ],
       "Color": [
        0.22,
@@ -3566,8 +6046,8 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       22.904936571359777,
-       20.991524213975353,
+       52.19555952795445,
+       18.744522675659997,
        -210
       ],
       "Shape": "Ball"
@@ -3579,7 +6059,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       19.40960065959601,
+       17.577821422133788,
        2.2,
        2.2
       ],
@@ -3597,9 +6077,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         42.0,
-         9.704800329798005,
-         0.0
+         -58.695605534389365,
+         8.788910711066894,
+         -222
         ],
         "orientation": [
          [
@@ -3628,9 +6108,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.21597157289516,
-       9.21597157289516,
-       9.21597157289516
+       12.74808480510497,
+       12.74808480510497,
+       12.74808480510497
       ],
       "Color": [
        0.22,
@@ -3643,9 +6123,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       42.0,
-       21.7135935528198,
-       0.0
+       -58.695605534389365,
+       20.76484262341003,
+       -222
       ],
       "Shape": "Ball"
      }
@@ -3656,7 +6136,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       21.196264080463617,
+       16.91708708289493,
        2.2,
        2.2
       ],
@@ -3674,9 +6154,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         33.97871376374779,
-         10.598132040231809,
-         24.68698059628387
+         58.68500441924933,
+         8.458543541447465,
+         -222
         ],
         "orientation": [
          [
@@ -3705,9 +6185,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.11987796282429,
-       12.11987796282429,
-       12.11987796282429
+       9.881849291984949,
+       9.881849291984949,
+       9.881849291984949
       ],
       "Color": [
        0.22,
@@ -3720,9 +6200,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       33.97871376374779,
-       24.22623357116969,
-       24.68698059628387
+       58.68500441924933,
+       19.387549405891168,
+       -222
       ],
       "Shape": "Ball"
      }
@@ -3733,7 +6213,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       20.99610547307581,
+       15.634986906209784,
        2.2,
        2.2
       ],
@@ -3751,9 +6231,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         12.978713763747793,
-         10.498052736537906,
-         39.944373684396446
+         -53.37694314393522,
+         7.817493453104892,
+         -234
         ],
         "orientation": [
          [
@@ -3782,9 +6262,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       12.191492484786265,
-       12.191492484786265,
-       12.191492484786265
+       11.496265589751273,
+       11.496265589751273,
+       11.496265589751273
       ],
       "Color": [
        0.22,
@@ -3797,9 +6277,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       12.978713763747793,
-       24.043978594272378,
-       39.944373684396446
+       -53.37694314393522,
+       18.5090533036476,
+       -234
       ],
       "Shape": "Ball"
      }
@@ -3810,7 +6290,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       17.13903125513015,
+       17.835787410092305,
        2.2,
        2.2
       ],
@@ -3828,9 +6308,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -12.978713763747788,
-         8.569515627565075,
-         39.94437368439645
+         57.88304869095503,
+         8.917893705046152,
+         -234
         ],
         "orientation": [
          [
@@ -3859,9 +6339,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.595915329281091,
-       10.595915329281091,
-       10.595915329281091
+       11.611912171364036,
+       11.611912171364036,
+       11.611912171364036
       ],
       "Color": [
        0.22,
@@ -3874,9 +6354,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -12.978713763747788,
-       19.788010087450424,
-       39.94437368439645
+       57.88304869095503,
+       20.738765452933315,
+       -234
       ],
       "Shape": "Ball"
      }
@@ -3887,7 +6367,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.828296749682593,
+       19.284685201639153,
        2.2,
        2.2
       ],
@@ -3905,9 +6385,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -33.97871376374779,
-         7.414148374841297,
-         24.686980596283878
+         -52.59344940515266,
+         9.642342600819577,
+         -246
         ],
         "orientation": [
          [
@@ -3936,9 +6416,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       11.537158262742835,
-       11.537158262742835,
-       11.537158262742835
+       12.639108550206892,
+       12.639108550206892,
+       12.639108550206892
       ],
       "Color": [
        0.22,
@@ -3951,9 +6431,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -33.97871376374779,
-       17.712586315368302,
-       24.686980596283878
+       -52.59344940515266,
+       22.444462339190878,
+       -246
       ],
       "Shape": "Ball"
      }
@@ -3964,7 +6444,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.4979825729495,
+       17.824261956752004,
        2.2,
        2.2
       ],
@@ -3982,9 +6462,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -42.0,
-         7.24899128647475,
-         5.143516556418883e-15
+         57.25098321881321,
+         8.912130978376002,
+         -246
         ],
         "orientation": [
          [
@@ -4013,9 +6493,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.2693904633721,
-       9.2693904633721,
-       9.2693904633721
+       9.714086873350293,
+       9.714086873350293,
+       9.714086873350293
       ],
       "Color": [
        0.22,
@@ -4028,9 +6508,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -42.0,
-       16.815330188792526,
-       5.143516556418883e-15
+       57.25098321881321,
+       20.252783675089578,
+       -246
       ],
       "Shape": "Ball"
      }
@@ -4041,7 +6521,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       15.670105483569316,
+       20.406588551173527,
        2.2,
        2.2
       ],
@@ -4059,9 +6539,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -33.9787137637478,
-         7.835052741784658,
-         -24.686980596283867
+         -54.32762039905227,
+         10.203294275586764,
+         -258
         ],
         "orientation": [
          [
@@ -4090,9 +6570,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.64921275108839,
-       9.64921275108839,
-       9.64921275108839
+       12.886629155928633,
+       12.886629155928633,
+       12.886629155928633
       ],
       "Color": [
        0.22,
@@ -4105,9 +6585,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -33.9787137637478,
-       18.082408671341412,
-       -24.686980596283867
+       -54.32762039905227,
+       23.628245840155685,
+       -258
       ],
       "Shape": "Ball"
      }
@@ -4118,7 +6598,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       16.720429217858747,
+       21.574376051719142,
        2.2,
        2.2
       ],
@@ -4136,9 +6616,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         -12.978713763747798,
-         8.360214608929374,
-         -39.944373684396446
+         54.80970772507391,
+         10.787188025859571,
+         -258
         ],
         "orientation": [
          [
@@ -4167,9 +6647,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.210302415561067,
-       9.210302415561067,
-       9.210302415561067
+       11.89919466253686,
+       11.89919466253686,
+       11.89919466253686
       ],
       "Color": [
        0.22,
@@ -4182,9 +6662,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       -12.978713763747798,
-       19.023004821749012,
-       -39.944373684396446
+       54.80970772507391,
+       24.549174717353356,
+       -258
       ],
       "Shape": "Ball"
      }
@@ -4195,7 +6675,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.001866255210853,
+       15.209205603051918,
        2.2,
        2.2
       ],
@@ -4213,9 +6693,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         12.978713763747784,
-         7.0009331276054265,
-         -39.94437368439645
+         -52.88926857108505,
+         7.604602801525959,
+         -270
         ],
         "orientation": [
          [
@@ -4244,9 +6724,9 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       9.605059729117713,
-       9.605059729117713,
-       9.605059729117713
+       12.619408382932956,
+       12.619408382932956,
+       12.619408382932956
       ],
       "Color": [
        0.22,
@@ -4259,9 +6739,9 @@
       "CanCollide": true,
       "Transparency": 0,
       "Position": [
-       12.978713763747784,
-       16.40313118749028,
-       -39.94437368439645
+       -52.88926857108505,
+       18.364057698785157,
+       -270
       ],
       "Shape": "Ball"
      }
@@ -4272,7 +6752,7 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       14.811714944180771,
+       20.612083828203097,
        2.2,
        2.2
       ],
@@ -4290,9 +6770,9 @@
       "CFrame": {
        "CFrame": {
         "position": [
-         33.97871376374779,
-         7.405857472090386,
-         -24.68698059628388
+         53.02322016120712,
+         10.306041914101549,
+         -270
         ],
         "orientation": [
          [
@@ -4321,9 +6801,3859 @@
      "Properties": {
       "Anchored": true,
       "Size": [
-       10.454439688138283,
-       10.454439688138283,
-       10.454439688138283
+       12.921223773788121,
+       12.921223773788121,
+       12.921223773788121
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.02322016120712,
+       23.842389771650126,
+       -270
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree43_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.389280351894232,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.45285258510252,
+         9.194640175947116,
+         -282
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree43_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.5239354080378,
+       9.5239354080378,
+       9.5239354080378
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.45285258510252,
+       20.770264203903682,
+       -282
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree44_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.197397357390646,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         58.79623124066435,
+         9.598698678695323,
+         -282
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree44_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.106324188396222,
+       11.106324188396222,
+       11.106324188396222
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       58.79623124066435,
+       21.9739784044897,
+       -282
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree45_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.973943423915234,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.0366660573024,
+         10.486971711957617,
+         -294
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree45_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.304621007260884,
+       12.304621007260884,
+       12.304621007260884
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.0366660573024,
+       24.050098675730453,
+       -294
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree46_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.343733221361752,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.76284367955817,
+         8.171866610680876,
+         -294
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree46_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.962157570233337,
+       9.962157570233337,
+       9.962157570233337
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.76284367955817,
+       18.834272613920085,
+       -294
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree47_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.35210042203635,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -53.815553566891474,
+         8.676050211018175,
+         -306
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree47_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.524294706013933,
+       9.524294706013933,
+       9.524294706013933
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -53.815553566891474,
+       19.733174098539834,
+       -306
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree48_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.66528789177387,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         54.47648816767281,
+         8.832643945886934,
+         -306
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree48_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.3333950881674,
+       11.3333950881674,
+       11.3333950881674
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       54.47648816767281,
+       20.498636663815716,
+       -306
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree49_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.341768674741314,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.94439789496346,
+         10.670884337370657,
+         -318
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree49_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.006595764480926,
+       11.006595764480926,
+       11.006595764480926
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.94439789496346,
+       24.093417615861544,
+       -318
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree50_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.14963894324336,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         55.66454609911016,
+         7.07481947162168,
+         -318
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree50_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.760499649539774,
+       10.760499649539774,
+       10.760499649539774
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       55.66454609911016,
+       16.839763855628306,
+       -318
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree51_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.39336360393777,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -52.027527372779495,
+         10.196681801968886,
+         -330
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree51_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.689386848853795,
+       9.689386848853795,
+       9.689386848853795
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -52.027527372779495,
+       22.815710316151222,
+       -330
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree52_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.451804999217707,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         57.07635289313164,
+         9.225902499608853,
+         -330
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree52_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.303928604195455,
+       10.303928604195455,
+       10.303928604195455
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       57.07635289313164,
+       21.02778715026657,
+       -330
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree53_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.274179802923804,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.88809312416173,
+         10.137089901461902,
+         -342
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree53_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.424437668419714,
+       9.424437668419714,
+       9.424437668419714
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.88809312416173,
+       22.630289220028732,
+       -342
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree54_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.215336563718253,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.73946024730163,
+         8.107668281859127,
+         -342
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree54_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.089044395021954,
+       12.089044395021954,
+       12.089044395021954
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.73946024730163,
+       19.237597662473743,
+       -342
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree55_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.079945140720135,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.93210570659534,
+         10.039972570360067,
+         -354
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree55_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.649952145319247,
+       12.649952145319247,
+       12.649952145319247
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.93210570659534,
+       23.242433177049946,
+       -354
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree56_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.044425046809774,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         56.28769519041122,
+         9.022212523404887,
+         -354
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree56_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.048645889741277,
+       11.048645889741277,
+       11.048645889741277
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       56.28769519041122,
+       20.806586519245094,
+       -354
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree57_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.266283500633367,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.166420545854365,
+         9.133141750316684,
+         -366
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree57_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.912145272128338,
+       10.912145272128338,
+       10.912145272128338
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.166420545854365,
+       20.994319818665453,
+       -366
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree58_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.012283854244746,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         56.894525175262004,
+         10.506141927122373,
+         -366
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree58_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.768722353214303,
+       12.768722353214303,
+       12.768722353214303
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       56.894525175262004,
+       24.20446444254832,
+       -366
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree59_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.54613627210787,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.916596645484006,
+         10.773068136053935,
+         -378
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree59_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.359999133572824,
+       12.359999133572824,
+       12.359999133572824
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.916596645484006,
+       24.636136055501076,
+       -378
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree60_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.536944706200348,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.851353680689265,
+         8.768472353100174,
+         -378
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree60_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.290184398625954,
+       9.290184398625954,
+       9.290184398625954
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.851353680689265,
+       19.859490805856836,
+       -378
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree61_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.355777162479164,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -52.51184536880872,
+         9.677888581239582,
+         -390
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree61_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.13574406869262,
+       12.13574406869262,
+       12.13574406869262
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -52.51184536880872,
+       22.38971317965232,
+       -390
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree62_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.72895906230557,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.08112636638084,
+         9.864479531152785,
+         -390
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree62_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.641026060765483,
+       11.641026060765483,
+       11.641026060765483
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.08112636638084,
+       22.63921557749694,
+       -390
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree63_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.74035826133107,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -58.17982983559953,
+         10.870179130665536,
+         -402
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree63_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.878351323207678,
+       9.878351323207678,
+       9.878351323207678
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -58.17982983559953,
+       24.20994609213299,
+       -402
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree64_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.898086199927043,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         54.787798123020906,
+         8.949043099963522,
+         -402
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree64_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.959485818977146,
+       12.959485818977146,
+       12.959485818977146
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       54.787798123020906,
+       21.13795765467133,
+       -402
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree65_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.452174543981112,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -53.13026241916615,
+         8.726087271990556,
+         -414
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree65_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.062420231217436,
+       11.062420231217436,
+       11.062420231217436
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -53.13026241916615,
+       20.21777960178547,
+       -414
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree66_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.54820454670155,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.37021266293752,
+         8.274102273350776,
+         -414
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree66_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.888603340564742,
+       11.888603340564742,
+       11.888603340564742
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.37021266293752,
+       19.520355381842737,
+       -414
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree67_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.523664814421615,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.878351734658295,
+         8.761832407210807,
+         -426
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree67_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.072327923308151,
+       9.072327923308151,
+       9.072327923308151
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.878351734658295,
+       19.791746795248653,
+       -426
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree68_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.098098275707645,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         56.367489517243044,
+         9.049049137853823,
+         -426
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree68_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.257163170363008,
+       9.257163170363008,
+       9.257163170363008
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       56.367489517243044,
+       20.412389068298396,
+       -426
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree69_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.773567669176593,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -57.51854139268306,
+         10.886783834588297,
+         -438
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree69_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.419118377091326,
+       9.419118377091326,
+       9.419118377091326
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -57.51854139268306,
+       24.128347263449424,
+       -438
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree70_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.23197944054314,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.27711732939847,
+         10.11598972027157,
+         -438
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree70_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.081784390085236,
+       10.081784390085236,
+       10.081784390085236
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.27711732939847,
+       22.752425538064447,
+       -438
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree71_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.291310529468873,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.95577926894363,
+         10.645655264734437,
+         -450
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree71_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.275915919125126,
+       12.275915919125126,
+       12.275915919125126
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.95577926894363,
+       24.360289509250155,
+       -450
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree72_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.35337206809417,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.04557563182855,
+         10.676686034047085,
+         -450
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree72_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.282379701573015,
+       11.282379701573015,
+       11.282379701573015
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.04557563182855,
+       24.173966993487426,
+       -450
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree73_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.46021209952757,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -52.62623545492765,
+         7.230106049763785,
+         -462
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree73_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.752822285394192,
+       11.752822285394192,
+       11.752822285394192
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -52.62623545492765,
+       17.398417670876118,
+       -462
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree74_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.5067976723213,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.50689866306233,
+         10.75339883616065,
+         -462
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree74_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.537758025186239,
+       11.537758025186239,
+       11.537758025186239
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.50689866306233,
+       24.39123717861786,
+       -462
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree75_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.84982909097719,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -52.58619768364163,
+         10.424914545488596,
+         -474
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree75_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.266490139497845,
+       9.266490139497845,
+       9.266490139497845
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -52.58619768364163,
+       23.166451625851654,
+       -474
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree76_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.713214218277088,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         55.17641464681047,
+         8.356607109138544,
+         -474
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree76_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.21225647383214,
+       11.21225647383214,
+       11.21225647383214
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       55.17641464681047,
+       19.516278336735123,
+       -474
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree77_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.033798399162631,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -53.87501822674218,
+         7.5168991995813155,
+         -486
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree77_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.107660106108687,
+       11.107660106108687,
+       11.107660106108687
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -53.87501822674218,
+       17.8107134256898,
+       -486
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree78_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.291592732780892,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.766160255554986,
+         7.645796366390446,
+         -486
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree78_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.20151886883813,
+       9.20151886883813,
+       9.20151886883813
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.766160255554986,
+       17.591972449990426,
+       -486
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree79_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.440043183033815,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.18394682854934,
+         8.220021591516907,
+         -498
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree79_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.037993019994245,
+       12.037993019994245,
+       12.037993019994245
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.18394682854934,
+       19.449541438032377,
+       -498
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree80_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.42319907370343,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         55.50062019903287,
+         7.711599536851715,
+         -498
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree80_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.388004088511435,
+       10.388004088511435,
+       10.388004088511435
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       55.50062019903287,
+       18.02020009583129,
+       -498
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree81_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.122768939640157,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -53.75314129336659,
+         7.061384469820078,
+         -510
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree81_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.932321533729255,
+       11.932321533729255,
+       11.932321533729255
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -53.75314129336659,
+       17.10584932307247,
+       -510
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree82_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.79808510814187,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.32619547545645,
+         8.899042554070935,
+         -510
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree82_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.738571359129416,
+       12.738571359129416,
+       12.738571359129416
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.32619547545645,
+       20.982727947924225,
+       -510
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree83_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.457420686275327,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -57.732440982392,
+         8.728710343137664,
+         -522
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree83_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.980006293830462,
+       10.980006293830462,
+       10.980006293830462
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -57.732440982392,
+       20.20242225973294,
+       -522
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree84_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.053487617241323,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         54.7516025289311,
+         9.026743808620662,
+         -522
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree84_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.750966942762766,
+       11.750966942762766,
+       11.750966942762766
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       54.7516025289311,
+       20.991229352932017,
+       -522
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree85_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.658292346115594,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.39893237792232,
+         10.329146173057797,
+         -534
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree85_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.826901606584912,
+       11.826901606584912,
+       11.826901606584912
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.39893237792232,
+       23.615017747761822,
+       -534
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree86_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.780417441241855,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         54.83288396094789,
+         8.390208720620928,
+         -534
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree86_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.217554147153745,
+       9.217554147153745,
+       9.217554147153745
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       54.83288396094789,
+       19.084805978030293,
+       -534
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree87_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.92711358546342,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -52.495059709088046,
+         9.96355679273171,
+         -546
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree87_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.022375507078788,
+       10.022375507078788,
+       10.022375507078788
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -52.495059709088046,
+       22.432707462233118,
+       -546
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree88_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.730151854806053,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.59139410895551,
+         10.365075927403026,
+         -546
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree88_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.482151284990993,
+       12.482151284990993,
+       12.482151284990993
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.59139410895551,
+       23.8506896760538,
+       -546
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree89_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.937703471939892,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -53.97353297614641,
+         7.968851735969946,
+         -558
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree89_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.172233970321342,
+       10.172233970321342,
+       10.172233970321342
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -53.97353297614641,
+       18.480761964520227,
+       -558
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree90_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.566596865869922,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         53.10273057880444,
+         8.783298432934961,
+         -558
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree90_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.052972267989556,
+       10.052972267989556,
+       10.052972267989556
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       53.10273057880444,
+       20.079839932867312,
+       -558
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree91_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.694292266900906,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         42.0,
+         10.847146133450453,
+         0.0
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree91_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.890491991785506,
+       12.890491991785506,
+       12.890491991785506
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       42.0,
+       24.916915264847283,
+       0.0
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree92_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.376586992951268,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         33.97871376374779,
+         9.188293496475634,
+         24.68698059628387
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree92_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.977785975767574,
+       9.977785975767574,
+       9.977785975767574
       ],
       "Color": [
        0.22,
@@ -4337,7 +10667,623 @@
       "Transparency": 0,
       "Position": [
        33.97871376374779,
-       17.42532486621534,
+       20.87103348689316,
+       24.68698059628387
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree93_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.725334160470283,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         12.978713763747793,
+         10.862667080235141,
+         39.944373684396446
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree93_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.23819167071181,
+       10.23819167071181,
+       10.23819167071181
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       12.978713763747793,
+       24.284882078148236,
+       39.944373684396446
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree94_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.852671336111896,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -12.978713763747788,
+         8.426335668055948,
+         39.94437368439645
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree94_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.00427565977969,
+       9.00427565977969,
+       9.00427565977969
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -12.978713763747788,
+       19.10374025105682,
+       39.94437368439645
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree95_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.053012852900657,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -33.97871376374779,
+         8.526506426450329,
+         24.686980596283878
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree95_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.898574509588745,
+       10.898574509588745,
+       10.898574509588745
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -33.97871376374779,
+       19.777656480297843,
+       24.686980596283878
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree96_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.0221120510112,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -42.0,
+         9.0110560255056,
+         5.143516556418883e-15
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree96_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.803920216804128,
+       9.803920216804128,
+       9.803920216804128
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -42.0,
+       20.47309210521223,
+       5.143516556418883e-15
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree97_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.037885116114502,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -33.9787137637478,
+         9.018942558057251,
+         -24.686980596283867
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree97_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.019802126015772,
+       9.019802126015772,
+       9.019802126015772
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -33.9787137637478,
+       20.292835647618446,
+       -24.686980596283867
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree98_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.113349486413256,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -12.978713763747798,
+         8.056674743206628,
+         -39.944373684396446
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree98_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.359013591523919,
+       9.359013591523919,
+       9.359013591523919
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -12.978713763747798,
+       18.453102884294236,
+       -39.944373684396446
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree99_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.196089362311405,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         12.978713763747784,
+         8.598044681155702,
+         -39.94437368439645
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree99_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.166667830764611,
+       9.166667830764611,
+       9.166667830764611
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       12.978713763747784,
+       19.487756320002557,
+       -39.94437368439645
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree100_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.17995317576206,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         33.97871376374779,
+         7.08997658788103,
+         -24.68698059628388
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree100_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.216978240897355,
+       10.216978240897355,
+       10.216978240897355
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       33.97871376374779,
+       16.7341977359864,
        -24.68698059628388
       ],
       "Shape": "Ball"
@@ -4356,8 +11302,8 @@
       "Anchored": true,
       "Size": [
        2,
-       40,
-       300
+       60,
+       740
       ],
       "Color": [
        1,
@@ -4371,8 +11317,8 @@
       "Transparency": 1,
       "Position": [
        -62,
-       20,
-       -90
+       30,
+       -318
       ]
      }
     },
@@ -4383,8 +11329,8 @@
       "Anchored": true,
       "Size": [
        2,
-       40,
-       300
+       60,
+       740
       ],
       "Color": [
        1,
@@ -4398,8 +11344,8 @@
       "Transparency": 1,
       "Position": [
        62,
-       20,
-       -90
+       30,
+       -318
       ]
      }
     },
@@ -4410,7 +11356,7 @@
       "Anchored": true,
       "Size": [
        126,
-       40,
+       60,
        2
       ],
       "Color": [
@@ -4425,8 +11371,8 @@
       "Transparency": 1,
       "Position": [
        0,
-       20,
-       -232
+       30,
+       -688
       ]
      }
     },

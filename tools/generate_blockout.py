@@ -72,11 +72,11 @@ for i, (x, z, rot) in enumerate([(-22, -18, 20), (22, -16, -25), (-24, 18, 160),
 camp.append(part("QuestNPC_Ilen", [2, 1, 2], [-8, 0.9, -4], STONE, tags=["QuestNPC"],
                  attributes={"NpcId": "Ilen", "NameKey": "Npc_Ilen"}))
 camp.append(part("TrainingArea", [16, 0.3, 12], [-14, 0.55, 12], DIRT, "Ground"))
-camp.append(part("AffinityShrine", [3, 3, 3], [14, 1.9, -6], [0.6, 0.5, 1], "Neon", shape="Ball",
-                 tags=["AffinityShrine"]))  # provisional: se moverá a las Ruinas de Aelith
-camp.append(part("QuestMarker_Shrine", [2, 2, 2], [14, 3, -6], [1, 0.85, 0.3], tags=["QuestMarker"],
-                 attributes={"MarkerId": "Shrine", "Radius": 8}, transparency=1, can_collide=False))
-camp.append(part("ShrineBase", [5, 0.6, 5], [14, 0.7, -6], STONE, "Slate"))
+# Altar para CAMBIAR de afinidad (decisión aprobada: cambio gratis en el campamento).
+# La primera elección se hace en el Santuario de las Ruinas de Aelith.
+camp.append(part("AffinityAltar", [2, 2, 2], [-14, 1.6, -4], [0.6, 0.5, 1], "Neon", shape="Ball",
+                 tags=["AffinityShrine"], attributes={"ChangeOnly": True}))
+camp.append(part("AltarBase", [4, 0.6, 4], [-14, 0.7, -4], STONE, "Slate"))
 camp.append(part("NoticeBoard", [6, 4, 0.5], [6, 2.4, -14], WOOD, "WoodPlanks"))
 
 path = []
@@ -94,12 +94,10 @@ spawns = [
     ("EnemySpawn_Thornling_L2", [22, 1, -150], 2, 4),
     ("EnemySpawn_Thornling_L3", [-5, 1, -190], 3, 4),
 ]
-# Provisional: Lanzadores en la Linde (misión 4) y Centinelas junto a las ruinas
-# (en el juego final los Centinelas viven en las Ruinas de Aelith, Zona 2).
+# Lanzadores en la Linde (misión 4).
 spawns = [(n, p, l, c, "Thornling") for n, p, l, c in spawns]
 spawns += [
     ("EnemySpawn_Spitter_L3", [30, 1, -195], 3, 3, "Spitter"),
-    ("EnemySpawn_Sentry_L5", [-30, 1, -150], 5, 2, "Sentry"),
 ]
 for name, pos, level, count, enemy_id in spawns:
     verge.append(part(name, [4, 1, 4], pos, [1, 0.2, 0.2], tags=["EnemySpawn"],
@@ -111,13 +109,100 @@ verge.append(part("QuestMarker_VergeRuins", [2, 2, 2], [-37, 2, -177], [1, 0.85,
                   attributes={"MarkerId": "VergeRuins", "Radius": 12}, transparency=1, can_collide=False))
 verge.append(part("RuinFloor", [20, 0.5, 20], [-37, 0.45, -177], STONE, "Cobblestone"))
 
+CRYSTAL = [1, 0.85, 0.35]
+STONE_DARK = [0.4, 0.4, 0.42]
+GRASS_WITHERED = [0.33, 0.36, 0.27]
+ROOT_PURPLE = [0.45, 0.2, 0.55]
+
+
+def fragment(fid, pos):
+    return part(f"Fragment_{fid}", [1.2, 2.2, 1.2], pos, CRYSTAL, "Neon", tags=["Fragment"],
+                attributes={"FragmentId": fid}, can_collide=False)
+
+
+def campfire(cid, zone, pos):
+    return part(f"Campfire_{cid}", [3, 1, 3], pos, [0.9, 0.45, 0.15], "Neon", tags=["Campfire"],
+                attributes={"CampfireId": cid, "Zone": zone})
+
+
+def spawn(enemy_id, level, count, pos, zone):
+    return part(f"EnemySpawn_{enemy_id}_L{level}", [4, 1, 4], pos, [1, 0.2, 0.2], tags=["EnemySpawn"],
+                attributes={"EnemyId": enemy_id, "Level": level, "Count": count, "Zone": zone})
+
+
+# Fragmentos de la Linde (F01 en las ruinas pequeñas: misión 3)
+verge += [fragment("F01", [-37, 2, -180]), fragment("F02", [46, 1.8, -118]), fragment("F03", [-50, 1.8, -205])]
+
+# Caminos entre zonas
+for i, z in enumerate([-225, -390, -550]):
+    path.append(part(f"PathLink{i + 1}", [12, 0.3, 30], [0, 0.25, z], DIRT, "Ground"))
+
+# ---------- ZONA 2: Ruinas de Aelith (niveles 6–12)
+ruins = [part("RuinsGround", [110, 0.4, 140], [0, 0.2, -310], STONE_DARK, "Cobblestone"),
+         campfire("Ruins", "AelithRuins", [12, 0.9, -248])]
+ruins.append(part("Shrine_Plaza", [24, 0.6, 24], [0, 0.6, -315], STONE, "Marble"))
+ruins.append(part("AffinityShrine", [3, 3, 3], [0, 3, -315], [0.6, 0.5, 1], "Neon", shape="Ball",
+                  tags=["AffinityShrine"]))
+ruins.append(part("QuestMarker_Shrine", [2, 2, 2], [0, 4.5, -315], [1, 0.85, 0.3], tags=["QuestMarker"],
+                  attributes={"MarkerId": "Shrine", "Radius": 10}, transparency=1, can_collide=False))
+for i, (x, z, h, w) in enumerate([(-45, -270, 10, 16), (45, -285, 7, 20), (-48, -345, 12, 14), (46, -360, 6, 18),
+                                   (-20, -378, 9, 22), (22, -262, 5, 10)]):
+    ruins.append(part(f"RuinWall{i + 1}", [w, h, 2], [x, h / 2 + 0.4, z], STONE, "Slate", rotation=random.uniform(-20, 20)))
+for i in range(8):
+    a = i / 8 * math.tau
+    h = random.choice([4, 7, 10, 12])
+    ruins.append(part(f"PlazaPillar{i + 1}", [2.4, h, 2.4], [math.cos(a) * 16, h / 2 + 0.4, -315 + math.sin(a) * 16],
+                      STONE, "Marble"))
+ruins += [
+    spawn("Thornling", 6, 4, [0, 1, -268], "AelithRuins"),
+    spawn("Sentry", 7, 2, [-28, 1, -292], "AelithRuins"),
+    spawn("Sentry", 9, 3, [28, 1, -345], "AelithRuins"),
+    spawn("Spitter", 8, 3, [-30, 1, -362], "AelithRuins"),
+    fragment("F04", [-44, 1.8, -300]), fragment("F05", [44, 1.8, -330]), fragment("F06", [-20, 10.5, -378]),
+]
+
+# ---------- ZONA 3: Hondonada Marchita (niveles 12–18)
+hollow = [part("HollowGround", [110, 0.4, 140], [0, 0.2, -470], GRASS_WITHERED, "Grass"),
+          campfire("Hollow", "WitheredHollow", [-12, 0.9, -408])]
+for i in range(14):
+    x, z = random.uniform(-48, 48), random.uniform(-530, -410)
+    hollow.append(part(f"CorruptRoot{i + 1}", [random.uniform(8, 16), 1.2, 1.2], [x, 0.9, z], ROOT_PURPLE, "Neon",
+                       rotation=random.uniform(0, 180)))
+hollow.append(part("FallenTree", [40, 3, 3], [-18, 1.8, -470], WOOD, "Wood", rotation=35))
+hollow += [
+    spawn("Thornling", 12, 4, [-22, 1, -430], "WitheredHollow"),
+    spawn("Spitter", 13, 3, [26, 1, -455], "WitheredHollow"),
+    spawn("Sentry", 14, 2, [-26, 1, -500], "WitheredHollow"),
+    spawn("Thornling", 15, 4, [22, 1, -515], "WitheredHollow"),
+    spawn("Spitter", 16, 3, [0, 1, -535], "WitheredHollow"),
+    fragment("F07", [-46, 1.8, -448]), fragment("F08", [46, 1.8, -492]), fragment("F09", [-18, 4.5, -470]),
+]
+
+# ---------- Corazón del Bosque: arena del jefe (semanas 17–18)
+heart = [campfire("Heart", "ForestHeart", [10, 0.9, -566])]
+arena_floor = part("ArenaFloor", [1, 80, 80], [0, 0.5, -615], [0.36, 0.3, 0.25], "Ground", shape="Cylinder")
+arena_floor["Properties"].pop("Position")
+arena_floor["Properties"]["CFrame"] = {"CFrame": {"position": [0, 0.5, -615], "orientation": [[0, -1, 0], [1, 0, 0], [0, 0, 1]]}}
+heart.append(arena_floor)
+for i in range(6):
+    a = i / 6 * math.tau + 0.3
+    heart.append(part(f"ArenaColumn{i + 1}", [5, 18, 5], [math.cos(a) * 26, 9.5, -615 + math.sin(a) * 26], STONE, "Slate"))
+heart.append(part("BossArena_Vharok", [6, 1, 6], [0, 1, -615], [0.6, 0.1, 0.6], tags=["BossArena"],
+                  attributes={"BossId": "Vharok", "Radius": 40}, transparency=1, can_collide=False))
+trunk = part("PrimevalTree_Trunk", [60, 16, 16], [0, 30, -668], WOOD, "Wood", shape="Cylinder")
+trunk["Properties"].pop("Position")
+trunk["Properties"]["CFrame"] = {"CFrame": {"position": [0, 30, -668], "orientation": [[0, -1, 0], [1, 0, 0], [0, 0, 1]]}}
+heart.append(trunk)
+heart.append(part("PrimevalTree_Crown", [70, 40, 70], [0, 68, -668], [0.35, 0.25, 0.45], "Grass", shape="Ball"))
+heart.append(fragment("F10", [0, 2, -652]))
+
 trees = []
 n = 0
-for z in range(-30, -215, -12):
+for z in range(-30, -560, -12):
     for side in (-1, 1):
         x = side * random.uniform(16, 26)
-        if -200 < z < -95:
-            x = side * random.uniform(48, 58)  # el claro es más ancho
+        if z < -95:
+            x = side * random.uniform(52, 59)  # las zonas son más anchas
         n += 1
         trees += tree(f"Tree{n}", x, z)
 for i in range(10):
@@ -127,9 +212,9 @@ for i in range(10):
 
 walls = []
 for name, size, pos in [
-    ("WallWest", [2, 40, 300], [-62, 20, -90]),
-    ("WallEast", [2, 40, 300], [62, 20, -90]),
-    ("WallNorth", [126, 40, 2], [0, 20, -232]),
+    ("WallWest", [2, 60, 740], [-62, 30, -318]),
+    ("WallEast", [2, 60, 740], [62, 30, -318]),
+    ("WallNorth", [126, 60, 2], [0, 30, -688]),
     ("WallSouth", [126, 40, 2], [0, 20, 52]),
 ]:
     walls.append(part(name, size, pos, [1, 1, 1], transparency=1))
@@ -140,6 +225,9 @@ model = {
         folder("DawnCamp", camp),
         folder("Path", path),
         folder("EmeraldVerge", verge),
+        folder("AelithRuins", ruins),
+        folder("WitheredHollow", hollow),
+        folder("ForestHeart", heart),
         folder("Trees", trees),
         folder("InvisibleWalls", walls),
     ],

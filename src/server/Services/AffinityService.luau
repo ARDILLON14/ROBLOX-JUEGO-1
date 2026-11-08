@@ -247,17 +247,18 @@ local function onRequestAbility(player: Player, kind: unknown, aim: unknown)
 	end
 end
 
-local function isNearShrine(player: Player): boolean
+-- Santuario cercano (o nil). Los que tienen el atributo ChangeOnly solo sirven para CAMBIAR de afinidad.
+local function getNearShrine(player: Player): BasePart?
 	local root = getRoot(player)
 	if not root then
-		return false
+		return nil
 	end
 	for _, shrine in CollectionService:GetTagged(TAG_SHRINE) do
 		if shrine:IsA("BasePart") and (shrine.Position - root.Position).Magnitude <= Affinities.ShrineRange then
-			return true
+			return shrine
 		end
 	end
-	return false
+	return nil
 end
 
 local function onRequestChooseAffinity(player: Player, affinityId: unknown)
@@ -265,7 +266,11 @@ local function onRequestChooseAffinity(player: Player, affinityId: unknown)
 		return
 	end
 	local data = DataService:get(player)
-	if not data or data.Level < Affinities.RequiredLevel or not isNearShrine(player) then
+	local shrine = getNearShrine(player)
+	if not data or not shrine or data.Level < Affinities.RequiredLevel then
+		return
+	end
+	if shrine:GetAttribute("ChangeOnly") and data.Affinity.Selected == "" then
 		return
 	end
 	if data.Affinity.Selected == affinityId then
@@ -298,6 +303,8 @@ local function setupShrine(shrine: Instance)
 		end
 		if data.Level < Affinities.RequiredLevel then
 			notify(player, "AffinityLocked", { level = Affinities.RequiredLevel })
+		elseif shrine:GetAttribute("ChangeOnly") and data.Affinity.Selected == "" then
+			notify(player, "AffinityChangeOnly", {})
 		else
 			notify(player, "OpenAffinityChoice", {})
 		end

@@ -20,6 +20,7 @@ local Config = Shared:WaitForChild("Config")
 local Levels = require(Config:WaitForChild("Levels"))
 local Quests = require(Config:WaitForChild("Quests"))
 local Affinities = require(Config:WaitForChild("Affinities"))
+local World = require(Config:WaitForChild("World"))
 local Strings = require(Config:WaitForChild("Strings"))
 local Net = require(Shared:WaitForChild("Net"))
 local PlayerDataController = require(script.Parent:WaitForChild("PlayerDataController"))
@@ -317,6 +318,15 @@ function HudController:Start()
 			showToast(Strings.get("WeaponReward", { name = Strings.get(params.nameKey) }))
 		elseif kind == "ItemCollected" then
 			showToast(Strings.get("ItemCollected", { name = Strings.get(params.nameKey) }))
+		elseif kind == "CampfireDiscovered" then
+			local info = World.Campfires[params.campfireId]
+			showToast(Strings.get("CampfireDiscovered", { name = if info then Strings.get(info.NameKey) else "" }))
+		elseif kind == "FastTravelBlocked" then
+			showToast(Strings.get("FastTravelBlocked"))
+		elseif kind == "FragmentFound" then
+			showToast(Strings.get("FragmentFound", { count = params.count, total = 10 }))
+		elseif kind == "AffinityChangeOnly" then
+			showToast(Strings.get("AffinityChangeOnly"))
 		elseif kind == "AffinityLocked" then
 			showToast(Strings.get("AffinityLocked", { level = params.level }))
 		elseif kind == "AffinityChosen" or kind == "MasteryRank" then

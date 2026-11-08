@@ -41,6 +41,7 @@ export type HitKind = "Normal" | "Crit"
 local CombatService = {}
 
 local states: { [Player]: CombatState } = {}
+local lastHurt: { [Player]: number } = {}
 local damageListeners: { (Player, Model, number) -> () } = {}
 -- Modificadores de daño (p. ej., la guardia del Centinela). Devuelven (daño, tipo).
 type DamageModifier = (player: Player, target: Model, amount: number, kind: string, source: string) -> (number, string)
@@ -288,6 +289,7 @@ function CombatService:Start()
 	end
 	Players.PlayerRemoving:Connect(function(player: Player)
 		states[player] = nil
+		lastHurt[player] = nil
 	end)
 end
 
@@ -358,6 +360,11 @@ function CombatService:isBusy(player: Player): boolean
 	return state ~= nil and os.clock() < state.busyUntil
 end
 
+-- Última vez (os.clock) que el jugador recibió daño (para el viaje rápido "fuera de combate").
+function CombatService:getLastHurtTime(player: Player): number
+	return lastHurt[player] or -math.huge
+end
+
 -- Añade un modificador de daño (lo usa EnemyService para la guardia del Centinela).
 function CombatService:addDamageModifier(modifier: DamageModifier)
 	table.insert(damageModifiers, modifier)
@@ -401,6 +408,7 @@ function CombatService:damagePlayer(player: Player, amount: number, unblockable:
 
 	if finalAmount > 0 then
 		humanoid:TakeDamage(finalAmount)
+		lastHurt[player] = now
 	end
 	if result ~= "Dodged" and player.Character then
 		local kind = if result == "Hit" then "Received" else result
