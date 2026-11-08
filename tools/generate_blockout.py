@@ -52,19 +52,74 @@ def folder(name, children):
     return {"Name": name, "ClassName": "Folder", "Children": children}
 
 
-def tree(name, x, z, height=None):
+def lerp_color(a, b, t):
+    return [a[i] + (b[i] - a[i]) * t for i in range(3)]
+
+
+# Paletas de hojas por estilo (estética anime: colores saturados con variación suave)
+LEAF_PALETTES = {
+    "lush": ([0.24, 0.55, 0.22], [0.42, 0.68, 0.25]),
+    "ruins": ([0.25, 0.45, 0.24], [0.35, 0.55, 0.3]),
+    "withered": ([0.35, 0.22, 0.4], [0.5, 0.3, 0.45]),
+}
+
+
+def upright(inst, x, y, z):
+    """Pone de pie un cilindro (Roblox los crea acostados en el eje X)."""
+    inst["Properties"].pop("Position", None)
+    inst["Properties"]["CFrame"] = {"CFrame": {"position": [x, y, z], "orientation": [[0, -1, 0], [1, 0, 0], [0, 0, 1]]}}
+    return inst
+
+
+def tree(name, x, z, height=None, style="lush"):
+    """Árbol estilizado: tronco + 2-3 copas de distinto tamaño y tono."""
     h = height or random.uniform(14, 22)
-    trunk = part(f"{name}_Trunk", [h, 2.2, 2.2], [x, h / 2, z], WOOD, "Wood", shape="Cylinder")
-    # Cilindro acostado en X: se gira 90° en Z para ponerlo de pie
-    trunk["Properties"].pop("Position")
-    trunk["Properties"]["CFrame"] = {"CFrame": {"position": [x, h / 2, z], "orientation": [[0, -1, 0], [1, 0, 0], [0, 0, 1]]}}
-    r = random.uniform(9, 13)
-    leaves = part(f"{name}_Leaves", [r, r, r], [x, h + r * 0.25, z], LEAF, "Grass", shape="Ball")
-    return [trunk, leaves]
+    low, high = LEAF_PALETTES[style]
+    trunk_color = [0.32, 0.22, 0.2] if style == "withered" else WOOD
+    parts = [upright(part(f"{name}_Trunk", [h, 2.2, 2.2], [x, h / 2, z], trunk_color, "Wood", shape="Cylinder"), x, h / 2, z)]
+    for j in range(random.choice([2, 3])):
+        r = random.uniform(7, 12) * (1 - j * 0.18)
+        ox, oz = random.uniform(-2.5, 2.5), random.uniform(-2.5, 2.5)
+        color = lerp_color(low, high, random.random())
+        parts.append(part(f"{name}_Leaves{j + 1}", [r, r * 0.85, r], [x + ox, h + j * 3 - 1, z + oz], color, "Grass",
+                          shape="Ball", can_collide=False))
+    return parts
+
+
+def rock(name, x, z, size=None):
+    s = size or random.uniform(2, 5)
+    color = lerp_color([0.45, 0.45, 0.45], [0.6, 0.58, 0.55], random.random())
+    return part(name, [s * random.uniform(1, 1.6), s * random.uniform(0.6, 1), s], [x, s * 0.35, z], color, "Slate",
+                rotation=random.uniform(0, 180))
+
+
+def bush(name, x, z, style="lush"):
+    low, high = LEAF_PALETTES[style]
+    r = random.uniform(2.5, 4.5)
+    return part(name, [r * 1.3, r, r * 1.3], [x, r * 0.35, z], lerp_color(low, high, random.random()), "Grass",
+                shape="Ball", can_collide=False)
+
+
+def flower(name, x, z, color):
+    return part(name, [0.6, 0.6, 0.6], [x, 0.7, z], color, "SmoothPlastic", shape="Ball", can_collide=False)
+
+
+def zone_volume(zone, size, pos):
+    """Volumen invisible que indica la zona (cambia el ambiente y muestra el nombre al entrar)."""
+    return part(f"ZoneVolume_{zone}", size, pos, [1, 1, 1], tags=["ZoneVolume"], attributes={"Zone": zone},
+                transparency=1, can_collide=False)
 
 
 camp = []
 camp.append(part("CampGround", [70, 0.4, 70], [0, 0.2, 0], GRASS, "Grass"))
+camp.append(zone_volume("DawnCamp", [80, 1, 90], [0, 0.5, 0]))
+for i, (x, z, col) in enumerate([(-30, 30, [0.8, 0.2, 0.2]), (30, 30, [0.95, 0.75, 0.2])]):
+    camp.append(upright(part(f"BannerPole{i + 1}", [10, 0.5, 0.5], [x, 5, z], WOOD, "Wood", shape="Cylinder"), x, 5, z))
+    camp.append(part(f"Banner{i + 1}", [0.2, 4, 2.5], [x, 7.5, z + 1.4], col, "Fabric"))
+for i in range(6):
+    a = i / 6 * math.tau
+    camp.append(part(f"Log{i + 1}", [3, 0.8, 0.8], [8 + math.cos(a) * 3.5, 0.8, 8 + math.sin(a) * 3.5], WOOD, "Wood",
+                     rotation=math.degrees(a)))
 camp.append(part("Campfire_Camp", [3, 1, 3], [8, 0.9, 8], [0.9, 0.45, 0.15], "Neon",
                  tags=["Campfire"], attributes={"CampfireId": "Camp", "Zone": "DawnCamp"}))
 for i, (x, z, rot) in enumerate([(-22, -18, 20), (22, -16, -25), (-24, 18, 160), (24, 20, 200)]):
@@ -87,6 +142,7 @@ for i in range(9):
 
 verge = []
 verge.append(part("VergeClearing", [110, 0.4, 130], [0, 0.2, -150], GRASS_DARK, "Grass"))
+verge.append(zone_volume("EmeraldVerge", [120, 1, 180], [0, 0.5, -140]))
 verge.append(part("Campfire_Verge", [3, 1, 3], [10, 0.9, -95], [0.9, 0.45, 0.15], "Neon",
                   tags=["Campfire"], attributes={"CampfireId": "Verge", "Zone": "EmeraldVerge"}))
 spawns = [
@@ -139,6 +195,7 @@ for i, z in enumerate([-225, -390, -550]):
 
 # ---------- ZONA 2: Ruinas de Aelith (niveles 6–12)
 ruins = [part("RuinsGround", [110, 0.4, 140], [0, 0.2, -310], STONE_DARK, "Cobblestone"),
+         zone_volume("AelithRuins", [120, 1, 160], [0, 0.5, -310]),
          campfire("Ruins", "AelithRuins", [12, 0.9, -248])]
 ruins.append(part("Shrine_Plaza", [24, 0.6, 24], [0, 0.6, -315], STONE, "Marble"))
 ruins.append(part("AffinityShrine", [3, 3, 3], [0, 3, -315], [0.6, 0.5, 1], "Neon", shape="Ball",
@@ -163,11 +220,18 @@ ruins += [
 
 # ---------- ZONA 3: Hondonada Marchita (niveles 12–18)
 hollow = [part("HollowGround", [110, 0.4, 140], [0, 0.2, -470], GRASS_WITHERED, "Grass"),
+          zone_volume("WitheredHollow", [120, 1, 160], [0, 0.5, -470]),
           campfire("Hollow", "WitheredHollow", [-12, 0.9, -408])]
 for i in range(14):
     x, z = random.uniform(-48, 48), random.uniform(-530, -410)
     hollow.append(part(f"CorruptRoot{i + 1}", [random.uniform(8, 16), 1.2, 1.2], [x, 0.9, z], ROOT_PURPLE, "Neon",
                        rotation=random.uniform(0, 180)))
+for i in range(16):
+    x, z = random.uniform(-50, 50), random.uniform(-535, -405)
+    hollow.append(upright(part(f"MushroomStem{i + 1}", [1.4, 0.5, 0.5], [x, 0.9, z], [0.85, 0.8, 0.75], "SmoothPlastic",
+                               shape="Cylinder", can_collide=False), x, 0.9, z))
+    hollow.append(part(f"MushroomCap{i + 1}", [1.6, 0.8, 1.6], [x, 1.7, z], [0.55, 0.3, 0.95], "Neon", shape="Ball",
+                       can_collide=False))
 hollow.append(part("FallenTree", [40, 3, 3], [-18, 1.8, -470], WOOD, "Wood", rotation=35))
 hollow += [
     spawn("Thornling", 12, 4, [-22, 1, -430], "WitheredHollow"),
@@ -179,7 +243,7 @@ hollow += [
 ]
 
 # ---------- Corazón del Bosque: arena del jefe (semanas 17–18)
-heart = [campfire("Heart", "ForestHeart", [10, 0.9, -566])]
+heart = [campfire("Heart", "ForestHeart", [10, 0.9, -566]), zone_volume("ForestHeart", [120, 1, 140], [0, 0.5, -620])]
 arena_floor = part("ArenaFloor", [1, 80, 80], [0, 0.5, -615], [0.36, 0.3, 0.25], "Ground", shape="Cylinder")
 arena_floor["Properties"].pop("Position")
 arena_floor["Properties"]["CFrame"] = {"CFrame": {"position": [0, 0.5, -615], "orientation": [[0, -1, 0], [1, 0, 0], [0, 0, 1]]}}
@@ -197,6 +261,14 @@ heart.append(trunk)
 heart.append(part("PrimevalTree_Crown", [70, 40, 70], [0, 68, -668], [0.35, 0.25, 0.45], "Grass", shape="Ball"))
 heart.append(fragment("F10", [0, 2, -652]))
 
+def style_for(z):
+    if z < -395:
+        return "withered"
+    if z < -235:
+        return "ruins"
+    return "lush"
+
+
 trees = []
 n = 0
 for z in range(-30, -560, -12):
@@ -205,11 +277,29 @@ for z in range(-30, -560, -12):
         if z < -95:
             x = side * random.uniform(52, 59)  # las zonas son más anchas
         n += 1
-        trees += tree(f"Tree{n}", x, z)
+        trees += tree(f"Tree{n}", x, z, style=style_for(z))
 for i in range(10):
     a = i / 10 * math.tau
     n += 1
     trees += tree(f"Tree{n}", math.cos(a) * 42, math.sin(a) * 42)
+
+# Decoración: rocas, arbustos y flores (sin colisión salvo las rocas)
+decor = []
+FLOWER_COLORS = [[1, 0.85, 0.3], [1, 0.5, 0.6], [0.6, 0.75, 1], [1, 1, 1]]
+for i in range(70):
+    z = random.uniform(-545, -25)
+    side = random.choice((-1, 1))
+    x = side * (random.uniform(30, 50) if z < -95 else random.uniform(10, 15))
+    decor.append(rock(f"Rock{i + 1}", x, z))
+for i in range(90):
+    z = random.uniform(-545, 20)
+    side = random.choice((-1, 1))
+    x = side * (random.uniform(25, 54) if z < -95 else random.uniform(9, 30))
+    decor.append(bush(f"Bush{i + 1}", x, z, style=style_for(z)))
+for i in range(120):
+    z = random.uniform(-230, 25)
+    x = random.uniform(-50, 50) if z < -95 else random.choice((-1, 1)) * random.uniform(8, 30)
+    decor.append(flower(f"Flower{i + 1}", x, z, random.choice(FLOWER_COLORS)))
 
 walls = []
 for name, size, pos in [
@@ -230,6 +320,7 @@ model = {
         folder("WitheredHollow", hollow),
         folder("ForestHeart", heart),
         folder("Trees", trees),
+        folder("Decor", decor),
         folder("InvisibleWalls", walls),
     ],
 }

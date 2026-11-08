@@ -133,7 +133,7 @@ local function buildGui()
 	-- Misión (derecha)
 	local questFrame = Instance.new("Frame")
 	questFrame.AnchorPoint = Vector2.new(1, 0)
-	questFrame.Position = UDim2.new(1, -16, 0.32, 0)
+	questFrame.Position = UDim2.new(1, -16, 0.4, 0) -- debajo de la lista de jugadores (hasta 12)
 	questFrame.Size = UDim2.new(0.24, 0, 0, 74)
 	questFrame.BackgroundColor3 = COLOR_PANEL
 	questFrame.BackgroundTransparency = 0.4

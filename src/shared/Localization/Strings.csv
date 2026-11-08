@@ -173,3 +173,5 @@ Quality_Low,Low,,,Baja,Low
 DeathTitle,You have fallen,,,Has caído,You have fallen
 DeathRespawn,Respawning at {place}…,,,Reapareciendo en {place}…,Respawning at {place}…
 DeathTip,You don't lose experience or items.,,,No pierdes experiencia ni objetos.,You don't lose experience or items.
+ZoneLevels,Lv {min}–{max},,,Nv {min}–{max},Lv {min}–{max}
+ZoneBoss,Boss area,,,Zona del jefe,Boss area

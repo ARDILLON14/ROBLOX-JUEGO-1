@@ -1,7 +1,7 @@
 --!strict
 --[[
 	SettingsUiController (cliente) — pantalla de Ajustes (GDD v1 §10).
-	Se abre con la tecla P o con el botón de engranaje (arriba a la izquierda, pensado también para móvil).
+	Se abre con la tecla P o con el botón de engranaje (a la derecha, encima de la misión; pensado también para móvil).
 	Opciones: idioma, volumen de efectos, números de daño de otros jugadores y calidad de efectos.
 	La sensibilidad de la cámara se cambia en el menú de Roblox (los juegos no pueden modificarla).
 ]]
@@ -105,7 +105,9 @@ local function buildGui()
 
 	-- Botón de engranaje (siempre visible).
 	local gear = Instance.new("TextButton")
-	gear.Position = UDim2.new(0, 16, 0, 56)
+	-- A la derecha, encima del panel de misión (arriba a la izquierda está el chat de Roblox).
+	gear.AnchorPoint = Vector2.new(1, 0)
+	gear.Position = UDim2.new(1, -16, 0.4, -48)
 	gear.Size = UDim2.fromOffset(40, 40)
 	gear.BackgroundColor3 = Color3.fromRGB(15, 20, 25)
 	gear.BackgroundTransparency = 0.3
