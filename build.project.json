@@ -70,6 +70,9 @@
           ],
           "TopSurface": "Smooth"
         }
+      },
+      "VerdantiaBlockout": {
+        "$path": "map/VerdantiaBlockout.model.json"
       }
     },
     "Lighting": {

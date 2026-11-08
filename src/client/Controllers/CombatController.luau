@@ -368,4 +368,9 @@ function CombatController:getState(): State
 	return state
 end
 
+-- Segundos que faltan para poder esquivar otra vez (lo usa el HUD).
+function CombatController:getDodgeCooldownRemaining(): number
+	return math.max(0, CombatConfig.DodgeCooldown - (os.clock() - lastDodgeTime))
+end
+
 return CombatController

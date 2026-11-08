@@ -1,0 +1,4265 @@
+{
+ "ClassName": "Model",
+ "Children": [
+  {
+   "Name": "DawnCamp",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "CampGround",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       70,
+       0.4,
+       70
+      ],
+      "Color": [
+       0.42,
+       0.62,
+       0.31
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.2,
+       0
+      ]
+     }
+    },
+    {
+     "Name": "Campfire_Camp",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       1,
+       3
+      ],
+      "Color": [
+       0.9,
+       0.45,
+       0.15
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       8,
+       0.9,
+       8
+      ],
+      "Tags": [
+       "Campfire"
+      ]
+     },
+     "attributes": {
+      "CampfireId": "Camp",
+      "Zone": "DawnCamp"
+     }
+    },
+    {
+     "Name": "Tent1",
+     "ClassName": "WedgePart",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8,
+       6,
+       10
+      ],
+      "Color": [
+       0.85,
+       0.75,
+       0.55
+      ],
+      "Material": "Fabric",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -22,
+         3.4,
+         -18
+        ],
+        "orientation": [
+         [
+          0.9396926207859084,
+          0,
+          0.3420201433256687
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.3420201433256687,
+          0,
+          0.9396926207859084
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tent2",
+     "ClassName": "WedgePart",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8,
+       6,
+       10
+      ],
+      "Color": [
+       0.85,
+       0.75,
+       0.55
+      ],
+      "Material": "Fabric",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         22,
+         3.4,
+         -16
+        ],
+        "orientation": [
+         [
+          0.9063077870366499,
+          0,
+          -0.42261826174069944
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0.42261826174069944,
+          0,
+          0.9063077870366499
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tent3",
+     "ClassName": "WedgePart",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8,
+       6,
+       10
+      ],
+      "Color": [
+       0.85,
+       0.75,
+       0.55
+      ],
+      "Material": "Fabric",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -24,
+         3.4,
+         18
+        ],
+        "orientation": [
+         [
+          -0.9396926207859083,
+          0,
+          0.3420201433256689
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          -0.3420201433256689,
+          0,
+          -0.9396926207859083
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tent4",
+     "ClassName": "WedgePart",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       8,
+       6,
+       10
+      ],
+      "Color": [
+       0.85,
+       0.75,
+       0.55
+      ],
+      "Material": "Fabric",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         24,
+         3.4,
+         20
+        ],
+        "orientation": [
+         [
+          -0.9396926207859084,
+          0,
+          -0.34202014332566866
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0.34202014332566866,
+          0,
+          -0.9396926207859084
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "QuestNPC_Ilen",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2,
+       1,
+       2
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -8,
+       0.9,
+       -4
+      ],
+      "Tags": [
+       "QuestNPC"
+      ]
+     },
+     "attributes": {
+      "NpcId": "Ilen",
+      "NameKey": "Npc_Ilen"
+     }
+    },
+    {
+     "Name": "TrainingArea",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16,
+       0.3,
+       12
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -14,
+       0.55,
+       12
+      ]
+     }
+    },
+    {
+     "Name": "NoticeBoard",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       6,
+       4,
+       0.5
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "WoodPlanks",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       6,
+       2.4,
+       -14
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "Name": "Path",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "Path1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0.0,
+       0.25,
+       -40
+      ]
+     }
+    },
+    {
+     "Name": "Path2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       3.865306123426146,
+       0.25,
+       -60
+      ]
+     }
+    },
+    {
+     "Name": "Path3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       5.912698379930761,
+       0.25,
+       -80
+      ]
+     }
+    },
+    {
+     "Name": "Path4",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       5.179256199893244,
+       0.25,
+       -100
+      ]
+     }
+    },
+    {
+     "Name": "Path5",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       2.0099289009354306,
+       0.25,
+       -120
+      ]
+     }
+    },
+    {
+     "Name": "Path6",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -2.104699366137719,
+       0.25,
+       -140
+      ]
+     }
+    },
+    {
+     "Name": "Path7",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -5.2294546344815265,
+       0.25,
+       -160
+      ]
+     }
+    },
+    {
+     "Name": "Path8",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -5.894715675745996,
+       0.25,
+       -180
+      ]
+     }
+    },
+    {
+     "Name": "Path9",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       0.3,
+       22
+      ],
+      "Color": [
+       0.55,
+       0.42,
+       0.28
+      ],
+      "Material": "Ground",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -3.7875998272339295,
+       0.25,
+       -200
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "Name": "EmeraldVerge",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "VergeClearing",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       110,
+       0.4,
+       130
+      ],
+      "Color": [
+       0.3,
+       0.5,
+       0.25
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       0,
+       0.2,
+       -150
+      ]
+     }
+    },
+    {
+     "Name": "Campfire_Verge",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       1,
+       3
+      ],
+      "Color": [
+       0.9,
+       0.45,
+       0.15
+      ],
+      "Material": "Neon",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       10,
+       0.9,
+       -95
+      ],
+      "Tags": [
+       "Campfire"
+      ]
+     },
+     "attributes": {
+      "CampfireId": "Verge",
+      "Zone": "EmeraldVerge"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Thornling_L1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -18,
+       1,
+       -115
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Thornling",
+      "Level": 1,
+      "Count": 3,
+      "Zone": "EmeraldVerge"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Thornling_L2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       22,
+       1,
+       -150
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Thornling",
+      "Level": 2,
+      "Count": 4,
+      "Zone": "EmeraldVerge"
+     }
+    },
+    {
+     "Name": "EnemySpawn_Thornling_L3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "Color": [
+       1,
+       0.2,
+       0.2
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -5,
+       1,
+       -190
+      ],
+      "Tags": [
+       "EnemySpawn"
+      ]
+     },
+     "attributes": {
+      "EnemyId": "Thornling",
+      "Level": 3,
+      "Count": 4,
+      "Zone": "EmeraldVerge"
+     }
+    },
+    {
+     "Name": "RuinPillar1",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       8,
+       3
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -38,
+       4.4,
+       -175
+      ]
+     }
+    },
+    {
+     "Name": "RuinPillar2",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       5,
+       3
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -30,
+       2.9,
+       -182
+      ]
+     }
+    },
+    {
+     "Name": "RuinPillar3",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       10,
+       3
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -44,
+       5.4,
+       -168
+      ]
+     }
+    },
+    {
+     "Name": "RuinPillar4",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       3,
+       3,
+       3
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Slate",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -36,
+       1.9,
+       -186
+      ]
+     }
+    },
+    {
+     "Name": "RuinFloor",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20,
+       0.5,
+       20
+      ],
+      "Color": [
+       0.55,
+       0.55,
+       0.52
+      ],
+      "Material": "Cobblestone",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -37,
+       0.45,
+       -177
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "Name": "Trees",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "Tree1_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.206793391396015,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -19.238327648331623,
+         7.603396695698008,
+         -30
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree1_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.603737892159415,
+       11.603737892159415,
+       11.603737892159415
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -19.238327648331623,
+       18.10772786443587,
+       -30
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree2_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.287056034453514,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         16.724362866675428,
+         9.143528017226757,
+         -30
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree2_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.462755667650342,
+       10.462755667650342,
+       10.462755667650342
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       16.724362866675428,
+       20.9027449513661,
+       -30
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree3_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.059485865515363,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -16.57998924774707,
+         9.029742932757681,
+         -42
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree3_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.149982633767939,
+       9.149982633767939,
+       9.149982633767939
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -16.57998924774707,
+       20.346981523957346,
+       -42
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree4_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.558843388596951,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         20.33645683662386,
+         7.279421694298476,
+         -42
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree4_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.36285205337546,
+       9.36285205337546,
+       9.36285205337546
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       20.33645683662386,
+       16.899556401940817,
+       -42
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree5_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.614816997376305,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -20.24519189142514,
+         10.307408498688153,
+         -54
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree5_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.495207844598582,
+       9.495207844598582,
+       9.495207844598582
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -20.24519189142514,
+       22.98861895852595,
+       -54
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree6_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.019465779244715,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         18.232389646070146,
+         9.509732889622358,
+         -54
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree6_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.790835769828023,
+       12.790835769828023,
+       12.790835769828023
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       18.232389646070146,
+       22.21717472170172,
+       -54
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree7_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.17344379720624,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -21.77102948617499,
+         8.58672189860312,
+         -66
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree7_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.905020422371681,
+       12.905020422371681,
+       12.905020422371681
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -21.77102948617499,
+       20.39969890279916,
+       -66
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree8_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.867747672389434,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         16.465826806177564,
+         10.433873836194717,
+         -66
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree8_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.158437145326705,
+       10.158437145326705,
+       10.158437145326705
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       16.465826806177564,
+       23.40735695872111,
+       -66
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree9_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.942337904626946,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -17.442550833574376,
+         7.471168952313473,
+         -78
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree9_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.233927296407737,
+       10.233927296407737,
+       10.233927296407737
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -17.442550833574376,
+       17.50081972872888,
+       -78
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree10_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.4458110393915,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         24.161263591200314,
+         7.72290551969575,
+         -78
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree10_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.326400654649865,
+       11.326400654649865,
+       11.326400654649865
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       24.161263591200314,
+       18.277411203053965,
+       -78
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree11_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.97918034180585,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -22.38913468926184,
+         8.489590170902925,
+         -90
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree11_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.190977862838231,
+       11.190977862838231,
+       11.190977862838231
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -22.38913468926184,
+       19.776924807515407,
+       -90
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree12_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.476809359729861,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         16.62788974973323,
+         7.238404679864931,
+         -90
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree12_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.823834851277306,
+       9.823834851277306,
+       9.823834851277306
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       16.62788974973323,
+       16.932768072549187,
+       -90
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree13_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.513177363014332,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -52.275923056694026,
+         8.256588681507166,
+         -102
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree13_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.342247454030556,
+       11.342247454030556,
+       11.342247454030556
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -52.275923056694026,
+       19.34873922652197,
+       -102
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree14_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.35503585217993,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         50.99766996863682,
+         10.177517926089966,
+         -102
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree14_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.795977734918285,
+       11.795977734918285,
+       11.795977734918285
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       50.99766996863682,
+       23.3040302859095,
+       -102
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree15_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.20157203049161,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -53.74423710258671,
+         9.100786015245806,
+         -114
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree15_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.500549982293716,
+       12.500549982293716,
+       12.500549982293716
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -53.74423710258671,
+       21.32670952606504,
+       -114
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree16_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.841398779940658,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         50.879377648901865,
+         10.920699389970329,
+         -114
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree16_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.47226311301985,
+       9.47226311301985,
+       9.47226311301985
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       50.879377648901865,
+       24.20946455819562,
+       -114
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree17_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.215876277284039,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -55.571409295652494,
+         7.6079381386420195,
+         -126
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree17_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.955852401903222,
+       10.955852401903222,
+       10.955852401903222
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -55.571409295652494,
+       17.954839377759846,
+       -126
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree18_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.116566929702504,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         54.682158565343954,
+         10.058283464851252,
+         -126
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree18_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.292103761109535,
+       11.292103761109535,
+       11.292103761109535
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       54.682158565343954,
+       22.939592869979887,
+       -126
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree19_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.562362930189273,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -51.137475128480965,
+         9.781181465094637,
+         -138
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree19_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.377479508420073,
+       11.377479508420073,
+       11.377479508420073
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -51.137475128480965,
+       22.40673280729429,
+       -138
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree20_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.71974224410033,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.56205331301413,
+         10.359871122050166,
+         -138
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree20_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.77872438043175,
+       12.77872438043175,
+       12.77872438043175
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.56205331301413,
+       23.91442333920827,
+       -138
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree21_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.485355420777758,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.641522054746744,
+         7.242677710388879,
+         -150
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree21_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.805968085217696,
+       11.805968085217696,
+       11.805968085217696
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.641522054746744,
+       17.436847442082183,
+       -150
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree22_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.57539829287772,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         57.930959394666345,
+         10.28769914643886,
+         -150
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree22_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.138382128376596,
+       10.138382128376596,
+       10.138382128376596
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       57.930959394666345,
+       23.109993824971866,
+       -150
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree23_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.180503424444709,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -54.68652715884188,
+         7.090251712222354,
+         -162
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree23_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.846781145199063,
+       10.846781145199063,
+       10.846781145199063
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -54.68652715884188,
+       16.892198710744474,
+       -162
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree24_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.471635354650484,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         49.17095794481732,
+         7.235817677325242,
+         -162
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree24_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.072931953890084,
+       12.072931953890084,
+       12.072931953890084
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       49.17095794481732,
+       17.489868343123007,
+       -162
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree25_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.127597625065818,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -50.476148336969146,
+         8.563798812532909,
+         -174
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree25_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.485687896505198,
+       12.485687896505198,
+       12.485687896505198
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -50.476148336969146,
+       20.249019599192117,
+       -174
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree26_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.3955192731523,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         52.49187400949331,
+         9.19775963657615,
+         -174
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree26_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.53353530576605,
+       12.53353530576605,
+       12.53353530576605
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       52.49187400949331,
+       21.528903099593812,
+       -174
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree27_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.227368516111177,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -56.63984469698515,
+         8.113684258055589,
+         -186
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree27_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.661186068846794,
+       10.661186068846794,
+       10.661186068846794
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -56.63984469698515,
+       18.892665033322874,
+       -186
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree28_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.66184963171193,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         56.84192827198217,
+         10.830924815855965,
+         -186
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree28_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.603683623164436,
+       9.603683623164436,
+       9.603683623164436
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       56.84192827198217,
+       24.06277053750304,
+       -186
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree29_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.866688669446889,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -50.31956866819536,
+         7.9333443347234445,
+         -198
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree29_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.939850921365426,
+       10.939850921365426,
+       10.939850921365426
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -50.31956866819536,
+       18.601651399788246,
+       -198
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree30_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.03274882708051,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         50.62746619298538,
+         7.016374413540255,
+         -198
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree30_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.675786004501312,
+       10.675786004501312,
+       10.675786004501312
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       50.62746619298538,
+       16.701695328205837,
+       -198
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree31_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.530729789651136,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -19.692535728947256,
+         9.265364894825568,
+         -210
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree31_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.812391702100381,
+       12.812391702100381,
+       12.812391702100381
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -19.692535728947256,
+       21.733827715176233,
+       -210
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree32_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       18.123931464566226,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         22.904936571359777,
+         9.061965732283113,
+         -210
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree32_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.470370997636511,
+       11.470370997636511,
+       11.470370997636511
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       22.904936571359777,
+       20.991524213975353,
+       -210
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree33_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       19.40960065959601,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         42.0,
+         9.704800329798005,
+         0.0
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree33_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.21597157289516,
+       9.21597157289516,
+       9.21597157289516
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       42.0,
+       21.7135935528198,
+       0.0
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree34_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       21.196264080463617,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         33.97871376374779,
+         10.598132040231809,
+         24.68698059628387
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree34_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.11987796282429,
+       12.11987796282429,
+       12.11987796282429
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       33.97871376374779,
+       24.22623357116969,
+       24.68698059628387
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree35_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       20.99610547307581,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         12.978713763747793,
+         10.498052736537906,
+         39.944373684396446
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree35_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       12.191492484786265,
+       12.191492484786265,
+       12.191492484786265
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       12.978713763747793,
+       24.043978594272378,
+       39.944373684396446
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree36_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       17.13903125513015,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -12.978713763747788,
+         8.569515627565075,
+         39.94437368439645
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree36_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.595915329281091,
+       10.595915329281091,
+       10.595915329281091
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -12.978713763747788,
+       19.788010087450424,
+       39.94437368439645
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree37_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.828296749682593,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -33.97871376374779,
+         7.414148374841297,
+         24.686980596283878
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree37_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       11.537158262742835,
+       11.537158262742835,
+       11.537158262742835
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -33.97871376374779,
+       17.712586315368302,
+       24.686980596283878
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree38_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.4979825729495,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -42.0,
+         7.24899128647475,
+         5.143516556418883e-15
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree38_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.2693904633721,
+       9.2693904633721,
+       9.2693904633721
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -42.0,
+       16.815330188792526,
+       5.143516556418883e-15
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree39_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       15.670105483569316,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -33.9787137637478,
+         7.835052741784658,
+         -24.686980596283867
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree39_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.64921275108839,
+       9.64921275108839,
+       9.64921275108839
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -33.9787137637478,
+       18.082408671341412,
+       -24.686980596283867
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree40_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       16.720429217858747,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         -12.978713763747798,
+         8.360214608929374,
+         -39.944373684396446
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree40_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.210302415561067,
+       9.210302415561067,
+       9.210302415561067
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       -12.978713763747798,
+       19.023004821749012,
+       -39.944373684396446
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree41_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.001866255210853,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         12.978713763747784,
+         7.0009331276054265,
+         -39.94437368439645
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree41_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       9.605059729117713,
+       9.605059729117713,
+       9.605059729117713
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       12.978713763747784,
+       16.40313118749028,
+       -39.94437368439645
+      ],
+      "Shape": "Ball"
+     }
+    },
+    {
+     "Name": "Tree42_Trunk",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       14.811714944180771,
+       2.2,
+       2.2
+      ],
+      "Color": [
+       0.45,
+       0.32,
+       0.2
+      ],
+      "Material": "Wood",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Shape": "Cylinder",
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         33.97871376374779,
+         7.405857472090386,
+         -24.68698059628388
+        ],
+        "orientation": [
+         [
+          0,
+          -1,
+          0
+         ],
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      }
+     }
+    },
+    {
+     "Name": "Tree42_Leaves",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       10.454439688138283,
+       10.454439688138283,
+       10.454439688138283
+      ],
+      "Color": [
+       0.22,
+       0.48,
+       0.2
+      ],
+      "Material": "Grass",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 0,
+      "Position": [
+       33.97871376374779,
+       17.42532486621534,
+       -24.68698059628388
+      ],
+      "Shape": "Ball"
+     }
+    }
+   ]
+  },
+  {
+   "Name": "InvisibleWalls",
+   "ClassName": "Folder",
+   "Children": [
+    {
+     "Name": "WallWest",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2,
+       40,
+       300
+      ],
+      "Color": [
+       1,
+       1,
+       1
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 1,
+      "Position": [
+       -62,
+       20,
+       -90
+      ]
+     }
+    },
+    {
+     "Name": "WallEast",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2,
+       40,
+       300
+      ],
+      "Color": [
+       1,
+       1,
+       1
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 1,
+      "Position": [
+       62,
+       20,
+       -90
+      ]
+     }
+    },
+    {
+     "Name": "WallNorth",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       126,
+       40,
+       2
+      ],
+      "Color": [
+       1,
+       1,
+       1
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 1,
+      "Position": [
+       0,
+       20,
+       -232
+      ]
+     }
+    },
+    {
+     "Name": "WallSouth",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       126,
+       40,
+       2
+      ],
+      "Color": [
+       1,
+       1,
+       1
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": true,
+      "Transparency": 1,
+      "Position": [
+       0,
+       20,
+       52
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

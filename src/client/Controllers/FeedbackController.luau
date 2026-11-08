@@ -24,6 +24,7 @@ local COLORS: { [string]: Color3 } = {
 	Received = Color3.fromRGB(255, 70, 70), -- daño que recibes
 	Blocked = Color3.fromRGB(170, 170, 170),
 	PerfectBlock = Color3.fromRGB(255, 205, 80),
+	Heal = Color3.fromRGB(90, 230, 110),
 }
 
 type ActiveNumber = {
@@ -82,6 +83,8 @@ local function showNumber(target: Instance, amount: number, kind: string, isMine
 		text = Strings.get("PerfectBlock")
 	elseif kind == "Blocked" then
 		text = Strings.get("Blocked", { amount = amount })
+	elseif kind == "Heal" then
+		text = `+{amount}`
 	end
 	local canMerge = isMine and (kind == "Normal" or kind == "Crit")
 

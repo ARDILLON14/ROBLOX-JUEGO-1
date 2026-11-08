@@ -64,6 +64,7 @@ type Enemy = {
 local EnemyService = {}
 
 local enemies: { [Model]: Enemy } = {}
+local defeatListeners: { (enemyId: string, contributors: { Player }) -> () } = {}
 local folder: Folder
 
 local function log(message: string)
@@ -192,9 +193,17 @@ local function onEnemyDied(enemy: Enemy)
 
 	-- XP para quien contribuyó lo suficiente.
 	local xp = enemy.config.XPPerLevel * enemy.level
+	local contributors: { Player } = {}
 	for player, damage in enemy.damageBy do
 		if player.Parent == Players and damage >= enemy.maxHealth * CONTRIBUTION_THRESHOLD then
 			ProgressionService:addXP(player, xp)
+			table.insert(contributors, player)
+		end
+	end
+	local enemyId = enemy.model:GetAttribute("EnemyId")
+	if typeof(enemyId) == "string" then
+		for _, listener in defeatListeners do
+			task.spawn(listener, enemyId, contributors)
 		end
 	end
 	log(`{enemy.model.Name} derrotado (+{xp} XP a los que contribuyeron)`)
@@ -469,6 +478,11 @@ function EnemyService:Start()
 			end
 		end
 	end)
+end
+
+-- Otros servicios (p. ej., QuestService) se enteran de cada enemigo derrotado y de quién contribuyó.
+function EnemyService:onEnemyDefeated(listener: (enemyId: string, contributors: { Player }) -> ())
+	table.insert(defeatListeners, listener)
 end
 
 return EnemyService

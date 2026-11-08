@@ -25,6 +25,7 @@ local DataTemplate = {
 	},
 	Quests = {
 		ActiveId = "Q01",
+		Status = "Available", -- "Available" | "Active" | "ReadyToTurnIn" | "None"
 		Progress = 0,
 		Completed = {} :: { [string]: boolean },
 	},
