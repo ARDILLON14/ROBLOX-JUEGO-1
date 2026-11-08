@@ -1,0 +1,81 @@
+{
+  "name": "eclipse-dev-build",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "$properties": {
+        "EnableMouseLockOption": false,
+        "CameraMinZoomDistance": 8,
+        "CameraMaxZoomDistance": 20
+      },
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    },
+    "Workspace": {
+      "Baseplate": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "Size": [
+            512,
+            16,
+            512
+          ],
+          "Position": [
+            0,
+            -8,
+            0
+          ],
+          "Color": [
+            0.36,
+            0.55,
+            0.27
+          ],
+          "Material": "Grass",
+          "TopSurface": "Smooth",
+          "Locked": true
+        }
+      },
+      "SpawnLocation": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Anchored": true,
+          "Size": [
+            8,
+            1,
+            8
+          ],
+          "Position": [
+            0,
+            0.5,
+            0
+          ],
+          "Color": [
+            0.95,
+            0.8,
+            0.4
+          ],
+          "TopSurface": "Smooth"
+        }
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "ClockTime": 14
+      }
+    }
+  }
+}

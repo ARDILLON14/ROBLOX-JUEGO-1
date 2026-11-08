@@ -1,9 +1,10 @@
 --!strict
 --[[
 	CombatController (cliente)
-	Combate LOCAL de la semana 3–4: ataque ligero, combo de 3, pesado, remate, esquiva y bloqueo.
+	Ataque ligero, combo de 3, pesado, remate, esquiva y bloqueo.
 	- Reproduce animaciones y muestra un destello cuando golpeas algo (respuesta visual inmediata).
-	- TODAVÍA NO HACE DAÑO: en la semana 5 el servidor validará cada ataque y calculará el daño real.
+	- Envía cada acción al servidor (CombatService), que la valida y calcula el daño REAL.
+	  El cliente nunca dice cuánto daño hace (decisión aprobada: server-authoritative).
 
 	Estados (Entrega 2B §4): Idle, Attacking, Blocking, Dodging. (Stunned y Dead los decidirá el servidor.)
 ]]
@@ -18,6 +19,7 @@ local WeaponTypes = require(Config:WaitForChild("WeaponTypes"))
 local Animations = require(Config:WaitForChild("Animations"))
 local Debug = require(Config:WaitForChild("Debug"))
 local Hitbox = require(Shared:WaitForChild("Combat"):WaitForChild("Hitbox"))
+local Net = require(Shared:WaitForChild("Net"))
 local InputController = require(script.Parent:WaitForChild("InputController"))
 
 type State = "Idle" | "Attacking" | "Blocking" | "Dodging"
@@ -191,6 +193,8 @@ local function performAttack(kind: AttackKind)
 	setWalkSpeed(CombatConfig.AttackMoveSpeedMultiplier)
 	playTrack(animationKey, animationId, duration)
 	log(`{label} ({weaponName})`)
+	-- El servidor decide por su cuenta si es remate; solo le decimos ligero o pesado.
+	Net.event("RequestAttack"):FireServer(if kind == "Light" then "Light" else "Heavy")
 
 	task.delay(hitTime, function()
 		if token == actionToken and state == "Attacking" then
@@ -278,6 +282,7 @@ local function requestDodge()
 
 	playTrack("Dodge", Animations.Dodge, CombatConfig.DodgeDuration)
 	log("Esquiva")
+	Net.event("RequestDodge"):FireServer(direction)
 
 	task.delay(CombatConfig.DodgeDuration, function()
 		velocity:Destroy()
@@ -298,6 +303,7 @@ local function startBlock()
 	setWalkSpeed(CombatConfig.BlockMoveSpeedMultiplier)
 	playTrack("Block", Animations.Block, nil, true)
 	log("Bloqueo: inicio")
+	Net.event("RequestBlock"):FireServer(true)
 end
 
 local function stopBlock()
@@ -309,6 +315,7 @@ local function stopBlock()
 	stopCurrentTrack()
 	setWalkSpeed(1)
 	log(`Bloqueo: fin ({string.format("%.2f", os.clock() - blockStartTime)} s)`)
+	Net.event("RequestBlock"):FireServer(false)
 end
 
 local function onCharacterAdded(newCharacter: Model)

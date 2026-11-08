@@ -23,6 +23,14 @@ local Combat = {
 
 	HitboxHeight = 5,
 	HitstopDuration = 0.05,
+
+	-- Red (el servidor es un poco más permisivo para compensar la latencia)
+	NetworkTimeTolerance = 0.15, -- segundos de margen al comprobar intervalos
+	HitboxTolerance = 1.5, -- studs extra de alcance/ancho en el servidor
+
+	-- Números de daño (GDD §4.6)
+	DamageNumberDuration = 0.8,
+	DamageNumberMergeWindow = 0.3, -- golpes al mismo objetivo en este tiempo se suman en un número
 }
 
 return table.freeze(Combat)

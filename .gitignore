@@ -8,3 +8,5 @@ roblox.yml
 # Sistema
 .DS_Store
 Thumbs.db
+# Excepción: lugar de prueba listo para abrir en Studio
+!builds/ECLIPSE-dev.rbxl

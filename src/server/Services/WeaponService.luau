@@ -24,9 +24,10 @@ local function attachWeapon(character: Model, weaponTypeName: string)
 		return
 	end
 
-	local hand = character:WaitForChild("RightHand", 5)
+	-- R15 tiene "RightHand"; R6 (por si el lugar no está en R15) tiene "Right Arm".
+	local hand = character:WaitForChild("RightHand", 3) or character:FindFirstChild("Right Arm")
 	if not hand or not hand:IsA("BasePart") then
-		warn("[WeaponService] No se encontró RightHand. ¿El juego usa avatares R15?")
+		warn("[WeaponService] No se encontró la mano derecha del personaje")
 		return
 	end
 
