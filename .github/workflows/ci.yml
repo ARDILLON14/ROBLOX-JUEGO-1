@@ -1,0 +1,50 @@
+# Comprobaciones automáticas en cada subida (gratis en GitHub Actions).
+# Si algo falla, GitHub marca el commit con una ❌ y el registro dice qué pasó.
+name: Comprobaciones
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar herramientas (Rojo, StyLua, luau-lsp)
+        run: |
+          mkdir -p "$HOME/bin"
+          cd "$HOME/bin"
+          curl -sSL -o rojo.zip https://github.com/rojo-rbx/rojo/releases/download/v7.7.1/rojo-7.7.1-linux-x86_64.zip
+          curl -sSL -o stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/download/v2.6.0/stylua-linux-x86_64.zip
+          curl -sSL -o lsp.zip https://github.com/JohnnyMorganz/luau-lsp/releases/download/1.70.1/luau-lsp-linux-x86_64.zip
+          unzip -oq rojo.zip && unzip -oq stylua.zip && unzip -oq lsp.zip
+          chmod +x rojo stylua luau-lsp
+          curl -sSL -o globalTypes.d.luau https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Construir con Rojo (juego y lugar de prueba)
+        run: |
+          rojo build default.project.json -o game.rbxl
+          rojo build build.project.json -o test-place.rbxl
+
+      - name: Formato (StyLua)
+        run: stylua --check src
+
+      - name: Tipos y lint (luau-lsp)
+        run: |
+          rojo sourcemap default.project.json -o sourcemap.json
+          luau-lsp analyze --platform=roblox --sourcemap=sourcemap.json \
+            --definitions="$HOME/bin/globalTypes.d.luau" \
+            $(find src -name '*.luau' -not -path '*/Packages/*') 2>&1 \
+            | grep -v -e '^\[INFO\]' -e '^\[WARN\]' -e 'Packages/ProfileStore' | tee analyze.txt
+          if [ -s analyze.txt ]; then echo "Hay errores de tipos o avisos de lint"; exit 1; fi
+
+      - name: Coherencia del proyecto (textos, misiones, armas, mapa)
+        run: python3 tools/check_project.py
+
+      - name: El lugar de prueba está actualizado
+        run: |
+          python3 tools/generate_blockout.py
+          git diff --exit-code map/ || (echo "Ejecuta: python3 tools/generate_blockout.py y sube el mapa" && exit 1)

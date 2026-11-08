@@ -35,7 +35,7 @@ Para ir rápido: `DummyXPPerHit = 500`; vuelve a 0 al terminar.
 
 | # | Haz esto | Resultado esperado |
 |---|---|---|
-| 1 | Play | Output: `v0.11.0`, 14 puntos de aparición, `[Server] 11 módulo(s)`, `[Client] 21 módulo(s)`. Nada en rojo |
+| 1 | Play | Output: `v0.11.0`, 13 puntos de aparición (4 en la Linde, 4 en las Ruinas, 5 en la Hondonada), `[Server] 11 módulo(s)`, `[Client] 21 módulo(s)`. Nada en rojo |
 | 2 | Camina hacia el norte hasta el final | Linde → Ruinas (piedra) → Hondonada (suelo marchito, raíces moradas) → Corazón del Bosque (arena con columnas y árbol gigante) |
 | 3 | Pulsa **E** en la fogata de la Linde | Aviso "Fogata descubierta: Linde Esmeralda", vida llena y ventana "Viaje rápido" |
 | 4 | Viaja al Campamento desde ahí | Apareces junto a la fogata del campamento |
