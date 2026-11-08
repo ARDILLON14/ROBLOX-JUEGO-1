@@ -18,3 +18,4 @@
 | 11 | Fragmentos de Amanecer | Coleccionables de lore + bonus de XP | [DECISIÓN APROBADA] |
 | 12 | Slice vertical | Hacia la semana 8–10, playtest con amigos | [DECISIÓN APROBADA] |
 | 13 | Números de daño | Números flotantes por golpe con colores por tipo; los propios grandes, los de otros pequeños/semitransparentes; agrupación; opción en Ajustes | [DECISIÓN APROBADA] |
+| 14 | GDD v1 completo (Entrega 1B, puntos 1–12) | Aprobado por el desarrollador ("empezar") | [DECISIÓN APROBADA] |
