@@ -44,6 +44,7 @@ type SpawnPoint = {
 	level: number,
 	count: number,
 	alive: number,
+	temporary: boolean?, -- refuerzos del jefe: no reaparecen
 }
 
 type Enemy = {
@@ -226,6 +227,10 @@ local function onEnemyDied(enemy: Enemy)
 	-- Reaparición: más rápida cuanta más gente hay cerca (ajuste aprobado para 12 jugadores).
 	local spawnPoint = enemy.spawnPoint
 	spawnPoint.alive -= 1
+	if spawnPoint.temporary then
+		spawnPoint.part:Destroy()
+		return
+	end
 	local nearby = math.max(1, countPlayersNear(spawnPoint.part.Position, SLEEP_RANGE))
 	local delayTime = enemy.config.RespawnTime / (1 + RESPAWN_PLAYER_FACTOR * (nearby - 1))
 	task.delay(delayTime, function()
@@ -584,6 +589,44 @@ function EnemyService:Start()
 			end
 		end
 	end)
+end
+
+-- Crea un enemigo que NO reaparece (lo usa el jefe para invocar refuerzos). Devuelve su modelo.
+function EnemyService:spawnTemporary(enemyId: string, level: number, position: Vector3): Model?
+	if not Enemies[enemyId] then
+		return nil
+	end
+	local home = Instance.new("Part")
+	home.Name = "TemporarySpawn"
+	home.Anchored = true
+	home.CanCollide = false
+	home.CanQuery = false
+	home.Transparency = 1
+	home.Size = Vector3.one
+	home.Position = position
+	home.Parent = folder
+	local spawnPoint: SpawnPoint = {
+		part = home,
+		enemyId = enemyId,
+		level = level,
+		count = 0,
+		alive = 0,
+		temporary = true,
+	}
+	spawnEnemy(spawnPoint)
+	for model, enemy in enemies do
+		if enemy.spawnPoint == spawnPoint then
+			return model
+		end
+	end
+	return nil
+end
+
+-- Avisa a los oyentes de una derrota que no gestiona este servicio (p. ej., el jefe).
+function EnemyService:notifyDefeated(enemyId: string, contributors: { Player })
+	for _, listener in defeatListeners do
+		task.spawn(listener, enemyId, contributors)
+	end
 end
 
 -- Otros servicios (p. ej., QuestService) se enteran de cada enemigo derrotado y de quién contribuyó.

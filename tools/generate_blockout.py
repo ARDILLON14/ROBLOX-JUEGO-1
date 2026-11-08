@@ -186,7 +186,8 @@ arena_floor["Properties"]["CFrame"] = {"CFrame": {"position": [0, 0.5, -615], "o
 heart.append(arena_floor)
 for i in range(6):
     a = i / 6 * math.tau + 0.3
-    heart.append(part(f"ArenaColumn{i + 1}", [5, 18, 5], [math.cos(a) * 26, 9.5, -615 + math.sin(a) * 26], STONE, "Slate"))
+    heart.append(part(f"ArenaColumn{i + 1}", [5, 18, 5], [math.cos(a) * 26, 9.5, -615 + math.sin(a) * 26], STONE, "Slate",
+                      tags=["BossColumn"]))
 heart.append(part("BossArena_Vharok", [6, 1, 6], [0, 1, -615], [0.6, 0.1, 0.6], tags=["BossArena"],
                   attributes={"BossId": "Vharok", "Radius": 40}, transparency=1, can_collide=False))
 trunk = part("PrimevalTree_Trunk", [60, 16, 16], [0, 30, -668], WOOD, "Wood", shape="Cylinder")

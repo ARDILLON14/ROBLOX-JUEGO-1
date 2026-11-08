@@ -321,6 +321,8 @@ function HudController:Start()
 		elseif kind == "CampfireDiscovered" then
 			local info = World.Campfires[params.campfireId]
 			showToast(Strings.get("CampfireDiscovered", { name = if info then Strings.get(info.NameKey) else "" }))
+		elseif kind == "BossDefeated" then
+			showToast(Strings.get("BossDefeated", { name = Strings.get(params.nameKey) }))
 		elseif kind == "FastTravelBlocked" then
 			showToast(Strings.get("FastTravelBlocked"))
 		elseif kind == "FragmentFound" then

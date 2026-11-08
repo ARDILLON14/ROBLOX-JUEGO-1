@@ -12,6 +12,7 @@ local Debug = {
 	TestEnemySpawnPosition = Vector3.new(30, 1, -30),
 	LogData = true, -- mensajes de carga y guardado de datos
 	MasteryMultiplier = 1, -- multiplica la maestría ganada (pon 20 para probar los rangos rápido; 1 = normal)
+	BossHealthMultiplier = 1, -- multiplica la vida del jefe (pon 0.1 para probarlo rápido; 1 = normal)
 	LogEnemies = true, -- mensajes de aparición y derrota de enemigos
 }
 
