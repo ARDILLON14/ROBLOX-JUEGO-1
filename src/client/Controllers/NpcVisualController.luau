@@ -21,7 +21,7 @@ local markers: { [string]: TextLabel } = {} -- NpcId → marca
 
 local function refreshMarkers()
 	local data = PlayerDataController:get()
-	local quest = if data then Quests[data.Quests.ActiveId] else nil
+	local quest = if data then Quests.List[data.Quests.ActiveId] else nil
 	for npcId, marker in markers do
 		local status = if data then data.Quests.Status else nil
 		if quest and quest.Giver == npcId and status == "Available" then

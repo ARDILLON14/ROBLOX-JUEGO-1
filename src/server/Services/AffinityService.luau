@@ -40,6 +40,7 @@ local AffinityService = {}
 local skillReadyAt: { [Player]: number } = {}
 local ultCharge: { [Player]: number } = {}
 local burning: { [Model]: Burn } = {}
+local chosenListeners: { (Player, string) -> () } = {}
 
 local function notify(player: Player, kind: string, params: { [string]: any })
 	Net.event("Notify"):FireClient(player, kind, params)
@@ -274,6 +275,9 @@ local function onRequestChooseAffinity(player: Player, affinityId: unknown)
 	DataService:changed(player, "Affinity")
 	setUltCharge(player, 0)
 	notify(player, "AffinityChosen", { affinity = affinityId })
+	for _, listener in chosenListeners do
+		task.spawn(listener, player, affinityId)
+	end
 end
 
 local function setupShrine(shrine: Instance)
@@ -381,6 +385,11 @@ function AffinityService:Start()
 	if Debug.LogCombat then
 		print("[AffinityService] Afinidades listas (Fuego, Rayo)")
 	end
+end
+
+-- Otros servicios (p. ej., QuestService) se enteran cuando un jugador elige o cambia de afinidad.
+function AffinityService:onAffinityChosen(listener: (player: Player, affinityId: string) -> ())
+	table.insert(chosenListeners, listener)
 end
 
 return AffinityService

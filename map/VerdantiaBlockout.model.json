@@ -351,6 +351,40 @@
      }
     },
     {
+     "Name": "QuestMarker_Shrine",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2,
+       2,
+       2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.3
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 1,
+      "Position": [
+       14,
+       3,
+       -6
+      ],
+      "Tags": [
+       "QuestMarker"
+      ]
+     },
+     "attributes": {
+      "MarkerId": "Shrine",
+      "Radius": 8
+     }
+    },
+    {
      "Name": "ShrineBase",
      "ClassName": "Part",
      "Properties": {
@@ -1006,6 +1040,40 @@
        1.9,
        -186
       ]
+     }
+    },
+    {
+     "Name": "QuestMarker_VergeRuins",
+     "ClassName": "Part",
+     "Properties": {
+      "Anchored": true,
+      "Size": [
+       2,
+       2,
+       2
+      ],
+      "Color": [
+       1,
+       0.85,
+       0.3
+      ],
+      "Material": "SmoothPlastic",
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "CanCollide": false,
+      "Transparency": 1,
+      "Position": [
+       -37,
+       2,
+       -177
+      ],
+      "Tags": [
+       "QuestMarker"
+      ]
+     },
+     "attributes": {
+      "MarkerId": "VergeRuins",
+      "Radius": 12
      }
     },
     {

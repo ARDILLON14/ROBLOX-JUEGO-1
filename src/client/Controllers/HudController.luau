@@ -177,7 +177,7 @@ local function refreshData()
 	potionText.Text = Strings.get("Potions", { count = data.Inventory.Potions })
 
 	local questState = data.Quests
-	local quest = Quests[questState.ActiveId]
+	local quest = Quests.List[questState.ActiveId]
 	if not quest or questState.Status == "None" then
 		questTitle.Text = Strings.get("QuestTitle")
 		questObjective.Text = Strings.get("QuestNone")
@@ -185,7 +185,9 @@ local function refreshData()
 	end
 	local npcName = Strings.get(`Npc_{quest.Giver}`)
 	questTitle.Text = `{Strings.get("QuestTitle")}: {Strings.get(quest.NameKey)}`
-	if questState.Status == "Available" then
+	if questState.Status == "Available" and quest.RequiredLevel and level < quest.RequiredLevel then
+		questObjective.Text = Strings.get("QuestReachLevel", { level = quest.RequiredLevel })
+	elseif questState.Status == "Available" then
 		questObjective.Text = Strings.get("QuestTalkTo", { npc = npcName })
 	elseif questState.Status == "ReadyToTurnIn" then
 		questObjective.Text = Strings.get("QuestReturnTo", { npc = npcName })
@@ -311,6 +313,10 @@ function HudController:Start()
 			showToast(Strings.get("QuestReady", { npc = Strings.get(`Npc_{params.npcId}`) }))
 		elseif kind == "QuestComplete" then
 			showToast(Strings.get("QuestComplete", { name = Strings.get(params.nameKey) }))
+		elseif kind == "WeaponReward" then
+			showToast(Strings.get("WeaponReward", { name = Strings.get(params.nameKey) }))
+		elseif kind == "ItemCollected" then
+			showToast(Strings.get("ItemCollected", { name = Strings.get(params.nameKey) }))
 		elseif kind == "AffinityLocked" then
 			showToast(Strings.get("AffinityLocked", { level = params.level }))
 		elseif kind == "AffinityChosen" or kind == "MasteryRank" then

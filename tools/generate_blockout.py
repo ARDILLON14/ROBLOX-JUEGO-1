@@ -74,6 +74,8 @@ camp.append(part("QuestNPC_Ilen", [2, 1, 2], [-8, 0.9, -4], STONE, tags=["QuestN
 camp.append(part("TrainingArea", [16, 0.3, 12], [-14, 0.55, 12], DIRT, "Ground"))
 camp.append(part("AffinityShrine", [3, 3, 3], [14, 1.9, -6], [0.6, 0.5, 1], "Neon", shape="Ball",
                  tags=["AffinityShrine"]))  # provisional: se moverá a las Ruinas de Aelith
+camp.append(part("QuestMarker_Shrine", [2, 2, 2], [14, 3, -6], [1, 0.85, 0.3], tags=["QuestMarker"],
+                 attributes={"MarkerId": "Shrine", "Radius": 8}, transparency=1, can_collide=False))
 camp.append(part("ShrineBase", [5, 0.6, 5], [14, 0.7, -6], STONE, "Slate"))
 camp.append(part("NoticeBoard", [6, 4, 0.5], [6, 2.4, -14], WOOD, "WoodPlanks"))
 
@@ -105,6 +107,8 @@ for name, pos, level, count, enemy_id in spawns:
 # Ruinas pequeñas (futuro Fragmento F01, misión 3)
 for i, (x, z, h) in enumerate([(-38, -175, 8), (-30, -182, 5), (-44, -168, 10), (-36, -186, 3)]):
     verge.append(part(f"RuinPillar{i + 1}", [3, h, 3], [x, h / 2 + 0.4, z], STONE, "Slate"))
+verge.append(part("QuestMarker_VergeRuins", [2, 2, 2], [-37, 2, -177], [1, 0.85, 0.3], tags=["QuestMarker"],
+                  attributes={"MarkerId": "VergeRuins", "Radius": 12}, transparency=1, can_collide=False))
 verge.append(part("RuinFloor", [20, 0.5, 20], [-37, 0.45, -177], STONE, "Cobblestone"))
 
 trees = []
