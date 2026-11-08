@@ -13,6 +13,7 @@ local TweenService = game:GetService("TweenService")
 
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local CombatConfig = require(Shared:WaitForChild("Config"):WaitForChild("Combat"))
+local Strings = require(Shared:WaitForChild("Config"):WaitForChild("Strings"))
 local Net = require(Shared:WaitForChild("Net"))
 
 local player = Players.LocalPlayer
@@ -20,6 +21,9 @@ local player = Players.LocalPlayer
 local COLORS: { [string]: Color3 } = {
 	Normal = Color3.fromRGB(255, 255, 255),
 	Crit = Color3.fromRGB(255, 215, 60),
+	Received = Color3.fromRGB(255, 70, 70), -- daño que recibes
+	Blocked = Color3.fromRGB(170, 170, 170),
+	PerfectBlock = Color3.fromRGB(255, 205, 80),
 }
 
 type ActiveNumber = {
@@ -73,8 +77,16 @@ local function showNumber(target: Instance, amount: number, kind: string, isMine
 	local color = COLORS[kind] or COLORS.Normal
 	local now = os.clock()
 
+	local text = tostring(amount)
+	if kind == "PerfectBlock" then
+		text = Strings.get("PerfectBlock")
+	elseif kind == "Blocked" then
+		text = Strings.get("Blocked", { amount = amount })
+	end
+	local canMerge = isMine and (kind == "Normal" or kind == "Crit")
+
 	-- Agrupar tus golpes rápidos al mismo objetivo.
-	local existing = if isMine then active[target] else nil
+	local existing = if canMerge then active[target] else nil
 	if existing and now - existing.time <= CombatConfig.DamageNumberMergeWindow then
 		existing.total += amount
 		existing.time = now
@@ -96,13 +108,13 @@ local function showNumber(target: Instance, amount: number, kind: string, isMine
 	label.BackgroundTransparency = 1
 	label.Font = Enum.Font.GothamBlack
 	label.TextScaled = true
-	label.Text = tostring(amount)
+	label.Text = text
 	label.TextColor3 = color
 	label.TextStrokeTransparency = if isMine then 0.2 else 0.7
 	label.Parent = gui
 	gui.Parent = player:WaitForChild("PlayerGui")
 
-	if isMine then
+	if canMerge then
 		local entry: ActiveNumber = { label = label, gui = gui, total = amount, time = now, token = 0 }
 		active[target] = entry
 		animateAndRemove(gui, label, true, function()
@@ -111,7 +123,7 @@ local function showNumber(target: Instance, amount: number, kind: string, isMine
 			end
 		end)
 	else
-		animateAndRemove(gui, label, false, function() end)
+		animateAndRemove(gui, label, isMine, function() end)
 	end
 end
 

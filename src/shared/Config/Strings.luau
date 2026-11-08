@@ -18,6 +18,10 @@ local TEXTS: { [string]: { [string]: string } } = {
 		Title_VerdantiaGuardian = "Nuevo título: Guardián de Verdantia",
 		DebugHud = "Nv {level} · XP {xp}/{next} · Pociones {potions}",
 		DebugHudMax = "Nv {level} (máx.) · Pociones {potions}",
+		Blocked = "Bloqueado {amount}",
+		PerfectBlock = "¡Perfecto!",
+		Enemy_Thornling = "Brotespina",
+		EnemyName = "{name} · Nv {level}",
 	},
 	en = {
 		LevelUp = "LEVEL {level}!",
@@ -29,6 +33,10 @@ local TEXTS: { [string]: { [string]: string } } = {
 		Title_VerdantiaGuardian = "New title: Guardian of Verdantia",
 		DebugHud = "Lv {level} · XP {xp}/{next} · Potions {potions}",
 		DebugHudMax = "Lv {level} (max) · Potions {potions}",
+		Blocked = "Blocked {amount}",
+		PerfectBlock = "Perfect!",
+		Enemy_Thornling = "Thornling",
+		EnemyName = "{name} · Lv {level}",
 	},
 }
 

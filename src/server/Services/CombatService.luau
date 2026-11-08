@@ -40,6 +40,7 @@ export type HitKind = "Normal" | "Crit"
 local CombatService = {}
 
 local states: { [Player]: CombatState } = {}
+local damageListeners: { (Player, Model, number) -> () } = {}
 
 local function log(message: string)
 	if Debug.LogCombat then
@@ -139,6 +140,9 @@ local function resolveHit(player: Player, weapon: WeaponTypes.WeaponType, attack
 			humanoid:TakeDamage(amount)
 			sendHit(player, target, amount, kind)
 			log(`{player.Name}: {label} → {target.Name} -{amount} ({kind})`)
+			for _, listener in damageListeners do
+				task.spawn(listener, player, target, amount)
+			end
 			-- Temporal (solo desarrollo): XP por golpear al muñeco, para probar la subida de nivel.
 			if Debug.DummyXPPerHit > 0 and CollectionService:HasTag(target, "TrainingDummy") then
 				ProgressionService:addXP(player, Debug.DummyXPPerHit)
@@ -274,26 +278,50 @@ function CombatService:Start()
 	end)
 end
 
+-- Otros servicios (p. ej., EnemyService) se enteran del daño que hace cada jugador.
+function CombatService:onDamageDealt(listener: (player: Player, target: Model, amount: number) -> ())
+	table.insert(damageListeners, listener)
+end
+
+export type DefenseResult = "Hit" | "Blocked" | "PerfectBlock" | "Dodged"
+
 --[[
-	Para la semana 7 (enemigos): consulta si un jugador está esquivando o bloqueando.
-	Devuelve el multiplicador de daño que debe recibir: 0 (esquiva o bloqueo perfecto), 0,3 (bloqueo) o 1.
+	Daña a un jugador teniendo en cuenta su defensa (Entrega 2B §4):
+	- Esquivando: no recibe daño ("Dodged").
+	- Bloqueo perfecto (bloqueó hace ≤ 0,2 s): no recibe daño ("PerfectBlock"); el atacante debe aturdirse.
+	- Bloqueando: recibe el 30 % ("Blocked"). Los ataques imbloqueables ignoran el bloqueo.
+	- Si no: daño completo ("Hit").
 ]]
-function CombatService:getIncomingDamageMultiplier(player: Player): number
+function CombatService:damagePlayer(player: Player, amount: number, unblockable: boolean): DefenseResult
+	local _, humanoid = getAliveCharacter(player)
 	local state = states[player]
-	if not state then
-		return 1
+	if not humanoid or not state then
+		return "Dodged"
 	end
 	local now = os.clock()
+	local result: DefenseResult = "Hit"
+	local finalAmount = amount
 	if now < state.invulnerableUntil then
-		return 0
-	end
-	if state.blocking then
+		result = "Dodged"
+		finalAmount = 0
+	elseif state.blocking and not unblockable then
 		if now - state.blockStart <= CombatConfig.PerfectBlockWindow then
-			return 0
+			result = "PerfectBlock"
+			finalAmount = 0
+		else
+			result = "Blocked"
+			finalAmount = math.floor(amount * CombatConfig.BlockDamageMultiplier + 0.5)
 		end
-		return CombatConfig.BlockDamageMultiplier
 	end
-	return 1
+
+	if finalAmount > 0 then
+		humanoid:TakeDamage(finalAmount)
+	end
+	if result ~= "Dodged" and player.Character then
+		local kind = if result == "Hit" then "Received" else result
+		Net.event("HitConfirmed"):FireClient(player, player.Character, finalAmount, kind)
+	end
+	return result
 end
 
 return CombatService
