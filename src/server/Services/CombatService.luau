@@ -8,6 +8,7 @@
 	- No hay PvP: los jugadores no se dañan entre sí.
 ]]
 
+local CollectionService = game:GetService("CollectionService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
@@ -19,6 +20,8 @@ local Debug = require(Config:WaitForChild("Debug"))
 local Hitbox = require(Shared:WaitForChild("Combat"):WaitForChild("Hitbox"))
 local Validate = require(Shared:WaitForChild("Util"):WaitForChild("Validate"))
 local Net = require(Shared:WaitForChild("Net"))
+local Levels = require(Config:WaitForChild("Levels"))
+local ProgressionService = require(script.Parent:WaitForChild("ProgressionService"))
 
 type CombatState = {
 	busyUntil: number, -- hasta cuándo está ocupado (atacando o esquivando)
@@ -91,11 +94,15 @@ local function getPlayerCharacters(): { Instance }
 	return list
 end
 
--- Fórmula de daño aprobada (2B §5). Nivel y rareza llegarán con la progresión y el inventario.
-local function calculateDamage(weapon: WeaponTypes.WeaponType, attackMultiplier: number): (number, HitKind)
-	local level = 1 -- [PENDIENTE] semana 6: nivel real del jugador
+-- Fórmula de daño aprobada (2B §5).
+local function calculateDamage(
+	player: Player,
+	weapon: WeaponTypes.WeaponType,
+	attackMultiplier: number
+): (number, HitKind)
+	local level = ProgressionService:getLevel(player)
 	local rarityMultiplier = 1 -- [PENDIENTE] semana 10: rareza del arma equipada
-	local damage = weapon.LightDamage * rarityMultiplier * (1 + 0.04 * (level - 1)) * attackMultiplier
+	local damage = weapon.LightDamage * rarityMultiplier * (1 + Levels.DamagePerLevel * (level - 1)) * attackMultiplier
 	local kind: HitKind = "Normal"
 	if math.random() < CombatConfig.CritChance then
 		damage *= CombatConfig.CritMultiplier
@@ -128,10 +135,14 @@ local function resolveHit(player: Player, weapon: WeaponTypes.WeaponType, attack
 	for _, target in targets do
 		local humanoid = target:FindFirstChildOfClass("Humanoid")
 		if humanoid then
-			local amount, kind = calculateDamage(weapon, attackMultiplier)
+			local amount, kind = calculateDamage(player, weapon, attackMultiplier)
 			humanoid:TakeDamage(amount)
 			sendHit(player, target, amount, kind)
 			log(`{player.Name}: {label} → {target.Name} -{amount} ({kind})`)
+			-- Temporal (solo desarrollo): XP por golpear al muñeco, para probar la subida de nivel.
+			if Debug.DummyXPPerHit > 0 and CollectionService:HasTag(target, "TrainingDummy") then
+				ProgressionService:addXP(player, Debug.DummyXPPerHit)
+			end
 		end
 	end
 end
