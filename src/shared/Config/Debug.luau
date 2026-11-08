@@ -4,7 +4,7 @@
 local Debug = {
 	LogInput = true, -- muestra en Output cada acción pulsada
 	LogCombat = true, -- muestra en Output ataques, golpes, esquivas y bloqueos
-	StartingWeaponType = "Katana", -- arma con la que apareces: "Katana" o "Greatsword" (temporal hasta el inventario)
+	GiveAllWeapons = true, -- da las 6 armas al entrar (para probar el inventario; el juego real las da con misiones y botín)
 	SpawnTrainingDummy = true, -- crea un muñeco de práctica al iniciar el servidor
 	TrainingDummyPosition = Vector3.new(-14, 3, 12), -- zona de entrenamiento del campamento
 	DummyXPPerHit = 0, -- XP por golpe al muñeco (solo para probar la subida de nivel; 0 = desactivado)

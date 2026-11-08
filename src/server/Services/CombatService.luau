@@ -21,6 +21,7 @@ local Hitbox = require(Shared:WaitForChild("Combat"):WaitForChild("Hitbox"))
 local Validate = require(Shared:WaitForChild("Util"):WaitForChild("Validate"))
 local Net = require(Shared:WaitForChild("Net"))
 local Levels = require(Config:WaitForChild("Levels"))
+local WeaponCatalog = require(Config:WaitForChild("Weapons"))
 local ProgressionService = require(script.Parent:WaitForChild("ProgressionService"))
 
 type CombatState = {
@@ -96,13 +97,24 @@ local function getPlayerCharacters(): { Instance }
 end
 
 -- Fórmula de daño aprobada (2B §5).
+-- Multiplicador de la rareza del arma equipada (atributo "WeaponId" que pone WeaponService).
+local function getRarityMultiplier(player: Player): number
+	local character = player.Character
+	local weaponId = character and character:GetAttribute("WeaponId")
+	local item = if typeof(weaponId) == "string" then WeaponCatalog.Weapons[weaponId] else nil
+	if item then
+		return WeaponCatalog.Rarities[item.Rarity].DamageMultiplier
+	end
+	return 1
+end
+
 local function calculateDamage(
 	player: Player,
 	weapon: WeaponTypes.WeaponType,
 	attackMultiplier: number
 ): (number, HitKind)
 	local level = ProgressionService:getLevel(player)
-	local rarityMultiplier = 1 -- [PENDIENTE] semana 10: rareza del arma equipada
+	local rarityMultiplier = getRarityMultiplier(player)
 	local damage = weapon.LightDamage * rarityMultiplier * (1 + Levels.DamagePerLevel * (level - 1)) * attackMultiplier
 	local kind: HitKind = "Normal"
 	if math.random() < CombatConfig.CritChance then
@@ -276,6 +288,12 @@ function CombatService:Start()
 	Players.PlayerRemoving:Connect(function(player: Player)
 		states[player] = nil
 	end)
+end
+
+-- true si el jugador está atacando o esquivando (no puede cambiar de arma en ese momento).
+function CombatService:isBusy(player: Player): boolean
+	local state = states[player]
+	return state ~= nil and os.clock() < state.busyUntil
 end
 
 -- Otros servicios (p. ej., EnemyService) se enteran del daño que hace cada jugador.
