@@ -118,12 +118,32 @@ La clave técnica: el juego no pregunta "¿pulsó la tecla F?", sino "¿pidió *
 ### 4.5 Feedback visual y sonoro
 | Momento | Visual | Sonido |
 |---|---|---|
-| Golpe acertado | Hitstop (~0,05 s), destello blanco en el enemigo, partículas, número de daño | Impacto distinto por arma |
+| Golpe acertado | Hitstop (~0,05 s), destello blanco en el enemigo, partículas, número de daño (ver 4.6) | Impacto distinto por arma |
 | Golpe crítico / remate | Número más grande y de color, sacudida de cámara leve | Impacto grave |
 | Bloqueo / bloqueo perfecto | Chispas / destello dorado + aturdimiento visible | Metálico / "cling" agudo |
 | Esquiva | Estela del personaje | "Whoosh" |
 | Ataque enemigo próximo | Brillo normal (bloqueable) o rojo (imbloqueable); marcas en el suelo para áreas | Aviso sonoro corto |
 | Recibir daño | Borde rojo en pantalla, barra de vida que tiembla | Golpe sordo |
+
+### 4.6 Números de daño en pantalla [DECISIÓN APROBADA]
+Cada golpe muestra un número flotante sobre el objetivo que sube y se desvanece (~0,8 s).
+
+| Tipo de golpe | Aspecto del número |
+|---|---|
+| Normal | Blanco, tamaño normal |
+| Crítico / remate | Amarillo, más grande, pequeño "rebote" |
+| Fuego / Quemado | Naranja (el daño por segundo en números pequeños) |
+| Rayo | Celeste |
+| Resonancia | Morado, el más grande, con texto "¡RESONANCIA!" |
+| Bloqueado | Gris + texto "Bloqueado" |
+| Daño recibido por ti | Rojo, junto a tu personaje |
+| Curación | Verde con "+" |
+
+Reglas:
+- El **servidor** calcula el daño y avisa a los clientes; el número que ves es siempre el daño real (el cliente solo lo dibuja).
+- Con 12 jugadores puede haber demasiados números: **tus** números se ven grandes y opacos; los de **otros jugadores**, pequeños y semitransparentes.
+- Golpes muy rápidos al mismo objetivo se **agrupan** en un solo número que se va sumando, para no llenar la pantalla.
+- En **Ajustes**: activar/desactivar los números de otros jugadores.
 
 ---
 
@@ -180,4 +200,169 @@ Gigante de madera y piedra (Base 2 escalada con piezas extra), en la arena del *
 - **Reaparición:** 3 minutos después de ser derrotado.
 
 ---
-*Continúa en la parte 2: progresión, inventario y misiones, mapa, interfaz, futuro y métricas.*
+
+# GDD de la versión 1 — Parte 2 (puntos 7–12)
+
+## 7. Progresión
+
+### 7.1 Curva de experiencia [PROPUESTA]
+XP para pasar del nivel *n* al *n+1* = **100 × n^1,5** (redondeado a decenas). El nivel máximo es un valor de configuración (20 en la v1).
+
+| Nivel | XP para el siguiente | XP acumulada | Momento aproximado [SUPUESTO] |
+|---|---|---|---|
+| 1 → 2 | 100 | 100 | Minuto ~4 |
+| 4 → 5 | 800 | 1.700 | ~30–40 min (afinidad) |
+| 9 → 10 | 2.700 | 11.100 | ~1,5 h |
+| 14 → 15 | 5.240 | 32.000 | ~2,5 h (listo para el jefe) |
+| 19 → 20 | 8.280 | 67.140 | ~4–5 h (jefe repetido, Fragmentos) |
+
+**Fuentes de XP:** enemigos (Brotespina 15 × su nivel; Lanzador ×1,2; Centinela ×2,5), misiones (bloques grandes), Fragmentos (bonus fijo), jefe (gran cantidad para cada participante). [SUPUESTO] Valores iniciales; se ajustan con pruebas.
+
+### 7.2 Mejoras por nivel
+- Vida máxima: 100 + 10 por nivel (290 a nivel 20).
+- Daño base: +4 % por nivel (×1,76 a nivel 20).
+- Al subir: columna de luz dorada, aviso "¡NIVEL X!", sonido, curación completa y 1 poción.
+
+### 7.3 Recompensas especiales [DECISIÓN APROBADA]
+| Nivel | Recompensa |
+|---|---|
+| 5 | Elegir afinidad |
+| 10 | Título "Explorador del Alba" |
+| 15 | Aura cosmética "Brasa de Éter" |
+| 20 | Título "Guardián de Verdantia" |
+
+### 7.4 Maestría de afinidad [PROPUESTA de números]
+| Rango | Puntos de maestría necesarios | Tiempo aprox. usando la afinidad [SUPUESTO] |
+|---|---|---|
+| R1 | 0 (al elegir) | — |
+| R2 | 600 | ~45 min |
+| R3 (ulti) | 2.000 | ~2 h |
+
+Puntos: +10 por impacto de habilidad, +5 por enemigo derrotado con la afinidad equipada. Tabla de rangos ampliable.
+
+### 7.5 Niveles de enemigos por zona
+| Zona | Nivel de enemigos |
+|---|---|
+| Linde Esmeralda | 1–5 |
+| Ruinas de Aelith | 6–12 |
+| Hondonada Marchita | 12–18 |
+| Jefe | recomendado 15+ (escala por jugadores) |
+
+---
+
+## 8. Inventario y misiones
+
+### 8.1 Inventario (lista simple)
+| Pestaña | Contenido | Acciones |
+|---|---|---|
+| Armas | Hasta 6 (2 tipos × 3 rarezas) | Equipar |
+| Consumibles | **Poción de Savia / Sap Potion**: cura 40 % de la vida; enfriamiento 10 s; máximo 10 | Usar (tecla 1) |
+| Cosméticos | Títulos y auras desbloqueados | Equipar uno de cada |
+
+Sin vender, tirar ni comerciar en la v1. Los Fragmentos van al **Diario**, no al inventario. Todo lo decide y guarda el servidor.
+
+### 8.2 Cadena de misiones principal [PROPUESTA]
+| # | Misión (ES / EN) | Tipo | Objetivo | Recompensa |
+|---|---|---|---|---|
+| 1 | Despertar del Explorador / Seeker's Awakening | Hablar | Hablar con Ilen y completar el entrenamiento con el muñeco | XP |
+| 2 | Raíces Inquietas / Restless Roots | Derrotar | 6 Brotespinas (Linde Esmeralda) | XP + 2 pociones |
+| 3 | La Primera Luz / The First Light | Ir a | Encontrar el Fragmento de las ruinas pequeñas | XP |
+| 4 | El Peso del Acero / The Weight of Steel | Derrotar | 4 Brotespinas Lanzadores | **Mandoble común** |
+| 5 | Despertar del Éter / Aether Awakening (nivel 5) | Ir a | Llegar al Santuario de las Ruinas y elegir afinidad | **Afinidad** |
+| 6 | Guardianes de Piedra / Stone Guardians | Derrotar | 3 Centinelas Aelith | **Arma rara** del tipo equipado |
+| 7 | Savia Marchita / Withered Sap | Recoger | 5 Savias corruptas (las sueltan los enemigos de la Hondonada) | XP + 3 pociones |
+| 8 | El Guardián Marchito / The Withered Warden | Derrotar | Vencer a Vharok | XP grande + final de la historia |
+
+- Siempre hay **una misión activa** y su objetivo se muestra en pantalla (rastreador + marcador en el mundo).
+- Objetivo secundario permanente: **Fragmentos de Amanecer (10)**, visibles en el Diario.
+- Las misiones son **datos en una tabla** (tipo, objetivo, recompensa): añadir misiones nuevas no requiere programar.
+
+---
+
+## 9. Mapa de Verdantia
+
+```
+                         [ CORAZÓN DEL BOSQUE ]
+                          Arena del jefe (Vharok)
+                                   │
+                    ┌──── HONDONADA MARCHITA ────┐
+                    │  Nv 12–18 · raíces moradas │
+                    │  todos los enemigos 🔥 F3   │
+                    └─────────────┬──────────────┘
+                                  │
+                    ┌──── RUINAS DE AELITH ──────┐
+                    │  Nv 6–12 · Santuario de    │
+                    │  afinidad · Centinelas 🔥 F2 │
+                    └─────────────┬──────────────┘
+                                  │
+                    ┌──── LINDE ESMERALDA ───────┐
+                    │  Nv 1–5 · bosque claro     │
+                    │  Brotespinas · ruinas 🔥 F1 │
+                    └─────────────┬──────────────┘
+                                  │
+                       [ CAMPAMENTO DEL ALBA ]
+            Zona segura · aparición · Ilen · muñeco · fogata
+                                                    🔥 = fogata (punto de control)
+```
+
+| Zona | Función | Puntos de interés | Fragmentos |
+|---|---|---|---|
+| Campamento del Alba | Zona segura, inicio, NPC, entrenamiento | Maestra Ilen, muñeco, fogata, tablón de misiones | 0 |
+| Linde Esmeralda | Tutorial en combate | Ruinas pequeñas, primer Fragmento, claro de Brotespinas | 3 |
+| Ruinas de Aelith | Afinidad y lore | Santuario de afinidad, inscripciones, patio de Centinelas | 3 |
+| Hondonada Marchita | Reto antes del jefe | Raíces corruptas, árbol caído (atajo), cueva pequeña | 3 |
+| Corazón del Bosque | Jefe | Arena circular con columnas (para el aturdimiento de la embestida), Árbol Primigenio | 1 |
+
+- Recorrido lineal en "columna" para guiar al jugador; caminos laterales cortos esconden Fragmentos.
+- [PROPUESTA] **Viaje rápido** entre fogatas ya descubiertas (barato de hacer y evita caminar de vuelta).
+- [SUPUESTO] Tamaño compacto: caminar del campamento a la arena ≈ 3–4 minutos.
+- Arquitectura: cada zona es una **carpeta independiente** con sus datos (enemigos, niveles, fogatas). Nuevas regiones futuras se añadirán como nuevas carpetas/lugares sin tocar Verdantia.
+
+---
+
+## 10. Interfaz (pantallas)
+| Pantalla | Contenido | Notas para móvil |
+|---|---|---|
+| Carga + intro | Logo, consejos, intro saltable | — |
+| **HUD** | Vida, nivel y barra de XP, habilidad y ulti con enfriamiento, esquiva, pociones, rastreador de misión, números de daño | Elementos en las esquinas para dejar sitio a los botones táctiles |
+| Diálogo de NPC | Nombre, retrato simple, texto, botones | Botones grandes |
+| Inventario | Pestañas Armas / Consumibles / Cosméticos | Lista con desplazamiento táctil |
+| Misiones y Diario | Misión activa, completadas, Fragmentos y lore | — |
+| Selección de afinidad | Dos opciones con vídeo/imagen y descripción | — |
+| Subida de nivel | Aviso grande + recompensas | — |
+| Muerte | "Has caído" + reaparecer en la fogata | — |
+| Barra del jefe | Nombre, vida, fase | Parte superior |
+| Viaje rápido | Lista de fogatas descubiertas | — |
+| Ajustes | Idioma (ES/EN), volumen, sensibilidad, números de daño de otros, calidad de efectos | — |
+
+Regla: todas las pantallas usan tamaños **relativos** (porcentaje de pantalla) desde el inicio. [VERIFICAR EN DOCUMENTACIÓN: "UDim2 Scale", "UIAspectRatioConstraint"]
+
+---
+
+## 11. Futuras actualizaciones (orden recomendado)
+| Orden | Actualización | Por qué en este orden |
+|---|---|---|
+| 1 | **Controles táctiles (móvil)** | Más de la mitad del público de Roblox juega en móvil [VERIFICAR]; la base ya estará preparada |
+| 2 | Más Verdantia: nivel máx. 30, rangos de maestría nuevos, misiones | Reutiliza todo lo existente; mantiene a los jugadores |
+| 3 | Monetización cosmética (sin pay-to-win) | Solo cuando haya jugadores que vuelvan |
+| 4 | Nueva afinidad + nueva arma | Variedad de combate |
+| 5 | Mazmorras cooperativas | Contenido repetible |
+| 6 | Región Solkar | Primera expansión grande |
+| 7 | Ecos Ancestrales, rangos E–SS, reputación | Sistemas de progresión profunda |
+| 8 | Gremios, comercio | Necesitan comunidad estable |
+| 9 | PvP, incursiones, eventos | Requieren equilibrio y más jugadores |
+
+---
+
+## 12. Métricas de éxito
+| Métrica | Qué significa | Meta inicial [SUPUESTO] | Dónde verla |
+|---|---|---|---|
+| Retención D1 | % de jugadores que vuelven al día siguiente | ≥ 15 % | Creator Hub → Analytics [VERIFICAR] |
+| Retención D7 | % que vuelve a la semana | ≥ 5 % | Creator Hub → Analytics |
+| Tiempo medio de sesión | Minutos por visita | ≥ 12 min | Creator Hub → Analytics |
+| Tutorial completado | % de nuevos que terminan la misión 1 | ≥ 70 % | Evento propio (embudo) [VERIFICAR: "AnalyticsService funnel"] |
+| Llegan a nivel 5 | % de nuevos que eligen afinidad | ≥ 35 % | Evento propio |
+| Derrotan al jefe | % de jugadores que vencen a Vharok | ≥ 10 % | Evento propio |
+| Errores | Errores de scripts por sesión | Tendencia a la baja | Creator Hub → Error Report [VERIFICAR] |
+
+Si una métrica falla, sabemos dónde mirar: un tutorial bajo indica controles confusos; muchos jugadores que no llegan a nivel 5 indican que el inicio es lento.
